@@ -45,26 +45,39 @@ export default function Header3({ variant }) {
   return (
     <div>
       <style>{`
-        .cs_site_branding img {
-          height: clamp(50px, 5.5vw, 68px);
-          width: auto;
-          max-width: 220px;
-          display: block;
-          object-fit: contain;
-          transition: height 0.3s ease, transform 0.3s ease;
+        .cs_site_header.header_style_2_2 .cs_main_header_in {
+          min-height: 108px;
+          height: auto;
+          padding: 6px 0;
+          transition: min-height 0.3s ease, padding 0.3s ease;
         }
-        .cs_site_branding:hover img {
-          transform: scale(1.02);
-        }
-        .cs_sticky_header .cs_site_branding img,
-        .cs-gescout_sticky .cs_site_branding img {
-          height: clamp(44px, 4.8vw, 58px);
+        header.cs_site_header.scrolled.header_style_2_2 .cs_main_header_in,
+        .cs-gescout_sticky.header_style_2_2 .cs_main_header_in {
+          min-height: 88px;
+          height: auto;
+          padding: 4px 0;
         }
         .cs_main_header_left .cs_site_branding {
           display: inline-flex;
           align-items: center;
           line-height: 0;
-          padding: 4px 0;
+          padding: 2px 0;
+        }
+        .cs_site_branding img {
+          height: clamp(70px, 7vw, 92px);
+          width: auto;
+          max-width: 320px;
+          display: block;
+          object-fit: contain;
+          transition: height 0.3s ease, max-width 0.3s ease, transform 0.3s ease;
+        }
+        .cs_site_branding:hover img {
+          transform: scale(1.03);
+        }
+        header.cs_site_header.scrolled .cs_site_branding img,
+        .cs-gescout_sticky .cs_site_branding img {
+          height: clamp(56px, 5.5vw, 74px);
+          max-width: 260px;
         }
         header.cs_site_header {
           position: absolute;
@@ -107,6 +120,19 @@ export default function Header3({ variant }) {
           box-shadow: 0 6px 20px rgba(220, 38, 38, 0.45) !important;
         }
         @media (max-width: 991px) {
+          .cs_site_header.header_style_2_2 .cs_main_header_in {
+            min-height: 92px;
+            padding: 4px 0;
+          }
+          .cs_site_branding img {
+            height: clamp(54px, 12vw, 72px);
+            max-width: 240px;
+          }
+          header.cs_site_header.scrolled .cs_site_branding img,
+          .cs-gescout_sticky .cs_site_branding img {
+            height: clamp(48px, 10vw, 62px);
+            max-width: 200px;
+          }
           .cs_nav .cs_nav_list {
             background: #ffffff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -124,6 +150,21 @@ export default function Header3({ variant }) {
             color: #DC2626 !important;
           }
         }
+        @media (max-width: 575px) {
+          .cs_site_header.header_style_2_2 .cs_main_header_in {
+            min-height: 82px;
+            padding: 2px 0;
+          }
+          .cs_site_branding img {
+            height: clamp(48px, 13vw, 62px);
+            max-width: 200px;
+          }
+          header.cs_site_header.scrolled .cs_site_branding img,
+          .cs-gescout_sticky .cs_site_branding img {
+            height: clamp(42px, 11vw, 54px);
+            max-width: 175px;
+          }
+        }
       `}</style>
 
       <header
@@ -139,10 +180,10 @@ export default function Header3({ variant }) {
           <div className="container">
             <div className="cs_main_header_in">
               
-              {/* Left: Nexora360 Logo (whitebg.png in initial header, blackbg.png on scroll) */}
+              {/* Left: Centriva360 Logo (whitebg.png in initial header, blackbg.png on scroll) */}
               <div className="cs_main_header_left">
-                <Link className="cs_site_branding" to="/" aria-label="Nexora360 Home">
-                  <img src={logoSrc} alt="Nexora360 Global Solutions" />
+                <Link className="cs_site_branding" to="/" aria-label="Centriva360 Home">
+                  <img src={logoSrc} alt="Centriva360 Global Solutions" />
                 </Link>
               </div>
 

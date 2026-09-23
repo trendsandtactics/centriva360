@@ -9272,7 +9272,15 @@ input.main-search-input::placeholder {
   visibility: visible;
 }
 .cs_site_branding {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+}
+.cs_site_branding img {
+  height: clamp(68px, 6.8vw, 92px);
+  width: auto;
+  max-width: 320px;
+  display: block;
+  object-fit: contain;
 }
 .cs_site_branding + .cs_nav {
   margin-left: 65px;
