@@ -96,7 +96,7 @@ const NexoraHero = () => {
           align-items: center;
           background: #0B0F17;
           overflow: hidden;
-          padding: 140px 0 80px;
+          padding: 155px 0 80px;
         }
         .min-vh-hero {
           min-height: calc(92vh - 200px);
