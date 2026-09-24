@@ -9276,9 +9276,9 @@ input.main-search-input::placeholder {
   align-items: center;
 }
 .cs_site_branding img {
-  height: 102px;
+  height: clamp(82px, 6.5vw, 100px);
   width: auto;
-  max-width: 380px;
+  max-width: clamp(240px, 24vw, 360px);
   display: block;
   object-fit: contain;
   transform: none !important;
@@ -9286,6 +9286,24 @@ input.main-search-input::placeholder {
 }
 .cs_site_branding:hover img {
   transform: none !important;
+}
+@media (max-width: 991px) {
+  .cs_site_branding img {
+    height: clamp(62px, 8vw, 76px) !important;
+    max-width: clamp(210px, 32vw, 260px) !important;
+  }
+}
+@media (max-width: 575px) {
+  .cs_site_branding img {
+    height: clamp(44px, 11vw, 54px) !important;
+    max-width: clamp(155px, 50vw, 195px) !important;
+  }
+}
+@media (max-width: 360px) {
+  .cs_site_branding img {
+    height: 40px !important;
+    max-width: 150px !important;
+  }
 }
 .cs_site_branding + .cs_nav {
   margin-left: 65px;

@@ -158,11 +158,6 @@ const Heroanner1 = () => {
 
         {/* ✅ New Left-Side Grey Gradient Overlay */}
         <div className="video-overlay" />
-
-        <div className="hero-content">
-          <div className="sub-title">{heroContent.subtitle}</div>
-          <h1>{heroContent.title}</h1>
-        </div>
       </div>
     </section>
   );
