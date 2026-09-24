@@ -6,7 +6,7 @@ const Heroanner1 = () => {
   const [heroContent, setHeroContent] = useState({
     subtitle: 'Sustainability Through Innovation',
     title: '“Strategic investments for a sustainable, connected future.”',
-    video_src: 'video4.mp4'
+    video_src: '/hero.mp4'
   });
 
   useEffect(() => {

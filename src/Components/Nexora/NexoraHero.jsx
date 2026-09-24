@@ -3,7 +3,7 @@ import Header3 from '../Header/Header3';
 import { getHomeHero } from '../../utils/homeHeroData';
 
 const NexoraHero = () => {
-  const [videoSrc, setVideoSrc] = useState('/Video2.mp4');
+  const [videoSrc, setVideoSrc] = useState('/hero.mp4');
 
   useEffect(() => {
     let isMounted = true;

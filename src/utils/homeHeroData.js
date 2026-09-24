@@ -4,7 +4,7 @@ const DEFAULT_HERO = {
   subtitle: 'Nexora360 Global Solutions Private Limited',
   title: 'One partner. Every business need.',
   description: 'A next-generation global business services and capability partner — bringing GCC, BPO, KPO, digital, customer experience, IT, HR, finance and AI & automation together under one integrated ecosystem.',
-  video_src: '/Video2.mp4',
+  video_src: '/hero.mp4',
 };
 
 const LOCAL_STORAGE_KEY = '__nexora360_home_hero';
@@ -44,7 +44,12 @@ export const getHomeHero = async () => {
     return DEFAULT_HERO;
   }
   try {
-    return JSON.parse(stored);
+    const parsed = JSON.parse(stored);
+    if (parsed.video_src === '/Video2.mp4' || parsed.video_src === 'video4.mp4') {
+      parsed.video_src = '/hero.mp4';
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(parsed));
+    }
+    return parsed;
   } catch (e) {
     return DEFAULT_HERO;
   }
