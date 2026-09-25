@@ -61,9 +61,10 @@ const NexoraHero = () => {
         .hero-video-banner {
           position: relative;
           width: 100%;
-          min-height: 88vh;
-          height: 90vh;
-          max-height: 960px;
+          min-height: 100vh;
+          height: 100vh;
+          min-height: 100dvh;
+          height: 100dvh;
           overflow: hidden;
           background: #0B0F17;
           display: flex;
@@ -132,8 +133,10 @@ const NexoraHero = () => {
 
         @media (max-width: 991px) {
           .hero-video-banner {
-            min-height: 65vh;
-            height: 70vh;
+            min-height: 80vh;
+            height: 85vh;
+            min-height: 80dvh;
+            height: 85dvh;
           }
           .hero-overlay-top {
             height: 140px;
@@ -142,8 +145,10 @@ const NexoraHero = () => {
 
         @media (max-width: 575px) {
           .hero-video-banner {
-            min-height: 50vh;
-            height: 55vh;
+            min-height: 75vh;
+            height: 80vh;
+            min-height: 75dvh;
+            height: 80dvh;
           }
           .hero-overlay-top {
             height: 120px;
