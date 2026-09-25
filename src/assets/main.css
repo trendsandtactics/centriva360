@@ -42,16 +42,19 @@ Version: 1.0.0
   --box-shadow: 0px 4px 20px 0px rgba(220, 38, 38, 0.08);
 }
 
-/* Nexora360 Red & Orange Theme Enhancements */
-.text-gradient-nexora {
+/* Centriva360 Red & Orange Theme Enhancements */
+.text-gradient-nexora,
+.text-gradient-centriva {
   background: linear-gradient(135deg, #DC2626 0%, #FF5722 50%, #F97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.bg-gradient-nexora {
+.bg-gradient-nexora,
+.bg-gradient-centriva {
   background: linear-gradient(135deg, #DC2626 0%, #FF5722 50%, #F97316 100%);
 }
-.btn-nexora-primary {
+.btn-nexora-primary,
+.btn-centriva-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -67,13 +70,15 @@ Version: 1.0.0
   text-decoration: none;
   cursor: pointer;
 }
-.btn-nexora-primary:hover {
+.btn-nexora-primary:hover,
+.btn-centriva-primary:hover {
   background: linear-gradient(135deg, #B91C1C 0%, #EA580C 100%);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(220, 38, 38, 0.45);
   color: #fff !important;
 }
-.btn-nexora-secondary {
+.btn-nexora-secondary,
+.btn-centriva-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +94,8 @@ Version: 1.0.0
   text-decoration: none;
   cursor: pointer;
 }
-.btn-nexora-secondary:hover {
+.btn-nexora-secondary:hover,
+.btn-centriva-secondary:hover {
   background: #fff;
   color: #DC2626 !important;
   border-color: #fff;

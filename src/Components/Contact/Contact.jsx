@@ -73,7 +73,7 @@ const Contact = () => {
                                 </div>
                                 <div className="content">
                                     <h3>
-                                        <a href="mailto:info@nexora360global.com">info@nexora360global.com</a>
+                                        <a href="mailto:info@centriva360global.com">info@centriva360global.com</a>
                                     </h3>
                                     <p>
                                         Email us anytime for any capability inquiry.

@@ -2,17 +2,17 @@ import { addLog, isApiAvailable } from './adminData';
 
 const DEFAULT_LEADERSHIP = {
   block_1_title: 'Our People, Our Strength',
-  block_1_desc: 'At Nexora360 Global Solutions, our greatest strength is our people. Experienced professionals who continuously look for opportunities to improve process, productivity and customer experience across our global capability centres and operational hubs.',
+  block_1_desc: 'At Centriva360 Global Solutions, our greatest strength is our people. Experienced professionals who continuously look for opportunities to improve process, productivity and customer experience across our global capability centres and operational hubs.',
   block_2_title: 'Integrated Ecosystem Governance',
   block_2_desc: "Businesses shouldn't need multiple partners for multiple functions. From supporting a single business function to managing complete outsourced operations, our leadership designs solutions around the unique requirements of every client.",
   block_3_title: 'Vision for Lasting Impact',
   block_3_desc: "To be the world's trusted 360° business capability partner, enabling organizations to operate smarter, scale faster and grow stronger. Industry-agnostic and globally focused, we build customized solutions rather than forcing clients into a standard outsourcing model.",
   founder_img: '/aboutbg.png',
-  founder_name: 'Nexora360 Leadership Pod',
+  founder_name: 'Centriva360 Leadership Pod',
   founder_title: 'Global Capability & Operations',
 };
 
-const LOCAL_STORAGE_KEY = '__nexora360_leadership';
+const LOCAL_STORAGE_KEY = '__centriva360_leadership';
 const API_URL = '/api/index.php';
 
 async function apiRequest(action, data = null, method = 'POST') {

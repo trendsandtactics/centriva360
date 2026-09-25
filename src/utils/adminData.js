@@ -1,13 +1,13 @@
 // Utility to manage admin login state, credentials, and contact inquiries with Hostinger MySQL API and System Logs
 
-const CREDENTIALS_KEY = '__nexora360_admin_credentials';
-const INQUIRIES_KEY = '__nexora360_contact_inquiries';
-const LOGS_KEY = '__nexora360_admin_logs';
+const CREDENTIALS_KEY = '__centriva360_admin_credentials';
+const INQUIRIES_KEY = '__centriva360_contact_inquiries';
+const LOGS_KEY = '__centriva360_admin_logs';
 const API_URL = '/api/index.php';
 
 const DEFAULT_CREDENTIALS = {
-  username: 'admin@nexora360global.com',
-  password: 'nexora360@global',
+  username: 'admin@centriva360global.com',
+  password: 'centriva360@global',
 };
 
 const DEFAULT_INQUIRIES = [
@@ -16,7 +16,7 @@ const DEFAULT_INQUIRIES = [
     name: 'Sarah Jenkins',
     email: 'sarah.jenkins@acmecorp.com',
     subject: 'Capability Inquiry: Global Capability Centre (GCC)',
-    message: 'Hello, we are interested in establishing a dedicated Global Capability Centre (GCC) with Nexora360. Could you please share details on your BOT model and timeline?',
+    message: 'Hello, we are interested in establishing a dedicated Global Capability Centre (GCC) with Centriva360. Could you please share details on your BOT model and timeline?',
     date: '2026-06-21T10:30:00Z',
     status: 'unread',
   },

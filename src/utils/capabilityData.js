@@ -196,43 +196,55 @@ export const CAPABILITIES = [
   }
 ];
 
-export const VALUES_NEXORA = [
+export const VALUES_CENTRIVA = [
   {
-    letter: "N",
-    title: "Next-Generation Thinking",
-    description: "Embracing emerging technologies, AI and digital transformation to create smarter solutions and future-ready businesses."
+    letter: "C",
+    title: "Customer-Centricity",
+    description: "Putting client goals, end-user experience, and long-term partnership at the core of every capability pod and delivery model."
   },
   {
     letter: "E",
     title: "Excellence",
-    description: "Delivering high-quality solutions, measurable outcomes and exceptional customer experiences in everything we do."
+    description: "Delivering high-quality solutions, measurable outcomes, and exceptional service standards in everything we do."
   },
   {
-    letter: "X",
-    title: "eXecution",
-    description: "Transforming ideas, strategies and opportunities into tangible business results through disciplined, outcome-driven execution."
+    letter: "N",
+    title: "Next-Generation Thinking",
+    description: "Embracing emerging technologies, AI, and digital transformation to create smarter solutions and future-ready operating models."
   },
   {
-    letter: "O",
-    title: "Ownership",
-    description: "Taking complete ownership of our commitments and client success, acting with accountability and integrity."
+    letter: "T",
+    title: "Transparency & Trust",
+    description: "Building lasting relationships through open communication, ethical governance, and complete operational visibility."
   },
   {
     letter: "R",
     title: "Reliability",
-    description: "Building lasting relationships through consistency, transparency and dependable delivery clients can rely on."
+    description: "Delivering consistent performance, robust infrastructure, and dependable service quality clients can count on."
+  },
+  {
+    letter: "I",
+    title: "Innovation",
+    description: "Continuously reimagining processes, automating workflows, and driving ongoing operational improvement."
+  },
+  {
+    letter: "V",
+    title: "Value Creation",
+    description: "Focusing relentlessly on tangible business impact, cost efficiency, and sustainable strategic ROI across the enterprise."
   },
   {
     letter: "A",
     title: "Agility",
-    description: "Adapting rapidly to evolving business needs, market dynamics and technological change — flexible in every situation."
+    description: "Adapting rapidly to evolving business needs, market dynamics, and technological change — flexible in every engagement."
   },
   {
     letter: "360°",
     title: "Optimization & Value",
-    description: "Looking at the business from every angle to find optimization, efficiency and sustainable growth — maximum value across the ecosystem."
+    description: "Looking at the business from every angle to find optimization, efficiency, and sustainable growth across the ecosystem."
   }
 ];
+
+export const VALUES_NEXORA = VALUES_CENTRIVA;
 
 export const COMMITMENTS = [
   {

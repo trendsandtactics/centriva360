@@ -33,7 +33,7 @@ const NexoraHero = () => {
             playsInline
             preload="auto"
             className="hero-bg-video"
-            aria-label="Nexora360 Hero Video Banner"
+            aria-label="Centriva360 Hero Video Banner"
           >
             <source src={videoSrc} type="video/mp4" />
             <source src="/hero.mp4" type="video/mp4" />

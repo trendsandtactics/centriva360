@@ -3,49 +3,49 @@ import { addLog, isApiAvailable } from './adminData';
 const DEFAULT_SEO = [
   {
     page_key: 'home',
-    title: 'Nexora360 Global Solutions | One partner. Every business need.',
+    title: 'Centriva360 Global Solutions | One partner. Every business need.',
     description: 'A next-generation global business services and capability partner — bringing GCC, BPO, KPO, digital, customer experience, IT, HR, finance and AI & automation together under one integrated ecosystem.',
-    keywords: 'Nexora360, GCC, BPO, KPO, customer experience, digital marketing, AI automation, global business services, IT, HR recruitment, finance',
+    keywords: 'Centriva360, GCC, BPO, KPO, customer experience, digital marketing, AI automation, global business services, IT, HR recruitment, finance',
     robots: 'index, follow',
   },
   {
     page_key: 'about',
-    title: 'About Us | Nexora360 Global Solutions',
-    description: 'Learn about Nexora360 — businesses shouldn’t need multiple partners for multiple functions. Discover our Technology, People, and Process.',
-    keywords: 'about Nexora360, global capability partner, business services ecosystem',
+    title: 'About Us | Centriva360 Global Solutions',
+    description: 'Learn about Centriva360 — businesses shouldn’t need multiple partners for multiple functions. Discover our Technology, People, and Process.',
+    keywords: 'about Centriva360, global capability partner, business services ecosystem',
     robots: 'index, follow',
   },
   {
     page_key: 'values',
-    title: 'Our Core Values | Nexora360 Global Solutions',
-    description: 'What NEXORA360 stands for: Next-Generation Thinking, Excellence, eXecution, Ownership, Reliability, Agility, and 360° Optimization & Value.',
-    keywords: 'Nexora360 values, corporate culture, excellence, execution, agility',
+    title: 'Our Core Values | Centriva360 Global Solutions',
+    description: 'What CENTRIVA360 stands for: Customer-Centricity, Excellence, Next-Generation Thinking, Transparency & Trust, Reliability, Innovation, Value Creation, Agility, and 360° Optimization & Value.',
+    keywords: 'Centriva360 values, corporate culture, excellence, execution, agility',
     robots: 'index, follow',
   },
   {
     page_key: 'capabilities',
-    title: 'Capability Directory | Nexora360 Global Solutions',
+    title: 'Capability Directory | Centriva360 Global Solutions',
     description: 'Thirteen capabilities, one integrated ecosystem: GCC, BPO, CX, Digital Marketing, Sales, KPO, HR, Finance, Admin, Data, AI & Automation, Customized Support.',
     keywords: 'GCC solutions, BPO services, KPO, CX contact center, AI automation, outsourced operations',
     robots: 'index, follow',
   },
   {
     page_key: 'advantage',
-    title: 'The Nexora360 360° Advantage | One Ecosystem',
+    title: 'The Centriva360 360° Advantage | One Ecosystem',
     description: 'One partner. Multiple capabilities. One integrated ecosystem. Every capability connects into the same operating model and single point of accountability.',
     keywords: 'the 360 advantage, unified outsourcing, shared capability model',
     robots: 'index, follow',
   },
   {
     page_key: 'contact',
-    title: 'Get In Touch | Nexora360 Global Solutions',
-    description: 'Tell us what you’d rather not manage yourself. Contact Nexora360 Global Solutions in Chennai, India.',
-    keywords: 'contact Nexora360, outsource operations, business inquiry Chennai',
+    title: 'Get In Touch | Centriva360 Global Solutions',
+    description: 'Tell us what you’d rather not manage yourself. Contact Centriva360 Global Solutions in Chennai, India.',
+    keywords: 'contact Centriva360, outsource operations, business inquiry Chennai',
     robots: 'index, follow',
   }
 ];
 
-const LOCAL_STORAGE_KEY = '__nexora360_seo_metadata';
+const LOCAL_STORAGE_KEY = '__centriva360_seo_metadata';
 const API_URL = '/api/index.php';
 
 async function apiRequest(action, data = null, method = 'POST') {

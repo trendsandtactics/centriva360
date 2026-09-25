@@ -16,16 +16,16 @@ const Home = () => {
       {/* 01. Hero Section */}
       <NexoraHero />
 
-      {/* 02. About Nexora360 Section */}
+      {/* 02. About Centriva360 Section */}
       <NexoraAbout />
 
-      {/* 03. Core Values (N-E-X-O-R-A-360) Section */}
+      {/* 03. Core Values (C-E-N-T-R-I-V-A-360) Section */}
       <NexoraValues />
 
       {/* 04. Capability Directory (13 capabilities with interactive modal) */}
       <NexoraCapabilities />
 
-      {/* 05. The Nexora360 360° Advantage Section */}
+      {/* 05. The Centriva360 360° Advantage Section */}
       <NexoraAdvantage />
 
       {/* 06. Commitments, Vision & Mission Section */}

@@ -6,7 +6,7 @@ import { ArrowRight, Bot, Cpu, Code2 } from 'lucide-react';
 const SoftwareDevelopmentPage = () => {
   const title = "IT, Software & AI Automation";
   const imageSrc = "/aboutbg.png";
-  const contentText = "At Nexora360 Global Solutions, our technology and software engineering pods build scalable digital platforms, automated business workflows, and custom AI copilots. We bring enterprise technology together with operational execution under one unified roof.\n\nFrom modern cloud architectures and full-stack web platforms to Robotic Process Automation (RPA) and intelligent document processing, our dedicated engineers operate as an agile extension of your technical team.\n\nWe provide continuous DevOps, infrastructure monitoring, API development, and data engineering so you can launch faster and operate with complete reliability.";
+  const contentText = "At Centriva360 Global Solutions, our technology and software engineering pods build scalable digital platforms, automated business workflows, and custom AI copilots. We bring enterprise technology together with operational execution under one unified roof.\n\nFrom modern cloud architectures and full-stack web platforms to Robotic Process Automation (RPA) and intelligent document processing, our dedicated engineers operate as an agile extension of your technical team.\n\nWe provide continuous DevOps, infrastructure monitoring, API development, and data engineering so you can launch faster and operate with complete reliability.";
 
   const paragraphs = contentText.split(/\n+/).map(p => p.trim()).filter(Boolean);
 

@@ -1,7 +1,7 @@
 import { addLog, isApiAvailable } from './adminData';
 
 const DEFAULT_ABOUT = {
-  main_title: 'Nexora360 Global Solutions',
+  main_title: 'Centriva360 Global Solutions',
   tagline: 'One partner. Every business need.',
   who_we_are_title: 'Integrated Ecosystem',
   who_we_are_desc: 'A next-generation global business services and capability partner — bringing GCC, BPO, KPO, digital, customer experience, IT, HR, finance and AI & automation together under one integrated ecosystem.',
@@ -14,7 +14,7 @@ const DEFAULT_ABOUT = {
   banner_src: '/aboutbg.png',
 };
 
-const LOCAL_STORAGE_KEY = '__nexora360_about';
+const LOCAL_STORAGE_KEY = '__centriva360_about';
 const API_URL = '/api/index.php';
 
 async function apiRequest(action, data = null, method = 'POST') {

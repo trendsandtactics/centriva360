@@ -1,16 +1,18 @@
 import React from 'react';
-import { VALUES_NEXORA } from '../../utils/capabilityData';
+import { VALUES_CENTRIVA } from '../../utils/capabilityData';
 import { Sparkles, Shield, Zap, Target, Award, Compass, RefreshCw, CheckCircle2, TrendingUp, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router';
 
 const ICONS = [
-  Sparkles, // N
-  Award,    // E
-  Target,   // X
-  Shield,   // O
-  Compass,  // R
-  Zap,      // A
-  RefreshCw // 360
+  Target,      // C
+  Award,       // E
+  Sparkles,    // N
+  ShieldCheck, // T
+  Compass,     // R
+  Zap,         // I
+  TrendingUp,  // V
+  Shield,      // A
+  RefreshCw    // 360
 ];
 
 const METRICS = [
@@ -30,17 +32,17 @@ const NexoraValues = () => {
           <div className="col-lg-9">
             <span className="nexora-section-badge mb-2">OUR CORE VALUES</span>
             <h2 className="nexora-section-title mt-2">
-              What <span className="text-gradient-nexora">NEXORA360</span> stands for.
+              What <span className="text-gradient-nexora">CENTRIVA360</span> stands for.
             </h2>
             <p className="nexora-lead-text mx-auto mt-3">
-              Seven principles, spelled out in our own name — the standard every engagement is built against, from a single outsourced process to a full Global Capability Centre.
+              Eight core principles plus our 360° commitment, spelled out in our own name — the standard every engagement is built against, from a single outsourced process to a full Global Capability Centre.
             </p>
           </div>
         </div>
 
         {/* Corporate Excellence Visual Impact Banner with Image */}
         <div className="values-hero-banner mb-5 overflow-hidden position-relative">
-          <img src="/about9.png" alt="Nexora360 Corporate Excellence" className="values-banner-bg-img" />
+          <img src="/about9.png" alt="Centriva360 Corporate Excellence" className="values-banner-bg-img" />
           <div className="values-banner-overlay" />
           <div className="values-banner-content position-relative z-2 p-4 p-lg-5">
             <div className="row align-items-center g-4">
@@ -72,9 +74,9 @@ const NexoraValues = () => {
           </div>
         </div>
 
-        {/* 7 Values Grid */}
+        {/* Centriva360 Values Grid */}
         <div className="row g-4 justify-content-center mb-5">
-          {VALUES_NEXORA.map((val, idx) => {
+          {VALUES_CENTRIVA.map((val, idx) => {
             const Icon = ICONS[idx] || Sparkles;
             const isLast = val.letter === "360°";
             return (
@@ -101,7 +103,7 @@ const NexoraValues = () => {
           <div className="motto-glow" aria-hidden="true"></div>
           <div className="position-relative" style={{ zIndex: 2 }}>
             <p className="values-summary-text mx-auto mb-4">
-              Nexora360 combines innovation, agility, excellence, ownership, reliability, execution, and continuous optimization to help businesses adapt, perform better, and grow faster.
+              Centriva360 combines customer-centricity, excellence, innovation, transparency, reliability, and continuous optimization to help businesses adapt, perform better, and grow faster.
             </p>
             <div className="motto-divider mx-auto mb-4"></div>
             <h3 className="motto-headline">

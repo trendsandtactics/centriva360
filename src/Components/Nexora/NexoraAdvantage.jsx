@@ -85,13 +85,13 @@ const NexoraAdvantage = () => {
         {/* Header */}
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-9">
-            <span className="nexora-section-badge mb-2">THE NEXORA360 360° ADVANTAGE</span>
+            <span className="nexora-section-badge mb-2">THE CENTRIVA360 360° ADVANTAGE</span>
             <h2 className="nexora-section-title mt-2">
               One partner. Multiple capabilities. <br />
               <span className="text-gradient-nexora">One integrated ecosystem.</span>
             </h2>
             <p className="nexora-lead-text mx-auto mt-3">
-              What makes Nexora360 different is that clients don't need multiple outsourcing partners for different functions. Every capability connects into the same operating model, the same reporting line, and the same point of accountability.
+              What makes Centriva360 different is that clients don't need multiple outsourcing partners for different functions. Every capability connects into the same operating model, the same reporting line, and the same point of accountability.
             </p>
           </div>
         </div>

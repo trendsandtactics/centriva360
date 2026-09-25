@@ -1,13 +1,13 @@
 import { addLog, isApiAvailable } from './adminData';
 
 const DEFAULT_HERO = {
-  subtitle: 'Nexora360 Global Solutions Private Limited',
+  subtitle: 'Centriva360 Global Solutions Private Limited',
   title: 'One partner. Every business need.',
   description: 'A next-generation global business services and capability partner — bringing GCC, BPO, KPO, digital, customer experience, IT, HR, finance and AI & automation together under one integrated ecosystem.',
   video_src: '/hero.mp4',
 };
 
-const LOCAL_STORAGE_KEY = '__nexora360_home_hero';
+const LOCAL_STORAGE_KEY = '__centriva360_home_hero';
 const API_URL = '/api/index.php';
 
 async function apiRequest(action, data = null, method = 'POST') {

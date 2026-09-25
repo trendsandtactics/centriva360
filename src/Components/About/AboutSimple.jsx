@@ -149,7 +149,7 @@ const About1 = () => {
               <div className="about-photo-wrap w-100">
                 <img
                   src={aboutData.banner_src || "/aboutbg.png"}
-                  alt="Nexora360 Global Solutions Team"
+                  alt="Centriva360 Global Solutions Team"
                   className="about-photo"
                   loading="eager"
                 />

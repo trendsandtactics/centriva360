@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const LogisticsPage = () => {
   const title = "Supply Chain & Logistics BPO";
   const imageSrc = "/aboutbg.png";
-  const contentText = "Nexora360 Global Solutions streamlines complex supply chain workflows through dedicated back-office orchestration, order fulfillment support, inventory data hygiene, and automated vendor coordination.\n\nOur cross-functional teams operate 24/7 across multiple time zones, ensuring zero shipment delays, instantaneous track-and-trace updates, and proactive exception handling.\n\nWe provide both dedicated team models and shared services pods engineered around your enterprise ERP and warehouse management systems.";
+  const contentText = "Centriva360 Global Solutions streamlines complex supply chain workflows through dedicated back-office orchestration, order fulfillment support, inventory data hygiene, and automated vendor coordination.\n\nOur cross-functional teams operate 24/7 across multiple time zones, ensuring zero shipment delays, instantaneous track-and-trace updates, and proactive exception handling.\n\nWe provide both dedicated team models and shared services pods engineered around your enterprise ERP and warehouse management systems.";
 
   const paragraphs = contentText.split(/\n+/).map(p => p.trim()).filter(Boolean);
 

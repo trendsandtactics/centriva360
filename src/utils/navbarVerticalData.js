@@ -10,7 +10,7 @@ const DEFAULT_VERTICALS = CAPABILITIES.map((cap, idx) => ({
   content: cap.summary
 }));
 
-const LOCAL_STORAGE_KEY = '__nexora360_navbar_verticals';
+const LOCAL_STORAGE_KEY = '__centriva360_navbar_verticals';
 const API_URL = '/api/index.php';
 
 async function apiRequest(action, data = null, method = 'POST') {

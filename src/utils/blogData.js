@@ -5,12 +5,12 @@ const DEFAULT_BLOGS = [
   {
     id: '1',
     img: '/aboutbg.png',
-    title: 'Nexora360 Unveils Integrated 360° Capability Ecosystem',
+    title: 'Centriva360 Unveils Integrated 360° Capability Ecosystem',
     date: '15',
     month: 'Jan',
     author: 'Corporate Communications',
     tag: 'Ecosystem Launch',
-    content: 'Nexora360 Global Solutions Private Limited brings GCC, BPO, KPO, digital marketing, sales, customer experience, IT, HR, finance, and AI & automation together under one unified operating model, eliminating vendor fragmentation.',
+    content: 'Centriva360 Global Solutions Private Limited brings GCC, BPO, KPO, digital marketing, sales, customer experience, IT, HR, finance, and AI & automation together under one unified operating model, eliminating vendor fragmentation.',
   },
   {
     id: '2',
@@ -34,7 +34,7 @@ const DEFAULT_BLOGS = [
   },
 ];
 
-const LOCAL_STORAGE_KEY = '__nexora360_blogs';
+const LOCAL_STORAGE_KEY = '__centriva360_blogs';
 const API_URL = '/api/index.php';
 
 // Helper to make API calls to the Hostinger PHP MySQL gateway

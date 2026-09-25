@@ -87,7 +87,7 @@ const NexoraContact = () => {
                 </div>
               </div>
 
-              <h3 className="panel-title mb-3">Nexora360 Global Solutions</h3>
+              <h3 className="panel-title mb-3">Centriva360 Global Solutions</h3>
               <p className="text-slate-400 mb-4" style={{ color: '#94A3B8', fontSize: '14.5px', lineHeight: '1.6' }}>
                 Connect with our strategic capability advisors to discuss your enterprise requirements, pilot projects, or full-scale GCC transition.
               </p>
@@ -98,7 +98,7 @@ const NexoraContact = () => {
                 </div>
                 <div>
                   <span className="info-label">Company</span>
-                  <p className="info-value">Nexora360 Global Solutions Pvt. Ltd.</p>
+                  <p className="info-value">Centriva360 Global Solutions Pvt. Ltd.</p>
                 </div>
               </div>
 
@@ -109,8 +109,8 @@ const NexoraContact = () => {
                 <div>
                   <span className="info-label">Email</span>
                   <p className="info-value">
-                    <a href="mailto:info@nexora360global.com" className="text-white text-decoration-none hover-orange">
-                      info@nexora360global.com
+                    <a href="mailto:info@centriva360global.com" className="text-white text-decoration-none hover-orange">
+                      info@centriva360global.com
                     </a>
                   </p>
                 </div>

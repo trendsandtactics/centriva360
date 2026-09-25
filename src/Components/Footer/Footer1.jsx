@@ -15,9 +15,9 @@ const Footer1 = () => {
   }, []);
 
   const addressText = footerData?.address || "ED-305, Bollineni Hillside Phase 2,\nPerumbakkam, Chennai 600126";
-  const emailText = footerData?.email || "info@nexora360global.com";
+  const emailText = footerData?.email || "info@centriva360global.com";
   const phoneText = footerData?.phone_1 || "+91 96556 80234";
-  const copyrightText = footerData?.copyright || "© 2026 Nexora360 Global Solutions Private Limited";
+  const copyrightText = footerData?.copyright || "© 2026 Centriva360 Global Solutions Private Limited";
 
   return (
     <footer className="footer-section" aria-label="Website Footer">
@@ -48,7 +48,7 @@ const Footer1 = () => {
             <Link to="/" className="footer-logo-link">
               <img
                 src="/whitebg.png"
-                alt="Nexora360 Global Solutions"
+                alt="Centriva360 Global Solutions"
                 className="footer-logo"
               />
             </Link>
@@ -66,8 +66,8 @@ const Footer1 = () => {
             <h4 className="footer-heading">Navigation</h4>
             <ul className="footer-links">
               <li><Link to="/"><ArrowRight size={14} className="link-icon" /> Home</Link></li>
-              <li><Link to="/about"><ArrowRight size={14} className="link-icon" /> About Nexora360</Link></li>
-              <li><Link to="/values"><ArrowRight size={14} className="link-icon" /> Our Values (NEXORA)</Link></li>
+              <li><Link to="/about"><ArrowRight size={14} className="link-icon" /> About Centriva360</Link></li>
+              <li><Link to="/values"><ArrowRight size={14} className="link-icon" /> Our Values (CENTRIVA360)</Link></li>
               <li><Link to="/capabilities"><ArrowRight size={14} className="link-icon" /> Capability Directory</Link></li>
               <li><Link to="/the-advantage"><ArrowRight size={14} className="link-icon" /> The 360° Advantage</Link></li>
               <li><Link to="/contact"><ArrowRight size={14} className="link-icon" /> Contact & Inquiries</Link></li>

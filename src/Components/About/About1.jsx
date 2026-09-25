@@ -245,7 +245,7 @@ const About1 = () => {
               <div className="about-photo-wrap w-100">
                 <img
                   src={aboutData?.banner_src || "/aboutbg.png"}
-                  alt="Nexora360 Global Solutions Team"
+                  alt="Centriva360 Global Solutions Team"
                   className="about-photo"
                   loading="eager"
                 />
@@ -256,7 +256,7 @@ const About1 = () => {
             <div className="col-12 col-xl-5 about-text-col">
               <div className="about-content pe-xl-4 ps-xl-2 px-3 px-xl-0">
                 <div className="section-title">
-                  <h2>{aboutData?.main_title || "Nexora360 Global Solutions"}</h2>
+                  <h2>{aboutData?.main_title || "Centriva360 Global Solutions"}</h2>
                 </div>
 
                 <div className="about-area mt-3">

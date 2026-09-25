@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const ShippingPage = () => {
   const title = "Global Logistics & Operations Support";
   const imageSrc = "/aboutbg.png";
-  const contentText = "Nexora360 Global Solutions provides comprehensive outsourced back-office and customer support operations for global logistics, shipping, freight forwarding, and trade enterprises.\n\nOur specialized teams handle customs documentation, bill of lading generation, tracking and tracing, exception management, and carrier reconciliation with 99.8% precision.\n\nWhether you operate regional freight networks or global container supply chains, our dedicated operational pods extend your processing bandwidth without inflating overhead.";
+  const contentText = "Centriva360 Global Solutions provides comprehensive outsourced back-office and customer support operations for global logistics, shipping, freight forwarding, and trade enterprises.\n\nOur specialized teams handle customs documentation, bill of lading generation, tracking and tracing, exception management, and carrier reconciliation with 99.8% precision.\n\nWhether you operate regional freight networks or global container supply chains, our dedicated operational pods extend your processing bandwidth without inflating overhead.";
 
   const paragraphs = contentText.split(/\n+/).map(p => p.trim()).filter(Boolean);
 

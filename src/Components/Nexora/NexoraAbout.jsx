@@ -52,7 +52,7 @@ const NexoraAbout = () => {
         {/* Top Split Section: Text + Visual Media Showcase */}
         <div className="row align-items-center g-5 mb-5 pb-lg-3">
           <div className="col-lg-6">
-            <span className="nexora-section-badge mb-3">ABOUT NEXORA360</span>
+            <span className="nexora-section-badge mb-3">ABOUT CENTRIVA360</span>
             <h2 className="nexora-section-title mt-2 mb-3">
               Businesses shouldn't need <span className="text-gradient-nexora">multiple partners</span> for multiple functions.
             </h2>
@@ -104,7 +104,7 @@ const NexoraAbout = () => {
               <div className="main-image-wrap">
                 <img
                   src="/GROUP.jpg"
-                  alt="Nexora360 Global Leadership and Team"
+                  alt="Centriva360 Global Leadership and Team"
                   className="main-about-img img-fluid"
                 />
                 <div className="image-overlay-badge">

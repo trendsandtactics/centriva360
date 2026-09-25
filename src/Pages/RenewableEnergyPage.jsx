@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const RenewableEnergyPage = () => {
   const title = "Energy & Utilities Operations Support";
   const imageSrc = "/aboutbg.png";
-  const contentText = "Nexora360 Global Solutions provides specialized capability teams supporting renewable energy developers, utility operators, clean-tech firms, and grid management entities.\n\nOur pods deliver regulatory filing assistance, solar/wind asset telemetry monitoring, customer billing and metering dispute resolution, and environmental compliance documentation.\n\nWe combine domain understanding with structured process management and digital reporting, allowing clean-energy innovators to scale their generation and trading operations efficiently.";
+  const contentText = "Centriva360 Global Solutions provides specialized capability teams supporting renewable energy developers, utility operators, clean-tech firms, and grid management entities.\n\nOur pods deliver regulatory filing assistance, solar/wind asset telemetry monitoring, customer billing and metering dispute resolution, and environmental compliance documentation.\n\nWe combine domain understanding with structured process management and digital reporting, allowing clean-energy innovators to scale their generation and trading operations efficiently.";
 
   const paragraphs = contentText.split(/\n+/).map(p => p.trim()).filter(Boolean);
 

@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 const SupplyChainSolutionsPage = () => {
   const title = "Business & Capability Solutions";
   const imageSrc = "/aboutbg.png";
-  const contentText = "Nexora360 Global Solutions builds and operates high-performing capability teams that power modern business operations. Our integrated ecosystem brings GCC, BPO, KPO, digital marketing, sales, customer experience, IT, HR, finance and AI & automation together under one unified operating model.\n\nFrom supporting a single business function to managing complete outsourced operations, we design solutions around the unique requirements of every client. Our teams operate as an extension of your organization — dedicated resources, shared services, project-based teams, or complete outsourced functions.";
+  const contentText = "Centriva360 Global Solutions builds and operates high-performing capability teams that power modern business operations. Our integrated ecosystem brings GCC, BPO, KPO, digital marketing, sales, customer experience, IT, HR, finance and AI & automation together under one unified operating model.\n\nFrom supporting a single business function to managing complete outsourced operations, we design solutions around the unique requirements of every client. Our teams operate as an extension of your organization — dedicated resources, shared services, project-based teams, or complete outsourced functions.";
 
   const paragraphs = contentText.split(/\n+/).map(p => p.trim()).filter(Boolean);
 
@@ -24,7 +24,7 @@ const SupplyChainSolutionsPage = () => {
               />
             </div>
             <div className="col-lg-6">
-              <span className="badge-tag-red mb-2 d-inline-block">NEXORA360 CAPABILITY PODS</span>
+              <span className="badge-tag-red mb-2 d-inline-block">CENTRIVA360 CAPABILITY PODS</span>
               <h2 className="display-6 fw-bold mb-3 text-slate-900">
                 End-to-End <span className="text-gradient-nexora">Capability Engineering</span>
               </h2>

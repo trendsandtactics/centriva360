@@ -17,10 +17,10 @@ const InvestorRelationsPage = () => {
             <div className="col-lg-6">
               <span className="badge-tag-red mb-2 d-inline-block">GOVERNANCE &amp; PERFORMANCE</span>
               <h2 className="display-6 fw-bold mb-3 text-slate-900">
-                Nexora360 Global Solutions — <span className="text-gradient-nexora">Investor Relations</span>
+                Centriva360 Global Solutions — <span className="text-gradient-nexora">Investor Relations</span>
               </h2>
               <p className="lead text-slate-600 mb-4" style={{ fontSize: '17px', lineHeight: '1.7' }}>
-                Nexora360 Global Solutions Private Limited is a next-generation global business services and capability partner bringing GCC, BPO, KPO, digital, customer experience, IT, HR, finance and AI &amp; automation together under one integrated ecosystem. Our Investor Relations portal provides full transparency into our strategic roadmap, operating governance, and value creation metrics.
+                Centriva360 Global Solutions Private Limited is a next-generation global business services and capability partner bringing GCC, BPO, KPO, digital, customer experience, IT, HR, finance and AI &amp; automation together under one integrated ecosystem. Our Investor Relations portal provides full transparency into our strategic roadmap, operating governance, and value creation metrics.
               </p>
               <div className="d-flex gap-3 flex-wrap">
                 <Link to="/contact" className="btn-nexora-primary">
@@ -44,7 +44,7 @@ const InvestorRelationsPage = () => {
                   </div>
                 </div>
                 <p className="text-slate-300 small mb-3">
-                  By consolidating 13 distinct capability lines under a shared operational infrastructure and unified management, Nexora360 generates compounding operating leverage, high client retention, and attractive unit margins.
+                  By consolidating 13 distinct capability lines under a shared operational infrastructure and unified management, Centriva360 generates compounding operating leverage, high client retention, and attractive unit margins.
                 </p>
                 <div className="border-top border-secondary pt-3">
                   <div className="row g-2 text-center">

@@ -1,18 +1,18 @@
 import { addLog, isApiAvailable } from './adminData';
 
 const DEFAULT_FOOTER = {
-  company: 'Nexora360 Global Solutions Pvt. Ltd.',
+  company: 'Centriva360 Global Solutions Pvt. Ltd.',
   tagline: 'One partner. Every business need.',
   address: 'ED-305, Bollineni Hillside Phase 2,\nPerumbakkam, Chennai 600126',
-  email: 'info@nexora360global.com',
+  email: 'info@centriva360global.com',
   phone_1: '+91 96556 80234',
   phone_2: '',
   phone_3: '',
-  copyright: '© 2026 Nexora360 Global Solutions Private Limited',
-  linkedin_url: 'https://www.linkedin.com/company/nexora360-global-solutions',
+  copyright: '© 2026 Centriva360 Global Solutions Private Limited',
+  linkedin_url: 'https://www.linkedin.com/company/centriva360-global-solutions',
 };
 
-const LOCAL_STORAGE_KEY = '__nexora360_footer';
+const LOCAL_STORAGE_KEY = '__centriva360_footer';
 const API_URL = '/api/index.php';
 
 async function apiRequest(action, data = null, method = 'POST') {

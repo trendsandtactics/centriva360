@@ -11,7 +11,7 @@ const AboutPage = () => {
     <div className="nexora-about-page">
       <BreadCumb
         bgimg="/aboutbg.png"
-        Title="About Nexora360"
+        Title="About Centriva360"
       />
       <NexoraAbout />
       <NexoraCommitment />

@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 const ProductDistributionPage = () => {
   const title = "Sales Operations & Channel Distribution BPO";
   const imageSrc = "/aboutbg.png";
-  const contentText = "Nexora360 Global Solutions empowers commercial manufacturers, distributors, and multi-channel retailers with end-to-end sales operations, distributor partner support, and order-to-cash processing.\n\nFrom catalog indexing and pricing updates to wholesale buyer support and warranty ticket handling, our capability pods handle the intricate operational details so you can focus on core revenue growth.\n\nWe provide seamless ERP connectivity, EDI order processing, CRM synchronization, and multi-tier channel accountability.";
+  const contentText = "Centriva360 Global Solutions empowers commercial manufacturers, distributors, and multi-channel retailers with end-to-end sales operations, distributor partner support, and order-to-cash processing.\n\nFrom catalog indexing and pricing updates to wholesale buyer support and warranty ticket handling, our capability pods handle the intricate operational details so you can focus on core revenue growth.\n\nWe provide seamless ERP connectivity, EDI order processing, CRM synchronization, and multi-tier channel accountability.";
 
   const paragraphs = contentText.split(/\n+/).map(p => p.trim()).filter(Boolean);
 

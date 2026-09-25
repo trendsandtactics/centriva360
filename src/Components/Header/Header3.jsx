@@ -79,7 +79,7 @@ export default function Header3({ variant }) {
     <div>
       <style>{`
         /* ============================================================
-           NEXORA360 FULLY RESPONSIVE HEADER STYLES
+           CENTRIVA360 FULLY RESPONSIVE HEADER STYLES
            ============================================================ */
         :root {
           --header-text-color: ${textColor};
