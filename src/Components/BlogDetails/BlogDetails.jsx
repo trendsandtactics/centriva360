@@ -9,7 +9,7 @@ const BlogDetails = () => {
     }, []);
 
     return (
-        <section className="news-details fix section-padding">
+        <section className="news-details fix section-padding vertical-page-section">
         <div className="container">
             <div className="news-details-area">
                 <div className="row g-5">

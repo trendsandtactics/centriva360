@@ -42,7 +42,7 @@ const Team2 = () => {
   ];
 
   return (
-    <section className="team-section fix section-padding">
+    <section className="team-section fix section-padding vertical-page-section">
       <div className="container">
         <div className="row g-4">
           {teamContent.map((item, i) => (

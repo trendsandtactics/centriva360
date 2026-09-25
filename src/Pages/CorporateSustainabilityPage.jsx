@@ -29,7 +29,7 @@ const CorporateSustainabilityPage = () => {
   return (
     <div className="nexora-sustainability-page">
       <BreadCumb bgimg="/aboutbg.png" Title={title} />
-      <section className="py-5 bg-white">
+      <section className="py-5 vertical-page-section">
         <div className="container py-lg-4">
           
           <div className="row align-items-center g-5 mb-5">
@@ -54,7 +54,7 @@ const CorporateSustainabilityPage = () => {
           {section2Paragraphs.length > 0 && (
             <div className="row align-items-center g-5 pt-3">
               <div className="col-lg-6 order-lg-2">
-                <div className="p-4 p-lg-5 rounded-4 bg-dark text-white border border-danger border-opacity-30">
+                <div className="p-4 p-lg-5 rounded-4 bg-dark text-white border border-danger border-opacity-30 shadow-lg">
                   <div className="d-flex align-items-center gap-3 mb-3">
                     <Leaf size={28} className="text-danger" />
                     <h4 className="mb-0 text-white fw-bold">People, Process &amp; Planet</h4>
@@ -71,21 +71,21 @@ const CorporateSustainabilityPage = () => {
               <div className="col-lg-6 order-lg-1">
                 <div className="row g-3">
                   <div className="col-12">
-                    <div className="p-4 border rounded-3 bg-light">
+                    <div className="p-4 border border-slate-200 rounded-4 bg-white shadow-sm">
                       <div className="d-flex align-items-center gap-3 mb-2">
                         <ShieldCheck className="text-danger" size={22} />
-                        <h5 className="mb-0 fw-bold">Ethical Sourcing &amp; Compliance</h5>
+                        <h5 className="mb-0 fw-bold text-slate-900">Ethical Sourcing &amp; Compliance</h5>
                       </div>
-                      <p className="small text-muted mb-0">100% fair labor standards, cross-border compliance, and transparent reporting.</p>
+                      <p className="small text-slate-600 mb-0">100% fair labor standards, cross-border compliance, and transparent reporting.</p>
                     </div>
                   </div>
                   <div className="col-12">
-                    <div className="p-4 border rounded-3 bg-light">
+                    <div className="p-4 border border-slate-200 rounded-4 bg-white shadow-sm">
                       <div className="d-flex align-items-center gap-3 mb-2">
                         <HeartHandshake className="text-danger" size={22} />
-                        <h5 className="mb-0 fw-bold">Continuous Talent Enablement</h5>
+                        <h5 className="mb-0 fw-bold text-slate-900">Continuous Talent Enablement</h5>
                       </div>
-                      <p className="small text-muted mb-0">Upskilling in emerging tech, automation, and leadership development.</p>
+                      <p className="small text-slate-600 mb-0">Upskilling in emerging tech, automation, and leadership development.</p>
                     </div>
                   </div>
                 </div>

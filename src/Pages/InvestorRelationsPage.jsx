@@ -10,7 +10,7 @@ const InvestorRelationsPage = () => {
     <div className="nexora-investors-page">
       <BreadCumb bgimg="/aboutbg.png" Title="Investor Relations" />
 
-      <section className="py-5 bg-white">
+      <section className="py-5 vertical-page-section">
         <div className="container py-lg-4">
           {/* Intro */}
           <div className="row align-items-center g-4 mb-5">
@@ -69,35 +69,35 @@ const InvestorRelationsPage = () => {
           {/* Investment Highlights */}
           <div className="row g-4 mb-5">
             <div className="col-12">
-              <h3 className="fw-bold mb-2">Key Investment Pillars</h3>
-              <p className="text-muted">Structured around our core commitments and integrated operating model.</p>
+              <h3 className="fw-bold mb-2 text-slate-900">Key Investment Pillars</h3>
+              <p className="text-slate-600">Structured around our core commitments and integrated operating model.</p>
             </div>
             
             <div className="col-md-4">
-              <div className="p-4 border border-danger border-opacity-25 rounded-4 h-100 bg-light shadow-sm">
+              <div className="p-4 border border-slate-200 rounded-4 h-100 bg-white shadow-sm transition-all">
                 <div className="mb-3 text-danger"><Layers size={28} /></div>
-                <h5 className="fw-bold mb-2">Integrated Capability Model</h5>
-                <p className="text-muted mb-0" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
+                <h5 className="fw-bold mb-2 text-slate-900">Integrated Capability Model</h5>
+                <p className="text-slate-600 mb-0" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
                   Cross-selling and bundling multi-department capability (GCC, BPO, KPO, AI) leads to longer customer lifetimes and higher Net Revenue Retention (NRR).
                 </p>
               </div>
             </div>
 
             <div className="col-md-4">
-              <div className="p-4 border border-danger border-opacity-25 rounded-4 h-100 bg-light shadow-sm">
+              <div className="p-4 border border-slate-200 rounded-4 h-100 bg-white shadow-sm transition-all">
                 <div className="mb-3 text-danger"><TrendingUp size={28} /></div>
-                <h5 className="fw-bold mb-2">AI &amp; Automation Native</h5>
-                <p className="text-muted mb-0" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
+                <h5 className="fw-bold mb-2 text-slate-900">AI &amp; Automation Native</h5>
+                <p className="text-slate-600 mb-0" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
                   Embedded automation, robotic process automation, and intelligent document workflows allow our capability pods to scale output with superior operational efficiency.
                 </p>
               </div>
             </div>
 
             <div className="col-md-4">
-              <div className="p-4 border border-danger border-opacity-25 rounded-4 h-100 bg-light shadow-sm">
+              <div className="p-4 border border-slate-200 rounded-4 h-100 bg-white shadow-sm transition-all">
                 <div className="mb-3 text-danger"><ShieldCheck size={28} /></div>
-                <h5 className="fw-bold mb-2">Enterprise Governance</h5>
-                <p className="text-muted mb-0" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
+                <h5 className="fw-bold mb-2 text-slate-900">Enterprise Governance</h5>
+                <p className="text-slate-600 mb-0" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
                   Rigorous adherence to international compliance, data privacy, SLA transparency, and client-first operating integrity across all global delivery pods.
                 </p>
               </div>

@@ -132,25 +132,44 @@ const NexoraCommitment = () => {
 
       <style>{`
         .commitments-nexora-section {
-          background: #FAFAFA;
+          background: 
+            radial-gradient(ellipse 70% 50% at 85% 20%, rgba(249, 115, 22, 0.06) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 15% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 60%),
+            #F1F5F9;
           color: #0F172A;
+          position: relative;
           overflow: hidden;
-          border-top: 1px solid #F1F5F9;
+          border-top: 1px solid #E2E8F0;
+        }
+        .commitments-nexora-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+          background-size: 28px 28px;
+          pointer-events: none;
+          opacity: 0.6;
+          z-index: 0;
+        }
+        .commitments-nexora-section .container {
+          position: relative;
+          z-index: 1;
         }
         .commitment-card {
           background: #FFFFFF;
-          border: 1px solid #E2E8F0;
-          border-radius: 18px;
-          padding: 30px 24px;
+          border: 1px solid rgba(226, 232, 240, 0.95);
+          border-radius: 20px;
+          padding: 32px 26px;
           height: 100%;
-          transition: all 0.3s ease;
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+          box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
         }
         .commitment-card:hover {
-          transform: translateY(-5px);
-          border-color: #FCA5A5;
-          box-shadow: 0 16px 36px rgba(220, 38, 38, 0.08);
+          transform: translateY(-7px);
+          border-color: #F87171;
+          box-shadow: 0 20px 42px rgba(220, 38, 38, 0.12);
         }
         .commitment-icon-wrap {
           width: 50px;
@@ -241,10 +260,10 @@ const NexoraCommitment = () => {
         }
 
         .partnership-cta-card {
-          background: #FFFFFF;
-          border: 1px solid #FED7AA;
-          border-radius: 20px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+          background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 50%, #FEF2F2 100%);
+          border: 1px solid rgba(251, 146, 60, 0.35);
+          border-radius: 24px;
+          box-shadow: 0 16px 40px rgba(220, 38, 38, 0.08);
         }
       `}</style>
     </section>

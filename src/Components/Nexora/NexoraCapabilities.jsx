@@ -55,6 +55,24 @@ const CAP_IMAGES = {
 
 const NexoraCapabilities = () => {
   const [activeModalCap, setActiveModalCap] = useState(null);
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const CATEGORIES = [
+    { id: 'all', label: 'All Capabilities', count: 13 },
+    { id: 'gcc', label: 'GCC & Operations', count: 4 },
+    { id: 'digital', label: 'Digital, Sales & CX', count: 4 },
+    { id: 'tech', label: 'Engineering & AI', count: 2 },
+    { id: 'corporate', label: 'Corporate & Support', count: 3 }
+  ];
+
+  const filteredCaps = CAPABILITIES.filter((cap) => {
+    if (activeCategory === 'all') return true;
+    if (activeCategory === 'gcc') return ['01', '02', '06', '13'].includes(cap.id);
+    if (activeCategory === 'digital') return ['03', '04', '05', '10'].includes(cap.id);
+    if (activeCategory === 'tech') return ['11', '12'].includes(cap.id);
+    if (activeCategory === 'corporate') return ['07', '08', '09'].includes(cap.id);
+    return true;
+  });
 
   const openModal = (cap) => {
     setActiveModalCap(cap);
@@ -71,7 +89,7 @@ const NexoraCapabilities = () => {
       <div className="container py-lg-4">
         
         {/* Header */}
-        <div className="row justify-content-center text-center mb-5">
+        <div className="row justify-content-center text-center mb-4">
           <div className="col-lg-9">
             <span className="nexora-section-badge mb-2">CAPABILITY DIRECTORY</span>
             <h2 className="nexora-section-title mt-2">
@@ -83,9 +101,24 @@ const NexoraCapabilities = () => {
           </div>
         </div>
 
+        {/* Interactive Filter Pills */}
+        <div className="d-flex flex-wrap justify-content-center gap-2 mb-5">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              className={`cap-filter-pill ${activeCategory === cat.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              <span>{cat.label}</span>
+              <span className="pill-counter">{cat.count}</span>
+            </button>
+          ))}
+        </div>
+
         {/* 13 Capabilities Grid with Rich Images */}
         <div className="row g-4 justify-content-center">
-          {CAPABILITIES.map((cap) => {
+          {filteredCaps.map((cap) => {
             const Icon = CAP_ICONS[cap.id] || Building2;
             const imgPath = CAP_IMAGES[cap.id] || "/aboutbg.png";
 
@@ -237,27 +270,87 @@ const NexoraCapabilities = () => {
 
       <style>{`
         .capabilities-nexora-section {
-          background: #FFFFFF;
+          background: 
+            radial-gradient(ellipse 70% 50% at 20% 15%, rgba(220, 38, 38, 0.05) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 85% 65%, rgba(249, 115, 22, 0.06) 0%, transparent 60%),
+            radial-gradient(circle at 50% 95%, rgba(220, 38, 38, 0.03) 0%, transparent 40%),
+            #F8FAFC;
           color: #0F172A;
+          position: relative;
           overflow: hidden;
+        }
+        .capabilities-nexora-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+          background-size: 28px 28px;
+          pointer-events: none;
+          opacity: 0.65;
+          z-index: 0;
+        }
+        .capabilities-nexora-section .container {
+          position: relative;
+          z-index: 1;
+        }
+
+        /* Filter Pills */
+        .cap-filter-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.95);
+          color: #475569;
+          font-size: 13.5px;
+          font-weight: 700;
+          padding: 8px 18px;
+          border-radius: 9999px;
+          box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+          transition: all 0.25s ease;
+          cursor: pointer;
+        }
+        .cap-filter-pill:hover {
+          color: #DC2626;
+          border-color: #F87171;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(220, 38, 38, 0.1);
+        }
+        .cap-filter-pill.active {
+          background: linear-gradient(135deg, #DC2626 0%, #FF5722 50%, #F97316 100%);
+          color: #FFFFFF;
+          border-color: transparent;
+          box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+        }
+        .pill-counter {
+          font-size: 11px;
+          padding: 2px 7px;
+          border-radius: 9999px;
+          background: rgba(15, 23, 42, 0.08);
+          color: inherit;
+        }
+        .cap-filter-pill.active .pill-counter {
+          background: rgba(255, 255, 255, 0.25);
+          color: #FFFFFF;
         }
 
         /* Enhanced Capability Card with Image */
         .capability-card-enhanced {
           background: #FFFFFF;
-          border: 1px solid #E2E8F0;
-          border-radius: 20px;
+          border: 1px solid rgba(226, 232, 240, 0.95);
+          border-radius: 22px;
           overflow: hidden;
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
         }
         .capability-card-enhanced:hover {
           transform: translateY(-8px);
-          border-color: #FCA5A5;
-          box-shadow: 0 20px 42px rgba(220, 38, 38, 0.12);
+          border-color: #F87171;
+          box-shadow: 0 24px 48px rgba(220, 38, 38, 0.14);
         }
 
         .cap-img-container {

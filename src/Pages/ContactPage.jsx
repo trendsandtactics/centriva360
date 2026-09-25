@@ -15,7 +15,7 @@ const ContactPage = () => {
       <NexoraContact />
 
       {/* Chennai Headquarters Map Section */}
-      <section className="contact-map-section pb-5 bg-white">
+      <section className="contact-map-section pb-5 vertical-page-section">
         <div className="container">
           <div className="map-wrapper rounded-4 overflow-hidden border border-danger border-opacity-25 shadow-sm">
             <iframe

@@ -13,31 +13,33 @@ const ShippingPage = () => {
   return (
     <div className="nexora-vertical-page">
       <BreadCumb bgimg="/aboutbg.png" Title={title} />
-      <section className="py-5 bg-white">
+      <section className="py-5 vertical-page-section">
         <div className="container py-lg-4">
-          <div className="row align-items-center g-5 mb-5">
-            <div className="col-lg-6">
-              <img
-                src={imageSrc}
-                alt={title}
-                className="img-fluid rounded-4 shadow-sm border border-danger border-opacity-25"
-              />
-            </div>
-            <div className="col-lg-6">
-              <span className="badge-tag-red mb-2 d-inline-block">OPERATIONS &amp; TRADE BPO</span>
-              <h2 className="display-6 fw-bold mb-3 text-slate-900">
-                Logistics &amp; Trade <span className="text-gradient-nexora">Process Outsourcing</span>
-              </h2>
-              {paragraphs.map((p, idx) => (
-                <p key={idx} className="text-slate-600 mb-3" style={{ fontSize: '15.5px', lineHeight: '1.7' }}>
-                  {p}
-                </p>
-              ))}
-              <div className="mt-4">
-                <Link to="/contact" className="btn-nexora-primary">
-                  <span>Inquire for your operations</span>
-                  <ArrowRight size={16} />
-                </Link>
+          <div className="vertical-content-card">
+            <div className="row align-items-center g-5">
+              <div className="col-lg-6">
+                <img
+                  src={imageSrc}
+                  alt={title}
+                  className="img-fluid rounded-4 shadow-sm border border-danger border-opacity-25"
+                />
+              </div>
+              <div className="col-lg-6">
+                <span className="badge-tag-red mb-2 d-inline-block">OPERATIONS &amp; TRADE BPO</span>
+                <h2 className="display-6 fw-bold mb-3 text-slate-900">
+                  Logistics &amp; Trade <span className="text-gradient-nexora">Process Outsourcing</span>
+                </h2>
+                {paragraphs.map((p, idx) => (
+                  <p key={idx} className="text-slate-600 mb-3" style={{ fontSize: '15.5px', lineHeight: '1.7' }}>
+                    {p}
+                  </p>
+                ))}
+                <div className="mt-4">
+                  <Link to="/contact" className="btn-nexora-primary">
+                    <span>Inquire for your operations</span>
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

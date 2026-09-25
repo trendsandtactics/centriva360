@@ -257,9 +257,29 @@ const NexoraAbout = () => {
 
       <style>{`
         .about-nexora-section {
-          background: #FFFFFF;
+          background: 
+            radial-gradient(ellipse 70% 50% at 10% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 90% 70%, rgba(249, 115, 22, 0.06) 0%, transparent 60%),
+            radial-gradient(circle at 50% 100%, rgba(220, 38, 38, 0.03) 0%, transparent 40%),
+            #F8FAFC;
           color: #0F172A;
+          position: relative;
           overflow: hidden;
+        }
+        .about-nexora-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+          background-size: 28px 28px;
+          pointer-events: none;
+          opacity: 0.65;
+          z-index: 0;
+        }
+        .about-nexora-section .container {
+          position: relative;
+          z-index: 1;
         }
         .nexora-section-badge {
           display: inline-block;
@@ -288,12 +308,19 @@ const NexoraAbout = () => {
           display: flex;
           align-items: center;
           gap: 10px;
-          padding: 10px 14px;
-          background: #F8FAFC;
-          border-radius: 10px;
-          border: 1px solid #E2E8F0;
+          padding: 12px 16px;
+          background: #FFFFFF;
+          border-radius: 12px;
+          border: 1px solid rgba(226, 232, 240, 0.9);
+          box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
           font-size: 14px;
           color: #1E293B;
+          transition: all 0.25s ease;
+        }
+        .about-feature-box:hover {
+          transform: translateY(-2px);
+          border-color: #FCA5A5;
+          box-shadow: 0 8px 18px rgba(220, 38, 38, 0.08);
         }
 
         /* Visual Showcase */
@@ -409,18 +436,18 @@ const NexoraAbout = () => {
         /* Enhanced Pillar Cards */
         .pillar-card-enhanced {
           background: #FFFFFF;
-          border: 1px solid #E2E8F0;
-          border-radius: 18px;
+          border: 1px solid rgba(226, 232, 240, 0.95);
+          border-radius: 20px;
           overflow: hidden;
-          transition: all 0.35s ease;
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
           display: flex;
           flex-direction: column;
         }
         .pillar-card-enhanced:hover {
           transform: translateY(-8px);
-          border-color: #FCA5A5;
-          box-shadow: 0 18px 40px rgba(220, 38, 38, 0.1);
+          border-color: #F87171;
+          box-shadow: 0 22px 45px rgba(220, 38, 38, 0.12);
         }
         .pillar-image-wrap {
           height: 180px;

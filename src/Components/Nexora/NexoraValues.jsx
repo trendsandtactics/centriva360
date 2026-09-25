@@ -116,18 +116,49 @@ const NexoraValues = () => {
 
       <style>{`
         .values-nexora-section {
-          background: #FAFAFA;
-          color: #0F172A;
+          background: 
+            radial-gradient(ellipse 60% 40% at 50% 10%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 50% at 85% 75%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
+            radial-gradient(circle at 15% 90%, rgba(220, 38, 38, 0.08) 0%, transparent 40%),
+            #0B0F17;
+          color: #FFFFFF;
+          position: relative;
           overflow: hidden;
-          border-top: 1px solid #F1F5F9;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .values-nexora-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+          background-size: 28px 28px;
+          pointer-events: none;
+          opacity: 0.6;
+          z-index: 0;
+        }
+        .values-nexora-section .container {
+          position: relative;
+          z-index: 1;
+        }
+        .values-nexora-section .nexora-section-badge {
+          background: rgba(220, 38, 38, 0.15);
+          color: #F87171;
+          border: 1px solid rgba(220, 38, 38, 0.35);
+        }
+        .values-nexora-section .nexora-section-title {
+          color: #FFFFFF;
+        }
+        .values-nexora-section .nexora-lead-text {
+          color: #94A3B8;
         }
 
         /* Banner with Image */
         .values-hero-banner {
           border-radius: 20px;
           min-height: 260px;
-          border: 1px solid rgba(220, 38, 38, 0.25);
-          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+          border: 1px solid rgba(220, 38, 38, 0.35);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
         }
         .values-banner-bg-img {
           position: absolute;
@@ -181,23 +212,26 @@ const NexoraValues = () => {
         }
 
         .value-card {
-          background: #FFFFFF;
-          border: 1px solid #E2E8F0;
-          border-radius: 18px;
-          padding: 30px 26px;
+          background: rgba(17, 24, 39, 0.75);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(14px);
+          border-radius: 20px;
+          padding: 32px 26px;
           height: 100%;
-          transition: all 0.35s ease;
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
         }
         .value-card:hover {
-          transform: translateY(-6px);
-          border-color: #FCA5A5;
-          box-shadow: 0 16px 36px rgba(220, 38, 38, 0.09);
+          transform: translateY(-8px);
+          border-color: rgba(248, 113, 113, 0.5);
+          box-shadow: 0 20px 45px rgba(220, 38, 38, 0.22);
+          background: rgba(22, 30, 48, 0.88);
         }
         .value-card-highlight {
-          background: linear-gradient(135deg, #FFF7ED 0%, #FEF2F2 100%);
-          border: 1.5px solid #FDBA74;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.18) 0%, rgba(249, 115, 22, 0.12) 100%);
+          border: 1.5px solid rgba(249, 115, 22, 0.45);
+          box-shadow: 0 12px 35px rgba(249, 115, 22, 0.15);
         }
         .letter-badge {
           width: 52px;
@@ -210,25 +244,26 @@ const NexoraValues = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+          box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
         }
         .value-icon-wrap {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          background: rgba(220, 38, 38, 0.08);
+          background: rgba(220, 38, 38, 0.15);
+          border: 1px solid rgba(220, 38, 38, 0.3);
           display: flex;
           align-items: center;
           justify-content: center;
         }
         .value-title {
-          font-size: 20px;
+          font-size: 21px;
           font-weight: 800;
-          color: #0F172A;
+          color: #FFFFFF;
           margin-bottom: 10px;
         }
         .value-desc {
-          color: #64748B;
+          color: #CBD5E1;
           font-size: 15px;
           line-height: 1.65;
           margin-bottom: 0;
