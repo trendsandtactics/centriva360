@@ -200,9 +200,12 @@ const Footer1 = () => {
           }
         }
         .footer-logo {
-          height: clamp(54px, 5.5vw, 70px);
+          height: clamp(80px, 8.5vw, 115px);
           width: auto;
-          margin-bottom: 14px;
+          max-width: 320px;
+          object-fit: contain;
+          margin-bottom: 20px;
+          display: block;
         }
         .footer-tagline {
           font-size: 16px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { VALUES_NEXORA } from '../../utils/capabilityData';
-import { Sparkles, Shield, Zap, Target, Award, Compass, RefreshCw } from 'lucide-react';
+import { Sparkles, Shield, Zap, Target, Award, Compass, RefreshCw, CheckCircle2, TrendingUp, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router';
 
 const ICONS = [
   Sparkles, // N
@@ -12,21 +13,62 @@ const ICONS = [
   RefreshCw // 360
 ];
 
+const METRICS = [
+  { num: "13+", label: "Integrated Capabilities", sub: "End-to-End Enterprise Verticals" },
+  { num: "10+", label: "International Hubs", sub: "Global Multi-Country Presence" },
+  { num: "24/7", label: "Omnichannel Operations", sub: "Uninterrupted Execution" },
+  { num: "100%", label: "Single SLA Governance", sub: "Direct Client Accountability" }
+];
+
 const NexoraValues = () => {
   return (
     <section className="values-nexora-section py-5 position-relative" id="values">
-      <div className="container py-lg-5">
+      <div className="container py-lg-4">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-9">
-            <span className="nexora-section-badge">OUR CORE VALUES</span>
+            <span className="nexora-section-badge mb-2">OUR CORE VALUES</span>
             <h2 className="nexora-section-title mt-2">
               What <span className="text-gradient-nexora">NEXORA360</span> stands for.
             </h2>
             <p className="nexora-lead-text mx-auto mt-3">
-              Seven ideas, spelled out in our own name — the standard every engagement is built against, from a single outsourced process to a full Global Capability Centre.
+              Seven principles, spelled out in our own name — the standard every engagement is built against, from a single outsourced process to a full Global Capability Centre.
             </p>
+          </div>
+        </div>
+
+        {/* Corporate Excellence Visual Impact Banner with Image */}
+        <div className="values-hero-banner mb-5 overflow-hidden position-relative">
+          <img src="/about9.png" alt="Nexora360 Corporate Excellence" className="values-banner-bg-img" />
+          <div className="values-banner-overlay" />
+          <div className="values-banner-content position-relative z-2 p-4 p-lg-5">
+            <div className="row align-items-center g-4">
+              <div className="col-lg-6">
+                <span className="hero-banner-tag">GUIDING PRINCIPLES</span>
+                <h3 className="text-white fw-bold display-6 mb-3">
+                  Built on Integrity. <br />
+                  Driven by <span className="text-gradient-nexora">Measurable Impact.</span>
+                </h3>
+                <p className="text-slate-200 mb-0" style={{ fontSize: '15.5px', lineHeight: '1.7', color: '#E2E8F0' }}>
+                  We align our organizational culture with our clients' business goals. Every capability pod functions with high transparency, uncompromising quality, and relentless accountability.
+                </p>
+              </div>
+
+              <div className="col-lg-6">
+                <div className="row g-3">
+                  {METRICS.map((metric, idx) => (
+                    <div key={idx} className="col-6">
+                      <div className="metric-box">
+                        <div className="metric-num text-gradient-nexora">{metric.num}</div>
+                        <div className="metric-label">{metric.label}</div>
+                        <div className="metric-sub">{metric.sub}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -59,7 +101,7 @@ const NexoraValues = () => {
           <div className="motto-glow" aria-hidden="true"></div>
           <div className="position-relative" style={{ zIndex: 2 }}>
             <p className="values-summary-text mx-auto mb-4">
-              Nexora360 combines innovation, agility, excellence, ownership, reliability, execution and continuous optimization to help businesses adapt, perform better and grow faster.
+              Nexora360 combines innovation, agility, excellence, ownership, reliability, execution, and continuous optimization to help businesses adapt, perform better, and grow faster.
             </p>
             <div className="motto-divider mx-auto mb-4"></div>
             <h3 className="motto-headline">
@@ -77,10 +119,69 @@ const NexoraValues = () => {
           overflow: hidden;
           border-top: 1px solid #F1F5F9;
         }
+
+        /* Banner with Image */
+        .values-hero-banner {
+          border-radius: 20px;
+          min-height: 260px;
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+        }
+        .values-banner-bg-img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .values-banner-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(11, 15, 23, 0.94) 0%, rgba(11, 15, 23, 0.82) 50%, rgba(30, 20, 20, 0.9) 100%);
+        }
+        .hero-banner-tag {
+          display: inline-block;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 2px;
+          color: #F97316;
+          margin-bottom: 8px;
+        }
+
+        .metric-box {
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 14px;
+          padding: 16px;
+          backdrop-filter: blur(8px);
+          transition: all 0.3s ease;
+        }
+        .metric-box:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: #FF5722;
+          transform: translateY(-2px);
+        }
+        .metric-num {
+          font-size: 32px;
+          font-weight: 900;
+          line-height: 1;
+          margin-bottom: 4px;
+        }
+        .metric-label {
+          font-size: 13.5px;
+          font-weight: 700;
+          color: #FFFFFF;
+        }
+        .metric-sub {
+          font-size: 11px;
+          color: #94A3B8;
+        }
+
         .value-card {
           background: #FFFFFF;
           border: 1px solid #E2E8F0;
-          border-radius: 16px;
+          border-radius: 18px;
           padding: 30px 26px;
           height: 100%;
           transition: all 0.35s ease;

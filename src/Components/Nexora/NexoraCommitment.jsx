@@ -1,6 +1,7 @@
 import React from 'react';
 import { COMMITMENTS } from '../../utils/capabilityData';
-import { ShieldCheck, Award, Lightbulb, Zap, Eye, Trophy, Compass, Flag } from 'lucide-react';
+import { ShieldCheck, Award, Lightbulb, Zap, Eye, Trophy, Compass, Flag, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router';
 
 const COMMITMENT_ICONS = [
   ShieldCheck, // Reliability
@@ -14,12 +15,12 @@ const COMMITMENT_ICONS = [
 const NexoraCommitment = () => {
   return (
     <section className="commitments-nexora-section py-5 position-relative" id="commitments">
-      <div className="container py-lg-5">
+      <div className="container py-lg-4">
         
         {/* Header */}
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-9">
-            <span className="nexora-section-badge">OUR COMMITMENT</span>
+            <span className="nexora-section-badge mb-2">OUR COMMITMENT</span>
             <h2 className="nexora-section-title mt-2">
               Long-term partnerships, <span className="text-gradient-nexora">built on six commitments.</span>
             </h2>
@@ -47,41 +48,82 @@ const NexoraCommitment = () => {
           })}
         </div>
 
-        {/* Vision & Mission Cards */}
-        <div className="row g-4">
+        {/* Vision & Mission Cards Enhanced with Real Photo Backgrounds */}
+        <div className="row g-4 mb-5">
           {/* Vision */}
           <div className="col-lg-6">
-            <div className="vision-mission-card vision-card p-4 p-lg-5 h-100">
-              <div className="d-flex align-items-center gap-3 mb-3">
-                <div className="vm-icon-wrap">
-                  <Compass size={28} className="text-white" />
+            <div className="vision-mission-card vision-card-enhanced p-4 p-lg-5 h-100 position-relative overflow-hidden">
+              <img src="/about-bg.png" alt="Strategic Horizon" className="vm-bg-img" />
+              <div className="vm-gradient-overlay" />
+              
+              <div className="position-relative z-2">
+                <div className="d-flex align-items-center gap-3 mb-3">
+                  <div className="vm-icon-wrap">
+                    <Compass size={28} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="vm-tag">STRATEGIC HORIZON</span>
+                    <h3 className="vm-title mb-0">Our Vision</h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="vm-tag">STRATEGIC HORIZON</span>
-                  <h3 className="vm-title mb-0">Our Vision</h3>
-                </div>
+                <p className="vm-body-text">
+                  To be the world's trusted 360° business capability partner, enabling organizations to operate smarter, scale faster, and grow stronger across every global vertical.
+                </p>
               </div>
-              <p className="vm-body-text">
-                To be the world's trusted 360° business capability partner, enabling organizations to operate smarter, scale faster and grow stronger.
-              </p>
             </div>
           </div>
 
           {/* Mission */}
           <div className="col-lg-6">
-            <div className="vision-mission-card mission-card p-4 p-lg-5 h-100">
-              <div className="d-flex align-items-center gap-3 mb-3">
-                <div className="vm-icon-wrap mission-icon-wrap">
-                  <Flag size={28} className="text-white" />
+            <div className="vision-mission-card mission-card-enhanced p-4 p-lg-5 h-100 position-relative overflow-hidden">
+              <img src="/team.jpeg" alt="Operational Purpose" className="vm-bg-img" />
+              <div className="vm-gradient-overlay vm-mission-overlay" />
+              
+              <div className="position-relative z-2">
+                <div className="d-flex align-items-center gap-3 mb-3">
+                  <div className="vm-icon-wrap mission-icon-wrap">
+                    <Flag size={28} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="vm-tag">OPERATIONAL PURPOSE</span>
+                    <h3 className="vm-title mb-0">Our Mission</h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="vm-tag">OPERATIONAL PURPOSE</span>
-                  <h3 className="vm-title mb-0">Our Mission</h3>
-                </div>
+                <p className="vm-body-text">
+                  To deliver integrated, technology-enabled, and people-driven business solutions across operations, digital, customer experience, technology, knowledge, HR, and corporate support.
+                </p>
               </div>
-              <p className="vm-body-text">
-                To deliver integrated, technology-enabled and people-driven business solutions across operations, digital, customer experience, technology, knowledge, HR and corporate support.
+            </div>
+          </div>
+        </div>
+
+        {/* Global Partnership Banner with Team Image */}
+        <div className="partnership-cta-card p-4 p-lg-5 position-relative overflow-hidden">
+          <div className="row align-items-center g-4">
+            <div className="col-lg-8">
+              <span className="sub-badge-red mb-2 d-inline-block">PARTNERSHIP ROADMAP</span>
+              <h3 className="fs-3 fw-bold text-slate-900 mb-2">
+                Ready to build an agile, scalable extension of your company?
+              </h3>
+              <p className="text-muted mb-0" style={{ fontSize: '15px', lineHeight: '1.6' }}>
+                Whether you need a specialized 5-person pod or an enterprise GCC with 500+ professionals, our proven capability methodology accelerates time-to-value while de-risking execution.
               </p>
+            </div>
+            <div className="col-lg-4 text-lg-end">
+              <a 
+                href="#contact" 
+                className="btn-nexora-primary"
+                onClick={(e) => {
+                  const el = document.getElementById('contact');
+                  if (el) {
+                    e.preventDefault();
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <span>Request Capability Briefing</span>
+                <ArrowRight size={17} />
+              </a>
             </div>
           </div>
         </div>
@@ -98,11 +140,12 @@ const NexoraCommitment = () => {
         .commitment-card {
           background: #FFFFFF;
           border: 1px solid #E2E8F0;
-          border-radius: 16px;
+          border-radius: 18px;
           padding: 30px 24px;
           height: 100%;
           transition: all 0.3s ease;
           position: relative;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
         }
         .commitment-card:hover {
           transform: translateY(-5px);
@@ -131,28 +174,39 @@ const NexoraCommitment = () => {
           line-height: 1.65;
           margin-bottom: 0;
         }
+
+        /* Enhanced Vision & Mission Cards with Photos */
         .vision-mission-card {
           border-radius: 20px;
           position: relative;
           overflow: hidden;
-          border: 1px solid transparent;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
           transition: transform 0.3s ease;
+          border: 1px solid rgba(220, 38, 38, 0.3);
         }
         .vision-mission-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(-5px);
         }
-        .vision-card {
-          background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-          color: #FFFFFF;
-          border-color: rgba(220, 38, 38, 0.3);
-          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+        .vm-bg-img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
         }
-        .mission-card {
-          background: linear-gradient(135deg, #2D1515 0%, #170909 100%);
-          color: #FFFFFF;
-          border-color: rgba(249, 115, 22, 0.4);
-          box-shadow: 0 16px 36px rgba(220, 38, 38, 0.15);
+        .vision-mission-card:hover .vm-bg-img {
+          transform: scale(1.06);
         }
+        .vm-gradient-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 0.85) 60%, rgba(30, 20, 20, 0.92) 100%);
+        }
+        .vm-mission-overlay {
+          background: linear-gradient(135deg, rgba(30, 10, 10, 0.95) 0%, rgba(20, 10, 10, 0.88) 60%, rgba(15, 23, 42, 0.92) 100%);
+        }
+
         .vm-icon-wrap {
           width: 52px;
           height: 52px;
@@ -184,6 +238,13 @@ const NexoraCommitment = () => {
           font-size: 16.5px;
           line-height: 1.7;
           margin-bottom: 0;
+        }
+
+        .partnership-cta-card {
+          background: #FFFFFF;
+          border: 1px solid #FED7AA;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
         }
       `}</style>
     </section>

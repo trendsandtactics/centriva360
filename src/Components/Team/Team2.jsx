@@ -57,7 +57,7 @@ const Team2 = () => {
                 </div>
                 <div className="team-content">
                   <h4>
-                    <Link to="/team/team-details">{item.name}</Link>
+                    <span>{item.name}</span>
                   </h4>
                   <p>{item.content}</p>
                   <div className="social-profile">

@@ -77,8 +77,20 @@ const NexoraContact = () => {
         <div className="row g-5">
           {/* Left Column: Company & Office Information */}
           <div className="col-lg-5">
-            <div className="contact-info-panel h-100 p-4 p-lg-5">
-              <h3 className="panel-title mb-4">Nexora360 Global Solutions</h3>
+            <div className="contact-info-panel h-100 p-4 p-lg-5 overflow-hidden position-relative">
+              
+              {/* Photo Banner */}
+              <div className="contact-office-img-wrap mb-4">
+                <img src="/about3.png" alt="Centriva360 Corporate Hub" className="contact-office-img" />
+                <div className="contact-img-badge">
+                  <span>CENTRAL CAPABILITY OPERATIONS</span>
+                </div>
+              </div>
+
+              <h3 className="panel-title mb-3">Nexora360 Global Solutions</h3>
+              <p className="text-slate-400 mb-4" style={{ color: '#94A3B8', fontSize: '14.5px', lineHeight: '1.6' }}>
+                Connect with our strategic capability advisors to discuss your enterprise requirements, pilot projects, or full-scale GCC transition.
+              </p>
 
               <div className="info-item mb-4">
                 <div className="info-icon-box">
@@ -290,6 +302,37 @@ const NexoraContact = () => {
           border-radius: 20px;
           border: 1px solid rgba(220, 38, 38, 0.3);
           color: #FFFFFF;
+        }
+        .contact-office-img-wrap {
+          height: 160px;
+          width: 100%;
+          border-radius: 14px;
+          overflow: hidden;
+          position: relative;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .contact-office-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        .contact-office-img-wrap:hover .contact-office-img {
+          transform: scale(1.05);
+        }
+        .contact-img-badge {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          background: rgba(11, 15, 23, 0.85);
+          backdrop-filter: blur(4px);
+          color: #FF8A65;
+          font-size: 10px;
+          font-weight: 800;
+          letter-spacing: 0.8px;
+          padding: 4px 10px;
+          border-radius: 6px;
+          border: 1px solid rgba(249, 115, 22, 0.4);
         }
         .panel-title {
           font-size: 24px;

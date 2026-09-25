@@ -6,17 +6,9 @@ import ValuesPage from "../Pages/ValuesPage";
 import CapabilitiesPage from "../Pages/CapabilitiesPage";
 import AdvantagePage from "../Pages/AdvantagePage";
 import ContactPage from "../Pages/ContactPage";
-import DestinationPage from "../Pages/DestinationPage";
-import DestinationDetailsPage from "../Pages/DestinationDetailsPage";
-import TourPage from "../Pages/TourPage";
-import TourDetailsPage from "../Pages/TourDetailsPage";
-import ActivitiesPage from "../Pages/ActivitiesPage";
-import ActivitiesDetailsPage from "../Pages/ActivitiesDetailsPage";
 import TeamPage from "../Pages/TeamPage";
-import TeamDetailsPage from "../Pages/TeamDetailsPage";
 import BlogGrid from "../Pages/BlogGrid";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
-import BlogSidebarPage from "../Pages/BlogSidebarPage";
 import InvestorRelationsPage from "../Pages/InvestorRelationsPage";
 import ShippingPage from "../Pages/ShippingPage";
 import LogisticsPage from "../Pages/LogisticsPage";
@@ -67,36 +59,12 @@ export const router = createBrowserRouter([
         Component: CapabilitiesPage, // updated to Capabilities
       },
       {
-        path: "destination",
-        Component: DestinationPage,
-      },
-      {
-        path: "destination/destination-details",
-        Component: DestinationDetailsPage,
-      },
-      {
-        path: "tour",
-        Component: TourPage,
-      },
-      {
-        path: "tour/tour-details",
-        Component: TourDetailsPage,
-      },
-      {
         path: "global-presence",
         Component: GlobalPresencePage,
       },
       {
-        path: "activities/activities-details",
-        Component: ActivitiesDetailsPage,
-      },
-      {
         path: "team",
         Component: TeamPage,
-      },
-      {
-        path: "team/team-details",
-        Component: TeamDetailsPage,
       },
       {
         path: "investor-relations",
@@ -133,10 +101,6 @@ export const router = createBrowserRouter([
       {
         path: "blog",
         Component: BlogGrid,
-      },
-      {
-        path: "blog-sidebar",
-        Component: BlogSidebarPage,
       },
       {
         path: "blog/blog-details",
