@@ -115,7 +115,7 @@ const NexoraAbout = () => {
 
               {/* Floating Overlapping Card 1: Team & Talent */}
               <div className="floating-card floating-card-top">
-                <img src="/about5.png" alt="Operational Specialist" className="card-thumb-img" />
+                <img src="/centriva360.png" alt="Operational Specialist" className="card-thumb-img" />
                 <div>
                   <h5 className="floating-card-title">Dedicated Talent</h5>
                   <p className="floating-card-sub mb-0">High-Retention Specialists</p>
