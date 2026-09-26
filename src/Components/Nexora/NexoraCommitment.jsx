@@ -102,10 +102,10 @@ const NexoraCommitment = () => {
           <div className="row align-items-center g-4">
             <div className="col-lg-8">
               <span className="sub-badge-red mb-2 d-inline-block">PARTNERSHIP ROADMAP</span>
-              <h3 className="fs-3 fw-bold text-white mb-2">
+              <h3 className="fs-3 fw-bold text-slate-900 mb-2">
                 Ready to build an agile, scalable extension of your company?
               </h3>
-              <p className="mb-0" style={{ fontSize: '15px', lineHeight: '1.6', color: '#CBD5E1' }}>
+              <p className="mb-0 text-slate-600" style={{ fontSize: '15px', lineHeight: '1.6' }}>
                 Whether you need a specialized 5-person pod or an enterprise GCC with 500+ professionals, our proven capability methodology accelerates time-to-value while de-risking execution.
               </p>
             </div>
@@ -133,23 +133,22 @@ const NexoraCommitment = () => {
       <style>{`
         .commitments-nexora-section {
           background: 
-            radial-gradient(ellipse 70% 50% at 85% 20%, rgba(249, 115, 22, 0.15) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 15% 80%, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
-            #0B0F17;
-          color: #FFFFFF;
+            radial-gradient(ellipse 80% 50% at 15% 20%, rgba(254, 215, 170, 0.5) 0%, transparent 60%),
+            radial-gradient(ellipse 70% 50% at 85% 75%, rgba(254, 226, 226, 0.55) 0%, transparent 60%),
+            #F8FAFC;
+          color: #0F172A;
           position: relative;
           overflow: hidden;
-          border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
         .commitments-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
           background-image: 
-            radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-          background-size: 28px 28px;
+            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+          background-size: 24px 24px;
           pointer-events: none;
-          opacity: 0.6;
+          opacity: 0.8;
           z-index: 0;
         }
         .commitments-nexora-section .container {
@@ -157,51 +156,62 @@ const NexoraCommitment = () => {
           z-index: 1;
         }
         .commitments-nexora-section .nexora-section-badge {
-          background: rgba(220, 38, 38, 0.15);
-          color: #F87171;
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          color: #DC2626;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
+          padding: 6px 16px;
+          border-radius: 9999px;
+          text-transform: uppercase;
         }
         .commitments-nexora-section .nexora-section-title {
-          color: #FFFFFF;
+          font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+          font-weight: 800;
+          color: #0F172A;
+          line-height: 1.25;
         }
         .commitments-nexora-section .nexora-lead-text {
-          color: #94A3B8;
+          font-size: clamp(1rem, 1.2vw, 1.15rem);
+          line-height: 1.75;
+          color: #475569;
         }
         .commitment-card {
-          background: rgba(17, 24, 39, 0.75);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.9);
           border-radius: 20px;
           padding: 32px 26px;
           height: 100%;
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
         }
         .commitment-card:hover {
           transform: translateY(-7px);
-          border-color: rgba(248, 113, 113, 0.6);
-          box-shadow: 0 22px 48px rgba(220, 38, 38, 0.22);
-          background: rgba(22, 32, 52, 0.85);
+          border-color: #FCA5A5;
+          box-shadow: 0 20px 42px rgba(220, 38, 38, 0.12);
         }
         .commitment-icon-wrap {
-          width: 50px;
-          height: 50px;
-          border-radius: 12px;
-          background: rgba(220, 38, 38, 0.15);
+          width: 52px;
+          height: 52px;
+          border-radius: 14px;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(249, 115, 22, 0.12) 100%);
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          border: 1px solid rgba(220, 38, 38, 0.25);
         }
         .commitment-title {
           font-size: 20px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           margin-bottom: 10px;
         }
         .commitment-desc {
-          color: #94A3B8;
+          color: #64748B;
           font-size: 15px;
           line-height: 1.65;
           margin-bottom: 0;
@@ -212,9 +222,9 @@ const NexoraCommitment = () => {
           border-radius: 20px;
           position: relative;
           overflow: hidden;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
           transition: transform 0.3s ease;
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          border: 1px solid rgba(220, 38, 38, 0.3);
         }
         .vision-mission-card:hover {
           transform: translateY(-5px);
@@ -273,10 +283,10 @@ const NexoraCommitment = () => {
         }
 
         .partnership-cta-card {
-          background: linear-gradient(135deg, rgba(22, 28, 44, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 50%, #FEF2F2 100%);
+          border: 1.5px solid #FED7AA;
           border-radius: 24px;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 16px 40px rgba(249, 115, 22, 0.1);
         }
       `}</style>
     </section>

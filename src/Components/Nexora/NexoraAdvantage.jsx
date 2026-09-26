@@ -133,7 +133,7 @@ const NexoraAdvantage = () => {
               </div>
 
               <div className="wheel-footer-note mt-4 text-center text-lg-start">
-                <p className="text-slate-400 mb-0" style={{ color: '#94A3B8', fontSize: '14px' }}>
+                <p className="text-slate-500 mb-0" style={{ color: '#64748B', fontSize: '14px', fontWeight: 500 }}>
                   Ten capabilities, one shared operating model — click any vertical to preview its integration node and delivery image.
                 </p>
               </div>
@@ -232,23 +232,23 @@ const NexoraAdvantage = () => {
       <style>{`
         .advantage-nexora-section {
           background: 
-            radial-gradient(ellipse 70% 50% at 85% 15%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 15% 75%, rgba(249, 115, 22, 0.12) 0%, transparent 60%),
-            #0B0F17;
-          color: #FFFFFF;
+            radial-gradient(ellipse 70% 50% at 85% 15%, rgba(254, 215, 170, 0.5) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 15% 75%, rgba(254, 226, 226, 0.55) 0%, transparent 60%),
+            radial-gradient(circle at 50% 50%, rgba(254, 215, 170, 0.3) 0%, transparent 50%),
+            #F8FAFC;
+          color: #0F172A;
           overflow: hidden;
           position: relative;
-          border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
         .advantage-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
           background-image: 
-            radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-          background-size: 28px 28px;
+            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+          background-size: 24px 24px;
           pointer-events: none;
-          opacity: 0.6;
+          opacity: 0.8;
           z-index: 0;
         }
         .advantage-nexora-section .container {
@@ -256,81 +256,99 @@ const NexoraAdvantage = () => {
           z-index: 1;
         }
         .advantage-nexora-section .nexora-section-badge {
-          background: rgba(220, 38, 38, 0.15);
-          color: #F87171;
-          border-color: rgba(220, 38, 38, 0.3);
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          color: #DC2626;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
+          padding: 6px 16px;
+          border-radius: 9999px;
+          text-transform: uppercase;
         }
         .advantage-nexora-section .nexora-section-title {
-          color: #FFFFFF;
+          font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+          font-weight: 800;
+          color: #0F172A;
+          line-height: 1.25;
         }
         .advantage-nexora-section .nexora-lead-text {
-          color: #94A3B8;
+          font-size: clamp(1rem, 1.2vw, 1.15rem);
+          line-height: 1.75;
+          color: #475569;
         }
         .ecosystem-wheel-wrapper {
-          background: #111827;
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.95);
           border-radius: 24px;
           position: relative;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
         }
         .orbit-grid-container {
           position: relative;
         }
         .orbit-center-core {
           text-align: center;
-          background: linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(249, 115, 22, 0.15) 100%);
-          border: 1px solid rgba(220, 38, 38, 0.3);
+          background: linear-gradient(135deg, #FEF2F2 0%, #FFF7ED 100%);
+          border: 1.5px solid rgba(220, 38, 38, 0.25);
           border-radius: 16px;
           padding: 16px;
           margin-bottom: 20px;
+          box-shadow: 0 4px 14px rgba(220, 38, 38, 0.06);
         }
         .core-eyebrow {
           display: block;
           font-size: 11px;
           font-weight: 800;
           letter-spacing: 2px;
-          color: #F97316;
+          color: #DC2626;
         }
         .core-title {
           font-size: 20px;
           font-weight: 900;
-          color: #FFFFFF;
+          color: #0F172A;
           margin: 4px 0 0;
           letter-spacing: 1px;
         }
         .node-pill {
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 12px;
+          background: #F8FAFC;
+          border: 1px solid #E2E8F0;
+          border-radius: 14px;
           padding: 14px 16px;
           display: flex;
           align-items: center;
           gap: 12px;
           cursor: pointer;
-          transition: all 0.25s ease;
+          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
         }
         .node-pill:hover {
-          background: rgba(220, 38, 38, 0.1);
-          border-color: rgba(249, 115, 22, 0.4);
+          background: #FFFFFF;
+          border-color: #FCA5A5;
           transform: translateY(-2px);
+          box-shadow: 0 6px 18px rgba(220, 38, 38, 0.08);
         }
         .node-pill-active {
-          background: linear-gradient(135deg, rgba(220, 38, 38, 0.25) 0%, rgba(249, 115, 22, 0.2) 100%);
+          background: linear-gradient(135deg, #FEF2F2 0%, #FFF7ED 100%);
           border-color: #FF5722;
-          box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+          box-shadow: 0 6px 22px rgba(220, 38, 38, 0.16);
         }
         .node-number {
           font-size: 14px;
           font-weight: 800;
-          color: #F87171;
+          color: #DC2626;
           font-family: monospace;
         }
         .node-name {
           font-size: 14px;
           font-weight: 700;
-          color: #F1F5F9;
+          color: #1E293B;
           flex-grow: 1;
+        }
+        .node-pill-active .node-name {
+          color: #DC2626;
         }
         .node-active-indicator {
           width: 8px;
@@ -345,18 +363,19 @@ const NexoraAdvantage = () => {
 
         /* Inspector Card with Photo */
         .node-inspector-card {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(220, 38, 38, 0.3);
-          border-radius: 18px;
+          background: #FFFFFF;
+          border: 1.5px solid rgba(220, 38, 38, 0.22);
+          border-radius: 20px;
           padding: 24px;
-          backdrop-filter: blur(10px);
+          box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
         }
         .node-img-wrap {
           height: 160px;
           width: 100%;
-          border-radius: 12px;
+          border-radius: 14px;
           overflow: hidden;
           position: relative;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
         }
         .node-preview-img {
           width: 100%;
@@ -383,44 +402,45 @@ const NexoraAdvantage = () => {
           font-size: 11px;
           font-weight: 800;
           letter-spacing: 1px;
-          color: #F87171;
-          background: rgba(220, 38, 38, 0.15);
-          padding: 3px 8px;
-          border-radius: 4px;
+          color: #DC2626;
+          background: rgba(220, 38, 38, 0.08);
+          padding: 4px 10px;
+          border-radius: 6px;
         }
         .badge-live {
           font-size: 10px;
           font-weight: 800;
           letter-spacing: 1px;
-          color: #4ADE80;
-          background: rgba(74, 222, 128, 0.1);
-          padding: 3px 8px;
-          border-radius: 4px;
+          color: #16A34A;
+          background: rgba(22, 163, 74, 0.1);
+          padding: 4px 10px;
+          border-radius: 6px;
         }
         .inspector-title {
           font-size: 22px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
         }
         .inspector-text {
-          color: #94A3B8;
-          line-height: 1.6;
-          font-size: 14px;
+          color: #475569;
+          line-height: 1.65;
+          font-size: 14.5px;
         }
         .integrated-benefits {
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          border-top: 1px solid #E2E8F0;
           padding-top: 14px;
         }
         .benefit-row {
-          font-size: 13px;
-          color: #E2E8F0;
+          font-size: 13.5px;
+          color: #1E293B;
+          font-weight: 500;
         }
 
         /* Banner Photo */
         .advantage-focus-banner {
-          border-radius: 20px;
-          border: 1px solid rgba(220, 38, 38, 0.35);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+          border-radius: 24px;
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
         }
         .banner-photo-bg {
           position: absolute;
@@ -433,21 +453,39 @@ const NexoraAdvantage = () => {
         .banner-photo-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(11, 15, 23, 0.94) 0%, rgba(20, 10, 10, 0.88) 100%);
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(30, 20, 25, 0.9) 100%);
+        }
+        .advantage-focus-banner .btn-nexora-secondary {
+          background: rgba(255, 255, 255, 0.12);
+          border: 1.5px solid rgba(255, 255, 255, 0.35);
+          color: #FFFFFF !important;
+          backdrop-filter: blur(8px);
+        }
+        .advantage-focus-banner .btn-nexora-secondary:hover {
+          background: #FFFFFF;
+          color: #0F172A !important;
+          border-color: #FFFFFF;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         @media (max-width: 768px) {
           .ecosystem-wheel-wrapper {
             padding: 20px 16px !important;
+            border-radius: 18px;
           }
           .node-inspector-card {
-            padding: 16px;
+            padding: 18px 14px;
+            border-radius: 16px;
           }
           .node-pill {
             padding: 10px 12px;
           }
           .node-name {
             font-size: 13px;
+          }
+          .advantage-focus-banner {
+            border-radius: 18px;
           }
         }
       `}</style>

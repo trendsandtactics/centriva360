@@ -140,7 +140,7 @@ const NexoraAbout = () => {
         <div className="mb-5">
           <div className="text-center mb-4">
             <span className="sub-badge-red mb-2 d-inline-block">THE THREE PILLARS</span>
-            <h3 className="fs-2 fw-bold text-white">How we deliver consistent excellence</h3>
+            <h3 className="fs-2 fw-bold text-slate-900">How we deliver consistent excellence</h3>
           </div>
 
           <div className="row g-4">
@@ -258,24 +258,23 @@ const NexoraAbout = () => {
       <style>{`
         .about-nexora-section {
           background: 
-            radial-gradient(ellipse 70% 50% at 15% 15%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 85% 65%, rgba(249, 115, 22, 0.12) 0%, transparent 60%),
-            radial-gradient(circle at 50% 95%, rgba(220, 38, 38, 0.08) 0%, transparent 45%),
-            #0B0F17;
-          color: #FFFFFF;
+            radial-gradient(ellipse 80% 50% at 15% 15%, rgba(254, 226, 226, 0.6) 0%, transparent 60%),
+            radial-gradient(ellipse 70% 50% at 85% 45%, rgba(254, 215, 170, 0.45) 0%, transparent 60%),
+            radial-gradient(circle at 50% 90%, rgba(254, 226, 226, 0.5) 0%, transparent 50%),
+            #F8FAFC;
+          color: #0F172A;
           position: relative;
           overflow: hidden;
-          border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
         .about-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
           background-image: 
-            radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-          background-size: 28px 28px;
+            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+          background-size: 24px 24px;
           pointer-events: none;
-          opacity: 0.6;
+          opacity: 0.8;
           z-index: 0;
         }
         .about-nexora-section .container {
@@ -287,9 +286,10 @@ const NexoraAbout = () => {
           font-size: 12px;
           font-weight: 800;
           letter-spacing: 1.5px;
-          color: #F87171;
-          background: rgba(220, 38, 38, 0.15);
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          color: #DC2626;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
           padding: 6px 16px;
           border-radius: 9999px;
           text-transform: uppercase;
@@ -297,33 +297,46 @@ const NexoraAbout = () => {
         .nexora-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.6rem);
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           line-height: 1.25;
         }
         .nexora-lead-text {
           font-size: clamp(1rem, 1.2vw, 1.15rem);
           line-height: 1.75;
-          color: #94A3B8;
+          color: #475569;
         }
         .about-feature-box {
           display: flex;
           align-items: center;
           gap: 10px;
-          padding: 12px 16px;
-          background: rgba(17, 24, 39, 0.75);
-          backdrop-filter: blur(10px);
-          border-radius: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-          font-size: 14px;
-          color: #F1F5F9;
-          transition: all 0.25s ease;
+          padding: 13px 18px;
+          background: #FFFFFF;
+          border-radius: 14px;
+          border: 1px solid rgba(226, 232, 240, 0.9);
+          box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+          font-size: 14.5px;
+          color: #1E293B;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .about-feature-box:hover {
+          transform: translateY(-3px);
+          border-color: #FCA5A5;
+          box-shadow: 0 12px 24px rgba(220, 38, 38, 0.1);
+          background: #FFFBFB;
+        }
+
+        .about-nexora-section .btn-nexora-secondary {
+          background: #FFFFFF;
+          color: #0F172A !important;
+          border: 1.5px solid #CBD5E1;
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+        .about-nexora-section .btn-nexora-secondary:hover {
+          background: #FFF5F2;
+          color: #DC2626 !important;
+          border-color: #F87171;
           transform: translateY(-2px);
-          border-color: rgba(248, 113, 113, 0.6);
-          background: rgba(24, 34, 54, 0.9);
-          box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2);
+          box-shadow: 0 8px 20px rgba(220, 38, 38, 0.12);
         }
 
         /* Visual Showcase */
@@ -334,8 +347,8 @@ const NexoraAbout = () => {
         .main-image-wrap {
           border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-          border: 2px solid rgba(220, 38, 38, 0.3);
+          box-shadow: 0 20px 45px rgba(220, 38, 38, 0.12), 0 4px 15px rgba(0, 0, 0, 0.06);
+          border: 2px solid rgba(248, 113, 113, 0.3);
           position: relative;
         }
         .main-about-img {
@@ -375,12 +388,12 @@ const NexoraAbout = () => {
         /* Floating Overlapping Cards */
         .floating-card {
           position: absolute;
-          background: rgba(15, 23, 42, 0.88);
-          backdrop-filter: blur(14px);
-          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.96);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
           padding: 12px 18px;
-          box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
-          border: 1px solid rgba(249, 115, 22, 0.35);
+          box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1), 0 4px 10px rgba(0, 0, 0, 0.03);
+          border: 1.5px solid #FFEDD5;
           display: flex;
           align-items: center;
           gap: 12px;
@@ -405,17 +418,17 @@ const NexoraAbout = () => {
           height: 44px;
           border-radius: 10px;
           object-fit: cover;
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(0, 0, 0, 0.08);
         }
         .floating-card-title {
           font-size: 14px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           margin-bottom: 2px;
         }
         .floating-card-sub {
           font-size: 12px;
-          color: #94A3B8;
+          color: #64748B;
         }
         .stat-circle {
           width: 44px;
@@ -430,32 +443,44 @@ const NexoraAbout = () => {
         .floating-stat-num {
           font-size: 18px;
           font-weight: 900;
-          color: #FF5722;
+          color: #DC2626;
           line-height: 1;
         }
         .floating-stat-label {
           font-size: 11px;
           font-weight: 700;
-          color: #94A3B8;
+          color: #64748B;
         }
 
         /* Enhanced Pillar Cards */
         .pillar-card-enhanced {
-          background: rgba(17, 24, 39, 0.75);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.85);
           border-radius: 20px;
           overflow: hidden;
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
           display: flex;
           flex-direction: column;
+          position: relative;
+        }
+        .pillar-card-enhanced::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #DC2626, #FF5722);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: 5;
+        }
+        .pillar-card-enhanced:hover::before {
+          opacity: 1;
         }
         .pillar-card-enhanced:hover {
           transform: translateY(-8px);
-          border-color: rgba(248, 113, 113, 0.6);
-          box-shadow: 0 22px 50px rgba(220, 38, 38, 0.25);
-          background: rgba(22, 32, 52, 0.85);
+          border-color: #FCA5A5;
+          box-shadow: 0 22px 45px rgba(220, 38, 38, 0.14);
         }
         .pillar-image-wrap {
           height: 180px;
@@ -474,7 +499,7 @@ const NexoraAbout = () => {
         .pillar-photo-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(11, 15, 23, 0.1) 0%, rgba(11, 15, 23, 0.75) 100%);
+          background: linear-gradient(180deg, rgba(11, 15, 23, 0.1) 0%, rgba(11, 15, 23, 0.7) 100%);
         }
         .pillar-icon-floater {
           position: absolute;
@@ -483,16 +508,16 @@ const NexoraAbout = () => {
           width: 44px;
           height: 44px;
           border-radius: 12px;
-          background: #0F172A;
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.9);
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
           z-index: 2;
         }
         .pillar-floater-icon {
-          color: #F87171;
+          color: #DC2626;
         }
         .pillar-photo-badge {
           position: absolute;
@@ -506,40 +531,35 @@ const NexoraAbout = () => {
           border-radius: 6px;
           letter-spacing: 0.8px;
           backdrop-filter: blur(4px);
-          border: 1px solid rgba(255, 87, 34, 0.3);
         }
         .pillar-title {
           font-size: 22px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
         }
         .pillar-desc {
-          color: #94A3B8;
+          color: #64748B;
           font-size: 14.5px;
           line-height: 1.6;
-        }
-        .pillar-highlights {
-          border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
         }
         .highlight-text {
           font-size: 13.5px;
           font-weight: 600;
-          color: #CBD5E1;
+          color: #334155;
         }
 
         /* Verticals Card */
         .verticals-overview-card {
-          background: linear-gradient(135deg, rgba(22, 27, 40, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
-          border: 1px solid rgba(249, 115, 22, 0.3);
-          border-radius: 20px;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+          background: linear-gradient(135deg, #FFF7ED 0%, #FEF2F2 50%, #FFF1F2 100%);
+          border: 1.5px solid #FED7AA;
+          border-radius: 24px;
+          box-shadow: 0 16px 40px rgba(249, 115, 22, 0.08);
         }
         .sub-badge-red {
           font-size: 11px;
           font-weight: 800;
-          color: #FB923C;
-          background: rgba(249, 115, 22, 0.15);
-          border: 1px solid rgba(249, 115, 22, 0.3);
+          color: #EA580C;
+          background: rgba(234, 88, 12, 0.1);
           padding: 4px 10px;
           border-radius: 6px;
           letter-spacing: 1px;
@@ -547,11 +567,11 @@ const NexoraAbout = () => {
         .verticals-card-title {
           font-size: 24px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           line-height: 1.3;
         }
         .verticals-card-sub {
-          color: #94A3B8;
+          color: #64748B;
           font-size: 14.5px;
           line-height: 1.6;
         }
@@ -559,32 +579,32 @@ const NexoraAbout = () => {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #FFFFFF;
+          border: 1.5px solid #FED7AA;
           padding: 9px 18px;
           border-radius: 9999px;
           font-size: 14px;
           font-weight: 600;
-          color: #F1F5F9;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-          transition: all 0.2s ease;
+          color: #1E293B;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          transition: all 0.25s ease;
         }
         .vertical-pill:hover {
-          border-color: #FF5722;
-          background: rgba(220, 38, 38, 0.2);
-          color: #FFFFFF;
+          border-color: #DC2626;
+          background: #FFF1F2;
+          color: #DC2626;
           transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+          box-shadow: 0 6px 16px rgba(220, 38, 38, 0.14);
         }
 
         /* Global Focus Box */
         .global-focus-box {
-          background: rgba(17, 24, 39, 0.8);
+          background: #0F172A;
           border-radius: 20px;
-          border: 1px solid rgba(220, 38, 38, 0.3);
+          border: 1px solid rgba(220, 38, 38, 0.25);
           position: relative;
           overflow: hidden;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
         }
         .globe-icon-wrap {
           width: 48px;

@@ -12,7 +12,7 @@ const Home = () => {
   useSEO('home');
 
   return (
-    <div className="nexora-home-page" style={{ background: '#0B0F17', color: '#FFFFFF', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div className="nexora-home-page" style={{ overflowX: 'hidden' }}>
       {/* 01. Hero Section */}
       <NexoraHero />
 

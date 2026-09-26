@@ -117,24 +117,23 @@ const NexoraValues = () => {
       <style>{`
         .values-nexora-section {
           background: 
-            radial-gradient(ellipse 60% 40% at 50% 10%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
-            radial-gradient(ellipse 50% 50% at 85% 75%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
-            radial-gradient(circle at 15% 90%, rgba(220, 38, 38, 0.08) 0%, transparent 40%),
-            #0B0F17;
-          color: #FFFFFF;
+            radial-gradient(ellipse 70% 50% at 20% 15%, rgba(254, 226, 226, 0.55) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 85% 55%, rgba(254, 215, 170, 0.45) 0%, transparent 60%),
+            radial-gradient(circle at 40% 90%, rgba(254, 226, 226, 0.4) 0%, transparent 50%),
+            #F8FAFC;
+          color: #0F172A;
           position: relative;
           overflow: hidden;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         .values-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
           background-image: 
-            radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-          background-size: 28px 28px;
+            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+          background-size: 24px 24px;
           pointer-events: none;
-          opacity: 0.6;
+          opacity: 0.8;
           z-index: 0;
         }
         .values-nexora-section .container {
@@ -142,23 +141,36 @@ const NexoraValues = () => {
           z-index: 1;
         }
         .values-nexora-section .nexora-section-badge {
-          background: rgba(220, 38, 38, 0.15);
-          color: #F87171;
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          color: #DC2626;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
+          padding: 6px 16px;
+          border-radius: 9999px;
+          text-transform: uppercase;
         }
         .values-nexora-section .nexora-section-title {
-          color: #FFFFFF;
+          font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+          font-weight: 800;
+          color: #0F172A;
+          line-height: 1.25;
         }
         .values-nexora-section .nexora-lead-text {
-          color: #94A3B8;
+          font-size: clamp(1rem, 1.2vw, 1.15rem);
+          line-height: 1.75;
+          color: #475569;
         }
 
         /* Banner with Image */
         .values-hero-banner {
-          border-radius: 20px;
+          border-radius: 24px;
           min-height: 260px;
-          border: 1px solid rgba(220, 38, 38, 0.35);
-          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
         }
         .values-banner-bg-img {
           position: absolute;
@@ -171,7 +183,7 @@ const NexoraValues = () => {
         .values-banner-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(11, 15, 23, 0.94) 0%, rgba(11, 15, 23, 0.82) 50%, rgba(30, 20, 20, 0.9) 100%);
+          background: linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(15, 23, 42, 0.85) 50%, rgba(30, 20, 20, 0.92) 100%);
         }
         .hero-banner-tag {
           display: inline-block;
@@ -183,15 +195,15 @@ const NexoraValues = () => {
         }
 
         .metric-box {
-          background: rgba(255, 255, 255, 0.06);
-          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: rgba(255, 255, 255, 0.08);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 14px;
           padding: 16px;
-          backdrop-filter: blur(8px);
+          backdrop-filter: blur(10px);
           transition: all 0.3s ease;
         }
         .metric-box:hover {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.14);
           border-color: #FF5722;
           transform: translateY(-2px);
         }
@@ -208,35 +220,51 @@ const NexoraValues = () => {
         }
         .metric-sub {
           font-size: 11px;
-          color: #94A3B8;
+          color: #CBD5E1;
         }
 
         .value-card {
-          background: rgba(17, 24, 39, 0.75);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(14px);
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.9);
           border-radius: 20px;
           padding: 32px 26px;
           height: 100%;
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           position: relative;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+          overflow: hidden;
+          box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+          display: flex;
+          flex-direction: column;
+        }
+        .value-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #DC2626, #FF5722);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
         .value-card:hover {
           transform: translateY(-8px);
-          border-color: rgba(248, 113, 113, 0.5);
-          box-shadow: 0 20px 45px rgba(220, 38, 38, 0.22);
-          background: rgba(22, 30, 48, 0.88);
+          border-color: #FCA5A5;
+          box-shadow: 0 20px 35px -5px rgba(220, 38, 38, 0.12), 0 8px 16px -2px rgba(0, 0, 0, 0.04);
+        }
+        .value-card:hover::before {
+          opacity: 1;
         }
         .value-card-highlight {
-          background: linear-gradient(135deg, rgba(220, 38, 38, 0.18) 0%, rgba(249, 115, 22, 0.12) 100%);
-          border: 1.5px solid rgba(249, 115, 22, 0.45);
-          box-shadow: 0 12px 35px rgba(249, 115, 22, 0.15);
+          background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 100%);
+          border: 1.5px solid rgba(249, 115, 22, 0.4);
+          box-shadow: 0 10px 30px rgba(249, 115, 22, 0.08);
+        }
+        .value-card-highlight::before {
+          opacity: 1;
         }
         .letter-badge {
           width: 52px;
           height: 52px;
-          border-radius: 12px;
+          border-radius: 14px;
           background: linear-gradient(135deg, #DC2626 0%, #FF5722 50%, #F97316 100%);
           color: #FFFFFF;
           font-size: 22px;
@@ -244,49 +272,49 @@ const NexoraValues = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+          box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
         }
         .value-icon-wrap {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          background: rgba(220, 38, 38, 0.15);
-          border: 1px solid rgba(220, 38, 38, 0.3);
+          background: rgba(220, 38, 38, 0.08);
+          border: 1px solid rgba(220, 38, 38, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
         }
         .value-title {
-          font-size: 21px;
+          font-size: 20px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           margin-bottom: 10px;
         }
         .value-desc {
-          color: #CBD5E1;
+          color: #475569;
           font-size: 15px;
           line-height: 1.65;
           margin-bottom: 0;
         }
         .values-motto-banner {
-          background: #0B0F17;
-          border-radius: 20px;
+          background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #18181B 100%);
+          border-radius: 24px;
           border: 1px solid rgba(220, 38, 38, 0.3);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
         }
         .motto-glow {
           position: absolute;
-          width: 400px;
-          height: 400px;
+          width: 450px;
+          height: 450px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(220, 38, 38, 0.25) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(220, 38, 38, 0.3) 0%, rgba(249, 115, 22, 0.15) 50%, transparent 70%);
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          filter: blur(50px);
+          filter: blur(60px);
         }
         .values-summary-text {
-          color: #E2E8F0;
+          color: #F1F5F9;
           font-size: clamp(1rem, 1.3vw, 1.2rem);
           line-height: 1.7;
           max-width: 820px;
@@ -307,6 +335,26 @@ const NexoraValues = () => {
           background: linear-gradient(135deg, #FFFFFF 0%, #FED7AA 50%, #FF8A65 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+          .value-card {
+            padding: 24px 20px;
+          }
+          .letter-badge {
+            width: 44px;
+            height: 44px;
+            font-size: 18px;
+          }
+          .metric-num {
+            font-size: 26px;
+          }
+          .values-hero-banner {
+            border-radius: 16px;
+          }
+          .values-motto-banner {
+            border-radius: 16px;
+          }
         }
       `}</style>
     </section>

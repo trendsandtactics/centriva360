@@ -240,7 +240,7 @@ const NexoraCapabilities = () => {
 
               <div className="modal-outcomes-box p-3 mb-4">
                 <h5 className="mb-1 text-danger fw-bold fs-6">Target Business Outcome:</h5>
-                <p className="mb-0 text-slate-200" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
+                <p className="mb-0 text-slate-700" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
                   {activeModalCap.outcomes}
                 </p>
               </div>
@@ -258,7 +258,7 @@ const NexoraCapabilities = () => {
                   <span>Request this capability</span>
                   <ArrowRight size={17} />
                 </a>
-                <button className="btn btn-outline-light rounded-pill px-4" onClick={closeModal}>
+                <button className="btn btn-outline-secondary rounded-pill px-4" onClick={closeModal}>
                   Close
                 </button>
               </div>
@@ -271,24 +271,23 @@ const NexoraCapabilities = () => {
       <style>{`
         .capabilities-nexora-section {
           background: 
-            radial-gradient(ellipse 70% 50% at 20% 15%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 85% 65%, rgba(249, 115, 22, 0.12) 0%, transparent 60%),
-            radial-gradient(circle at 50% 95%, rgba(220, 38, 38, 0.08) 0%, transparent 45%),
-            #0B0F17;
-          color: #FFFFFF;
+            radial-gradient(ellipse 80% 50% at 85% 15%, rgba(254, 215, 170, 0.5) 0%, transparent 60%),
+            radial-gradient(ellipse 70% 50% at 15% 55%, rgba(254, 226, 226, 0.55) 0%, transparent 60%),
+            radial-gradient(circle at 50% 95%, rgba(254, 215, 170, 0.35) 0%, transparent 50%),
+            #F8FAFC;
+          color: #0F172A;
           position: relative;
           overflow: hidden;
-          border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
         .capabilities-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
           background-image: 
-            radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-          background-size: 28px 28px;
+            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+          background-size: 24px 24px;
           pointer-events: none;
-          opacity: 0.6;
+          opacity: 0.8;
           z-index: 0;
         }
         .capabilities-nexora-section .container {
@@ -296,15 +295,28 @@ const NexoraCapabilities = () => {
           z-index: 1;
         }
         .capabilities-nexora-section .nexora-section-badge {
-          background: rgba(220, 38, 38, 0.15);
-          color: #F87171;
-          border: 1px solid rgba(220, 38, 38, 0.35);
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          color: #DC2626;
+          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+          border: 1px solid rgba(220, 38, 38, 0.25);
+          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
+          padding: 6px 16px;
+          border-radius: 9999px;
+          text-transform: uppercase;
         }
         .capabilities-nexora-section .nexora-section-title {
-          color: #FFFFFF;
+          font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+          font-weight: 800;
+          color: #0F172A;
+          line-height: 1.25;
         }
         .capabilities-nexora-section .nexora-lead-text {
-          color: #94A3B8;
+          font-size: clamp(1rem, 1.2vw, 1.15rem);
+          line-height: 1.75;
+          color: #475569;
         }
 
         /* Filter Pills */
@@ -312,35 +324,34 @@ const NexoraCapabilities = () => {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          color: #CBD5E1;
+          background: #FFFFFF;
+          border: 1.5px solid #E2E8F0;
+          color: #475569;
           font-size: 13.5px;
           font-weight: 700;
           padding: 8px 18px;
           border-radius: 9999px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
           transition: all 0.25s ease;
           cursor: pointer;
         }
         .cap-filter-pill:hover {
-          color: #FFFFFF;
+          color: #DC2626;
           border-color: #F87171;
-          background: rgba(220, 38, 38, 0.15);
           transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(220, 38, 38, 0.25);
+          box-shadow: 0 6px 16px rgba(220, 38, 38, 0.1);
         }
         .cap-filter-pill.active {
           background: linear-gradient(135deg, #DC2626 0%, #FF5722 50%, #F97316 100%);
           color: #FFFFFF;
           border-color: transparent;
-          box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+          box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
         }
         .pill-counter {
           font-size: 11px;
           padding: 2px 7px;
           border-radius: 9999px;
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(15, 23, 42, 0.08);
           color: inherit;
         }
         .cap-filter-pill.active .pill-counter {
@@ -350,22 +361,34 @@ const NexoraCapabilities = () => {
 
         /* Enhanced Capability Card with Image */
         .capability-card-enhanced {
-          background: rgba(17, 24, 39, 0.75);
-          backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.9);
           border-radius: 22px;
           overflow: hidden;
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+          position: relative;
+        }
+        .capability-card-enhanced::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, #DC2626, #FF5722);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: 5;
+        }
+        .capability-card-enhanced:hover::before {
+          opacity: 1;
         }
         .capability-card-enhanced:hover {
           transform: translateY(-8px);
-          border-color: rgba(248, 113, 113, 0.6);
-          box-shadow: 0 24px 50px rgba(220, 38, 38, 0.25);
-          background: rgba(22, 32, 52, 0.85);
+          border-color: #FCA5A5;
+          box-shadow: 0 22px 48px rgba(220, 38, 38, 0.14);
         }
 
         .cap-img-container {
@@ -387,7 +410,7 @@ const NexoraCapabilities = () => {
         .cap-img-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(11, 15, 23, 0.1) 0%, rgba(11, 15, 23, 0.8) 100%);
+          background: linear-gradient(180deg, rgba(11, 15, 23, 0.15) 0%, rgba(11, 15, 23, 0.75) 100%);
         }
 
         .cap-number-badge {
@@ -411,7 +434,7 @@ const NexoraCapabilities = () => {
           width: 40px;
           height: 40px;
           border-radius: 12px;
-          background: rgba(11, 15, 23, 0.88);
+          background: rgba(11, 15, 23, 0.85);
           backdrop-filter: blur(6px);
           border: 1px solid rgba(255, 255, 255, 0.2);
           display: flex;
@@ -429,11 +452,11 @@ const NexoraCapabilities = () => {
         .cap-title {
           font-size: 19px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           line-height: 1.3;
         }
         .cap-tagline {
-          color: #94A3B8;
+          color: #64748B;
           font-size: 14px;
           line-height: 1.55;
         }
@@ -443,22 +466,22 @@ const NexoraCapabilities = () => {
           align-items: flex-start;
           gap: 8px;
           font-size: 12.5px;
-          color: #CBD5E1;
+          color: #334155;
           margin-bottom: 6px;
           line-height: 1.4;
         }
 
         .cap-action {
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          border-top: 1px solid #F1F5F9;
         }
         .view-details-btn {
           font-size: 13.5px;
           font-weight: 700;
-          color: #F87171;
+          color: #DC2626;
           transition: all 0.25s ease;
         }
         .capability-card-enhanced:hover .view-details-btn {
-          color: #FF8A65;
+          color: #FF5722;
         }
         .cap-arrow {
           transition: transform 0.25s ease;
@@ -471,8 +494,8 @@ const NexoraCapabilities = () => {
         .modal-backdrop-custom {
           position: fixed;
           inset: 0;
-          background: rgba(5, 8, 15, 0.85);
-          backdrop-filter: blur(10px);
+          background: rgba(15, 23, 42, 0.75);
+          backdrop-filter: blur(8px);
           z-index: 9999;
           display: flex;
           align-items: center;
@@ -485,7 +508,7 @@ const NexoraCapabilities = () => {
           to { opacity: 1; }
         }
         .modal-card-custom {
-          background: #0F172A;
+          background: #FFFFFF;
           border-radius: 24px;
           max-width: 720px;
           width: 100%;
@@ -493,8 +516,8 @@ const NexoraCapabilities = () => {
           overflow-y: auto;
           padding: 28px;
           position: relative;
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-          border: 1px solid rgba(220, 38, 38, 0.4);
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+          border: 1.5px solid #FCA5A5;
           animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         @keyframes slideUp {
@@ -508,20 +531,20 @@ const NexoraCapabilities = () => {
           width: 38px;
           height: 38px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: #F1F5F9;
+          border: none;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #FFFFFF;
+          color: #0F172A;
           cursor: pointer;
           transition: all 0.2s ease;
           z-index: 10;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
         .modal-close-btn:hover {
-          background: #DC2626;
-          color: #FFFFFF;
+          background: #FEE2E2;
+          color: #DC2626;
           transform: rotate(90deg);
         }
 
@@ -531,7 +554,6 @@ const NexoraCapabilities = () => {
           border-radius: 16px;
           overflow: hidden;
           position: relative;
-          border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .modal-banner-img {
           width: 100%;
@@ -541,7 +563,7 @@ const NexoraCapabilities = () => {
         .modal-img-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, transparent 40%, rgba(11, 15, 23, 0.9) 100%);
+          background: linear-gradient(180deg, transparent 40%, rgba(11, 15, 23, 0.85) 100%);
         }
         .modal-img-caption {
           position: absolute;
@@ -568,7 +590,7 @@ const NexoraCapabilities = () => {
         .modal-cap-title {
           font-size: 24px;
           font-weight: 800;
-          color: #FFFFFF;
+          color: #0F172A;
           margin-bottom: 6px;
         }
         .modal-cap-tagline {
@@ -582,12 +604,12 @@ const NexoraCapabilities = () => {
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 1px;
-          color: #94A3B8;
+          color: #64748B;
           margin-bottom: 10px;
         }
         .modal-overview-text {
           font-size: 15px;
-          color: #E2E8F0;
+          color: #334155;
           line-height: 1.65;
         }
         .modal-scope-list {
@@ -600,15 +622,15 @@ const NexoraCapabilities = () => {
           align-items: flex-start;
           gap: 12px;
           font-size: 14.5px;
-          color: #CBD5E1;
+          color: #334155;
           margin-bottom: 10px;
           line-height: 1.5;
         }
         .modal-outcomes-box {
-          background: rgba(220, 38, 38, 0.12);
+          background: #FEF2F2;
           border-left: 4px solid #DC2626;
           border-radius: 8px;
-          color: #FECDD3;
+          color: #991B1B;
         }
 
         @media (max-width: 575px) {

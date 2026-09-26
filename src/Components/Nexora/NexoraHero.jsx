@@ -43,8 +43,6 @@ const NexoraHero = () => {
 
         {/* Top gradient overlay to ensure legibility for transparent header */}
         <div className="hero-overlay-top" aria-hidden="true" />
-        {/* Bottom gradient overlay to blend into dark page theme */}
-        <div className="hero-overlay-bottom" aria-hidden="true" />
       </div>
 
       <style>{`
@@ -96,22 +94,6 @@ const NexoraHero = () => {
             180deg,
             rgba(11, 15, 23, 0.75) 0%,
             rgba(11, 15, 23, 0.3) 60%,
-            transparent 100%
-          );
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        .hero-overlay-bottom {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 140px;
-          background: linear-gradient(
-            0deg,
-            #0B0F17 0%,
-            rgba(11, 15, 23, 0.7) 50%,
             transparent 100%
           );
           z-index: 1;
