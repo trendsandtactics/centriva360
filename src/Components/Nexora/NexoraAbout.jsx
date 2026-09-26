@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Users, GitMerge, Globe, CheckCircle2, ArrowRight, ShieldCheck, Zap, Award } from 'lucide-react';
+import { Cpu, Users, GitMerge, Globe, CheckCircle2, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router';
 
 const PILLARS = [
@@ -50,7 +50,7 @@ const NexoraAbout = () => {
       <div className="container py-lg-4">
         
         {/* Top Split Section: Text + Visual Media Showcase */}
-        <div className="row align-items-center g-5 mb-5 pb-lg-3">
+        <div className="row align-items-center g-5 mb-5 pb-lg-4">
           <div className="col-lg-6">
             <span className="nexora-section-badge mb-3">ABOUT CENTRIVA360</span>
             <h2 className="nexora-section-title mt-2 mb-3">
@@ -334,114 +334,44 @@ const NexoraAbout = () => {
         /* Visual Showcase */
         .about-visual-showcase {
           position: relative;
-          padding: 18px;
-        }
-        .main-image-wrap {
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 20px 45px rgba(220, 38, 38, 0.12), 0 4px 15px rgba(0, 0, 0, 0.06);
-          border: 2px solid rgba(248, 113, 113, 0.3);
-          position: relative;
-        }
-        .main-about-img {
-          width: 100%;
-          height: 380px;
-          object-fit: cover;
-          display: block;
-          transition: transform 0.5s ease;
-        }
-        .main-image-wrap:hover .main-about-img {
-          transform: scale(1.03);
-        }
-        .image-overlay-badge {
-          position: absolute;
-          bottom: 16px;
-          left: 16px;
-          background: rgba(11, 15, 23, 0.88);
-          backdrop-filter: blur(8px);
-          color: #FFFFFF;
-          padding: 6px 14px;
-          border-radius: 9999px;
-          font-size: 12px;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          border: 1px solid rgba(249, 115, 22, 0.4);
-        }
-        .badge-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: #22C55E;
-          box-shadow: 0 0 8px #22C55E;
+          padding: 8px;
         }
 
-        /* Floating Overlapping Cards */
-        .floating-card {
+        .main-image-wrap {
+          border-radius: 28px;
+          overflow: hidden;
+          box-shadow:
+            0 28px 70px rgba(15, 23, 42, 0.14),
+            0 8px 24px rgba(220, 38, 38, 0.08);
+          border: 1px solid rgba(248, 113, 113, 0.28);
+          position: relative;
+          background: #fff;
+        }
+
+        .main-image-wrap::after {
+          content: '';
           position: absolute;
-          background: rgba(255, 255, 255, 0.96);
-          backdrop-filter: blur(12px);
-          border-radius: 16px;
-          padding: 12px 18px;
-          box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1), 0 4px 10px rgba(0, 0, 0, 0.03);
-          border: 1.5px solid #FFEDD5;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          z-index: 3;
-          animation: floatSlow 4s ease-in-out infinite alternate;
+          inset: 0;
+          pointer-events: none;
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08),
+            transparent 45%,
+            rgba(220, 38, 38, 0.04)
+          );
         }
-        .floating-card-top {
-          top: -8px;
-          right: 0px;
-        }
-        .floating-card-bottom {
-          bottom: -12px;
-          left: 0px;
-          animation-delay: 2s;
-        }
-        @keyframes floatSlow {
-          0% { transform: translateY(0px); }
-          100% { transform: translateY(-8px); }
-        }
-        .card-thumb-img {
-          width: 44px;
-          height: 44px;
-          border-radius: 10px;
+
+        .main-about-img {
+          width: 100%;
+          height: clamp(340px, 36vw, 500px);
           object-fit: cover;
-          border: 1px solid rgba(0, 0, 0, 0.08);
+          object-position: center;
+          display: block;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .floating-card-title {
-          font-size: 14px;
-          font-weight: 800;
-          color: #0F172A;
-          margin-bottom: 2px;
-        }
-        .floating-card-sub {
-          font-size: 12px;
-          color: #64748B;
-        }
-        .stat-circle {
-          width: 44px;
-          height: 44px;
-          border-radius: 10px;
-          background: linear-gradient(135deg, #DC2626 0%, #FF5722 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
-        }
-        .floating-stat-num {
-          font-size: 18px;
-          font-weight: 900;
-          color: #DC2626;
-          line-height: 1;
-        }
-        .floating-stat-label {
-          font-size: 11px;
-          font-weight: 700;
-          color: #64748B;
+
+        .main-image-wrap:hover .main-about-img {
+          transform: scale(1.025);
         }
 
         /* Enhanced Pillar Cards */
@@ -616,46 +546,194 @@ const NexoraAbout = () => {
           backdrop-filter: blur(8px);
         }
 
-        @media (max-width: 991px) {
+        @media (max-width: 1199px) {
+          .nexora-section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+          }
+
           .main-about-img {
-            height: 280px;
+            height: 390px;
           }
-          .floating-card-top {
-            top: -5px;
-            right: -5px;
+
+          .verticals-card-title {
+            font-size: 22px;
           }
-          .floating-card-bottom {
-            bottom: -5px;
-            left: -5px;
+        }
+
+        @media (max-width: 991px) {
+          .about-nexora-section {
+            padding-top: 3rem !important;
+            padding-bottom: 3rem !important;
+          }
+
+          .about-nexora-section .container {
+            padding-left: 18px;
+            padding-right: 18px;
+          }
+
+          .nexora-section-title {
+            font-size: clamp(1.9rem, 5vw, 2.35rem);
+          }
+
+          .nexora-lead-text {
+            font-size: 1rem;
+            line-height: 1.7;
+          }
+
+          .about-visual-showcase {
+            margin-top: 8px;
+            padding: 0;
+          }
+
+          .main-about-img {
+            height: 360px;
+          }
+
+          .pillar-image-wrap {
+            height: 200px;
+          }
+
+          .verticals-overview-card {
+            padding: 28px !important;
+          }
+
+          .global-focus-box {
+            padding: 28px !important;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .about-nexora-section .container {
+            padding-left: 14px;
+            padding-right: 14px;
+          }
+
+          .row.g-5 {
+            --bs-gutter-y: 2rem;
+          }
+
+          .nexora-section-badge {
+            font-size: 10px;
+            padding: 6px 12px;
+            letter-spacing: 1.2px;
+          }
+
+          .nexora-section-title {
+            font-size: clamp(1.8rem, 8vw, 2.15rem);
+            line-height: 1.2;
+          }
+
+          .nexora-lead-text {
+            font-size: 0.96rem;
+          }
+
+          .about-feature-box {
+            min-height: 52px;
+            padding: 11px 13px;
+            font-size: 13px;
+            border-radius: 12px;
+          }
+
+          .about-visual-showcase {
+            margin-top: 4px;
+          }
+
+          .main-image-wrap {
+            border-radius: 20px;
+          }
+
+          .main-about-img {
+            height: auto;
+            min-height: 260px;
+            max-height: 390px;
+            object-fit: cover;
+          }
+
+          .d-flex.align-items-center.gap-3.flex-wrap {
+            gap: 10px !important;
+          }
+
+          .btn-nexora-primary,
+          .btn-nexora-secondary {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .pillar-card-enhanced {
+            border-radius: 17px;
+          }
+
+          .pillar-image-wrap {
+            height: 190px;
+          }
+
+          .pillar-card-body {
+            padding: 20px !important;
+          }
+
+          .pillar-title {
+            font-size: 20px;
+          }
+
+          .verticals-overview-card {
+            padding: 22px !important;
+            border-radius: 20px;
+          }
+
+          .verticals-card-title {
+            font-size: 21px;
+          }
+
+          .vertical-pill {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 9px 14px;
+            font-size: 13px;
+          }
+
+          .global-focus-box {
+            padding: 22px !important;
+            border-radius: 18px;
+          }
+
+          .global-focus-box h3 {
+            font-size: 20px !important;
+          }
+
+          .global-map-card {
+            padding: 12px;
           }
         }
 
         @media (max-width: 575px) {
-          .about-visual-showcase {
-            padding: 10px 0;
+          .about-nexora-section {
+            overflow-x: hidden;
           }
+
+          .nexora-section-title {
+            font-size: 1.78rem;
+          }
+
+          .about-feature-box {
+            font-size: 12.5px;
+          }
+
           .main-about-img {
-            height: 220px;
+            min-height: 230px;
+            border-radius: 20px;
           }
-          .floating-card {
-            padding: 8px 12px;
+
+          .pillar-image-wrap {
+            height: 175px;
           }
-          .card-thumb-img {
-            width: 36px;
-            height: 36px;
+
+          .pillar-photo-badge {
+            font-size: 9px;
+            padding: 4px 8px;
           }
-          .stat-circle {
-            width: 36px;
-            height: 36px;
-          }
-          .floating-stat-num {
-            font-size: 15px;
-          }
-          .floating-card-title {
-            font-size: 13px;
-          }
-          .floating-card-sub {
-            font-size: 11px;
+
+          .verticals-overview-card .btn-nexora-primary {
+            width: 100%;
           }
         }
       `}</style>
