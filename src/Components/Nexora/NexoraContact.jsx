@@ -295,34 +295,59 @@ const NexoraContact = () => {
       <style>{`
         .contact-nexora-section {
           background: 
-            radial-gradient(ellipse 70% 50% at 20% 15%, rgba(220, 38, 38, 0.05) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 85% 75%, rgba(249, 115, 22, 0.06) 0%, transparent 60%),
-            #F8FAFC;
-          color: #0F172A;
+            radial-gradient(ellipse 70% 50% at 20% 15%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 85% 75%, rgba(249, 115, 22, 0.12) 0%, transparent 60%),
+            #0B0F17;
+          color: #FFFFFF;
           position: relative;
           overflow: hidden;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
         .contact-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
           background-image: 
-            radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+            radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
           background-size: 28px 28px;
           pointer-events: none;
-          opacity: 0.65;
+          opacity: 0.6;
           z-index: 0;
         }
         .contact-nexora-section .container {
           position: relative;
           z-index: 1;
         }
+        .contact-nexora-section .nexora-section-badge {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          color: #F87171;
+          background: rgba(220, 38, 38, 0.15);
+          border: 1px solid rgba(220, 38, 38, 0.35);
+          padding: 6px 16px;
+          border-radius: 9999px;
+          text-transform: uppercase;
+        }
+        .contact-nexora-section .nexora-section-title {
+          font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+          font-weight: 800;
+          color: #FFFFFF;
+          line-height: 1.25;
+        }
+        .contact-nexora-section .nexora-lead-text {
+          font-size: clamp(1rem, 1.2vw, 1.15rem);
+          line-height: 1.75;
+          color: #94A3B8;
+        }
         .contact-info-panel {
-          background: #0B0F17;
+          background: rgba(17, 24, 39, 0.75);
+          backdrop-filter: blur(14px);
           border-radius: 24px;
           border: 1px solid rgba(220, 38, 38, 0.35);
           color: #FFFFFF;
-          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
         }
         .contact-office-img-wrap {
           height: 160px;
@@ -345,7 +370,7 @@ const NexoraContact = () => {
           position: absolute;
           bottom: 10px;
           left: 10px;
-          background: rgba(11, 15, 23, 0.85);
+          background: rgba(11, 15, 23, 0.88);
           backdrop-filter: blur(4px);
           color: #FF8A65;
           font-size: 10px;
@@ -399,25 +424,26 @@ const NexoraContact = () => {
           border-radius: 12px;
         }
         .contact-form-panel {
-          background: #FFFFFF;
-          border: 1px solid rgba(226, 232, 240, 0.95);
+          background: rgba(17, 24, 39, 0.75);
+          backdrop-filter: blur(14px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 24px;
-          box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
         .form-title {
           font-size: 24px;
           font-weight: 800;
-          color: #0F172A;
+          color: #FFFFFF;
         }
         .form-sub {
-          color: #64748B;
+          color: #94A3B8;
           font-size: 15px;
         }
         .form-group-custom label {
           display: block;
           font-size: 13.5px;
           font-weight: 700;
-          color: #334155;
+          color: #E2E8F0;
           margin-bottom: 6px;
         }
         .form-control-custom,
@@ -425,17 +451,26 @@ const NexoraContact = () => {
           width: 100%;
           padding: 12px 16px;
           font-size: 14.5px;
-          background: #FFFFFF;
-          border: 1.5px solid #CBD5E1;
+          background: rgba(11, 15, 23, 0.8);
+          border: 1.5px solid rgba(255, 255, 255, 0.15);
           border-radius: 10px;
-          color: #0F172A;
+          color: #FFFFFF;
           transition: all 0.25s ease;
           outline: none;
         }
+        .form-control-custom::placeholder {
+          color: #64748B;
+        }
         .form-control-custom:focus,
         .form-select-custom:focus {
-          border-color: #DC2626;
-          box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+          border-color: #FF5722;
+          background: rgba(11, 15, 23, 0.95);
+          color: #FFFFFF;
+          box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.2);
+        }
+        .form-select-custom option {
+          background: #0F172A;
+          color: #FFFFFF;
         }
         .status-feedback {
           padding: 12px 16px;
@@ -447,19 +482,30 @@ const NexoraContact = () => {
           font-weight: 600;
         }
         .status-success {
-          background: #DCFCE7;
-          color: #15803D;
-          border: 1px solid #86EFAC;
+          background: rgba(34, 197, 94, 0.15);
+          color: #4ADE80;
+          border: 1px solid rgba(34, 197, 94, 0.3);
         }
         .status-error {
-          background: #FEE2E2;
-          color: #B91C1C;
-          border: 1px solid #FCA5A5;
+          background: rgba(220, 38, 38, 0.15);
+          color: #F87171;
+          border: 1px solid rgba(220, 38, 38, 0.3);
         }
         .form-disclaimer-note {
           font-size: 12.5px;
-          color: #94A3B8;
+          color: #64748B;
           font-style: italic;
+        }
+
+        @media (max-width: 575px) {
+          .contact-info-panel,
+          .contact-form-panel {
+            padding: 24px 18px !important;
+            border-radius: 18px;
+          }
+          .contact-office-img-wrap {
+            height: 130px;
+          }
         }
       `}</style>
     </section>

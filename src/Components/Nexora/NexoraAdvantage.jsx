@@ -231,10 +231,29 @@ const NexoraAdvantage = () => {
 
       <style>{`
         .advantage-nexora-section {
-          background: #0B0F17;
+          background: 
+            radial-gradient(ellipse 70% 50% at 85% 15%, rgba(220, 38, 38, 0.16) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 50% at 15% 75%, rgba(249, 115, 22, 0.12) 0%, transparent 60%),
+            #0B0F17;
           color: #FFFFFF;
           overflow: hidden;
           position: relative;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .advantage-nexora-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+          background-size: 28px 28px;
+          pointer-events: none;
+          opacity: 0.6;
+          z-index: 0;
+        }
+        .advantage-nexora-section .container {
+          position: relative;
+          z-index: 1;
         }
         .advantage-nexora-section .nexora-section-badge {
           background: rgba(220, 38, 38, 0.15);
@@ -415,6 +434,21 @@ const NexoraAdvantage = () => {
           position: absolute;
           inset: 0;
           background: linear-gradient(135deg, rgba(11, 15, 23, 0.94) 0%, rgba(20, 10, 10, 0.88) 100%);
+        }
+
+        @media (max-width: 768px) {
+          .ecosystem-wheel-wrapper {
+            padding: 20px 16px !important;
+          }
+          .node-inspector-card {
+            padding: 16px;
+          }
+          .node-pill {
+            padding: 10px 12px;
+          }
+          .node-name {
+            font-size: 13px;
+          }
         }
       `}</style>
     </section>
