@@ -103,24 +103,16 @@ const NexoraAbout = () => {
               {/* Main Visual Image */}
               <div className="main-image-wrap">
                 <img
-                  src="/centriva360.png"
+                  src="/centre.png"
                   alt="Centriva360 Global Leadership and Team"
                   className="main-about-img img-fluid"
                 />
                 <div className="image-overlay-badge">
                   <span className="badge-dot"></span>
-                  <span>Centriva360 Global Ecosystem</span>
                 </div>
               </div>
 
-              {/* Floating Overlapping Card 1: Team & Talent */}
-              <div className="floating-card floating-card-top">
-                <img src="/centriva360.png" alt="Operational Specialist" className="card-thumb-img" />
-                <div>
-                  <h5 className="floating-card-title">Dedicated Talent</h5>
-                  <p className="floating-card-sub mb-0">High-Retention Specialists</p>
-                </div>
-              </div>
+              
 
               {/* Floating Overlapping Card 2: Performance Metric */}
               <div className="floating-card floating-card-bottom">
