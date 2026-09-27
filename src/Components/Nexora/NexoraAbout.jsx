@@ -103,7 +103,7 @@ const NexoraAbout = () => {
               {/* Main Visual Image */}
               <div className="main-image-wrap">
                 <img
-                  src="/centre.png"
+                  src="/about.png"
                   alt="Centriva360 Global Leadership and Team"
                   className="main-about-img img-fluid"
                 />
