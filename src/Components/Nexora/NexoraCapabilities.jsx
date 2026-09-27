@@ -38,19 +38,19 @@ const CAP_ICONS = {
 };
 
 const CAP_IMAGES = {
-  "01": "/aboutbg.png",
-  "02": "/image1.png",
-  "03": "/about5.png",
-  "04": "/image-gen.png",
-  "05": "/about8.png",
-  "06": "/about9.png",
-  "07": "/team.jpg",
-  "08": "/about4.png",
-  "09": "/GROUP.jpg",
-  "10": "/team1.jpg",
-  "11": "/software.png",
-  "12": "/superenergy.png",
-  "13": "/Productdistribution.jpg",
+  "01": "/gcc.png",
+  "02": "/bpo.png",
+  "03": "/ce.png",
+  "04": "/dm.png",
+  "05": "/ds.png",
+  "06": "/kpo.png",
+  "07": "/hr.png",
+  "08": "/fi.png",
+  "09": "/support.png",
+  "10": "/sales.png",
+  "11": "/date.png",
+  "12": "/ai.png",
+  "13": "/cbs.jpg",
 };
 
 const NexoraCapabilities = () => {
