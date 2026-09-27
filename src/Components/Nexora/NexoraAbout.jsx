@@ -181,7 +181,7 @@ const NexoraAbout = () => {
           </div>
         </div>
 
-      </div>
+   
 
       <style>{`
         .about-nexora-section {
