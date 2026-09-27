@@ -173,37 +173,7 @@ const NexoraAbout = () => {
         </div>
 
         {/* Integrated Capability Verticals Strip with Visual Illustration */}
-        <div className="verticals-overview-card p-4 p-lg-5 mb-5 overflow-hidden position-relative">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-5">
-              <span className="sub-badge-red mb-2 d-inline-block">UNIFIED PLATFORM</span>
-              <h3 className="verticals-card-title">Everything under one integrated ecosystem</h3>
-              <p className="verticals-card-sub mb-4">
-                Connect your operational functions into a cohesive, high-performing engine. No silos, no duplicate vendors.
-              </p>
-              
-              <div className="verticals-banner-img-wrap mb-3 mb-lg-0">
-                <img src="/about7.png" alt="Integrated Operational Ecosystem" className="img-fluid rounded-3 shadow-sm border" />
-              </div>
-
-              <Link to="/capabilities" className="btn-nexora-primary btn-sm py-2 px-3 mt-3">
-                <span>Browse all 13 capabilities</span>
-                <ArrowRight size={15} />
-              </Link>
-            </div>
-
-            <div className="col-lg-7">
-              <div className="d-flex flex-wrap gap-2">
-                {VERTICALS.map((item, idx) => (
-                  <div key={idx} className="vertical-pill">
-                    <CheckCircle2 size={15} className="text-danger flex-shrink-0" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
         {/* Industry-Agnostic. Globally Focused. Sub-section with Global Presence Graphic */}
         <div className="global-focus-box p-4 p-lg-5">
