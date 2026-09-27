@@ -46,11 +46,11 @@ const CAP_IMAGES = {
   "06": "/kpo.png",
   "07": "/hr.png",
   "08": "/fi.png",
-  "09": "/support.png",
+  "09": "/su.png",
   "10": "/sales.png",
-  "11": "/date.png",
+  "11": "/data.png",
   "12": "/ai.png",
-  "13": "/cbs.jpg",
+  "13": "/cbs.png",
 };
 
 const NexoraCapabilities = () => {
