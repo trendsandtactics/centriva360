@@ -176,9 +176,7 @@ const NexoraAbout = () => {
        
 
         {/* Industry-Agnostic. Globally Focused. Sub-section with Global Presence Graphic */}
-        <div className="global-focus-box p-4 p-lg-5">
-       
-          </div>
+        
         </div>
 
    
