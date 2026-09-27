@@ -23,7 +23,7 @@ const PILLARS = [
     icon: GitMerge,
     title: "Process",
     tagline: "Structured & Repeatable",
-    image: "/logistics.png",
+    image: "/process.png",
     description: "Structured, repeatable ways of working — engineered around your unique requirements rather than a standard one-size-fits-all outsourcing template.",
     highlights: ["Single SLA Governance", "Real-Time Audit Dashboards", "Continuous Process Optimization"]
   }
@@ -177,41 +177,7 @@ const NexoraAbout = () => {
 
         {/* Industry-Agnostic. Globally Focused. Sub-section with Global Presence Graphic */}
         <div className="global-focus-box p-4 p-lg-5">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-7">
-              <div className="d-flex align-items-center gap-3 mb-3">
-                <div className="globe-icon-wrap">
-                  <Globe size={26} className="text-warning" />
-                </div>
-                <div>
-                  <span className="text-uppercase fw-bold text-danger font-monospace" style={{ fontSize: '12px', letterSpacing: '1.2px' }}>
-                    OPERATIONAL PHILOSOPHY
-                  </span>
-                  <h3 className="mb-0 text-white fw-bold fs-4">Industry-Agnostic. Globally Focused.</h3>
-                </div>
-              </div>
-              <h4 className="text-white-50 fs-5 mb-3">
-                Built to support businesses across diverse industries and international geographies.
-              </h4>
-              <p className="text-slate-300 mb-0" style={{ color: '#CBD5E1', lineHeight: '1.7' }}>
-                Our flexible operating model allows us to understand the unique requirements of each organization and build customized solutions — rather than forcing clients into a standard outsourcing model. We work with businesses that need reliable support to operate, scale, transform, and grow.
-              </p>
-            </div>
-
-            <div className="col-lg-5">
-              <div className="global-map-card">
-                <img src="/gp.png" alt="Centriva360 Global Presence Map" className="img-fluid rounded-3 mb-3 border border-secondary" />
-                <div className="d-flex align-items-center justify-content-between text-white">
-                  <div>
-                    <span className="d-block fw-bold fs-5 text-gradient-nexora">360° Global Reach</span>
-                    <span className="text-muted" style={{ fontSize: '12.5px' }}>Multiple Country Capability Nodes</span>
-                  </div>
-                  <Link to="/global-presence" className="btn btn-sm btn-outline-danger text-white rounded-pill px-3">
-                    View Network
-                  </Link>
-                </div>
-              </div>
-            </div>
+       
           </div>
         </div>
 
