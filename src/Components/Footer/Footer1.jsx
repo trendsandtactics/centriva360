@@ -14,7 +14,7 @@ const Footer1 = () => {
     });
   }, []);
 
-  const addressText = footerData?.address || "ED-305, Bollineni Hillside Phase 2,\nPerumbakkam, Chennai 600126";
+  const addressText = footerData?.address || "ED-305, Bollineni Hillside Phase 2,\nChennai 600126";
   const emailText = footerData?.email || "info@centriva360global.com";
   const phoneText = footerData?.phone_1 || "+91 96556 80234";
   const copyrightText = footerData?.copyright || "© 2026 Centriva360 Global Solutions Private Limited";
