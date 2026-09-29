@@ -19,11 +19,11 @@ const Home = () => {
       {/* 02. About Centriva360 Section */}
       <NexoraAbout />
 
-      {/* 03. Core Values (C-E-N-T-R-I-V-A-360) Section */}
-      <NexoraValues />
-
       {/* 04. Capability Directory (13 capabilities with interactive modal) */}
       <NexoraCapabilities />
+
+      {/* 03. Core Values (C-E-N-T-R-I-V-A-360) Section */}
+      <NexoraValues />
 
       {/* 05. The Centriva360 360° Advantage Section */}
       <NexoraAdvantage />
