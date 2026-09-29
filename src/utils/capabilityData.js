@@ -178,21 +178,6 @@ export const CAPABILITIES = [
       "AI feasibility consulting, prompt engineering & security guardrails"
     ],
     outcomes: "Cut operational processing costs by up to 70% while operating 24/7 with zero human fatigue."
-  },
-  {
-    id: "13",
-    slug: "customized-business-support",
-    title: "Customized Business Support",
-    tagline: "If you need it, we can build it.",
-    summary: "Bespoke operational pods engineered around your organization's unique requirements, niche workflows, and proprietary software stacks.",
-    scope: [
-      "Tailored multi-disciplinary team assembly (hybrid skillsets)",
-      "Flexible engagement models (dedicated, fractional, project-based)",
-      "Domain-specific proprietary tooling and workflow integration",
-      "Agile pilot programs with rapid milestone validation",
-      "Custom SLA definitions tailored to non-standard requirements"
-    ],
-    outcomes: "Receive an outsourcing solution that fits your exact DNA rather than being forced into a rigid generic template."
   }
 ];
 
