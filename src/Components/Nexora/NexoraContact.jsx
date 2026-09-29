@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { CAPABILITIES } from '../../utils/capabilityData';
 import { addInquiry } from '../../utils/adminData';
-import { Mail, Phone, MapPin, Building, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Building,
+  Send,
+  CheckCircle2,
+  AlertCircle
+} from 'lucide-react';
 
 const NexoraContact = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +30,7 @@ const NexoraContact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!formData.fullName || !formData.workEmail || !formData.message) {
       setStatus({
         type: 'error',
@@ -43,10 +52,12 @@ const NexoraContact = () => {
       });
 
       setIsSubmitting(false);
+
       setStatus({
         type: 'success',
         text: 'Thank you for reaching out! Your inquiry has been received. Our capability team will connect with you shortly.'
       });
+
       setFormData({
         fullName: '',
         company: '',
@@ -58,117 +69,192 @@ const NexoraContact = () => {
   };
 
   return (
-    <section className="contact-nexora-section py-5 position-relative" id="contact">
+    <section
+      className="contact-nexora-section py-5 position-relative"
+      id="contact"
+    >
       <div className="container py-lg-5">
-        
+
         {/* Header */}
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-9">
-            <span className="nexora-section-badge">GET IN TOUCH</span>
+            <span className="nexora-section-badge">
+              GET IN TOUCH
+            </span>
+
             <h2 className="nexora-section-title mt-2">
-              Tell us what you'd rather <span className="text-gradient-nexora">not manage yourself.</span>
+              Tell us what you'd rather{' '}
+              <span className="text-gradient-nexora">
+                not manage yourself.
+              </span>
             </h2>
+
             <p className="nexora-lead-text mx-auto mt-3">
-              Whether it's one process, one department, or your complete business-support operation — we'll build the team and workflow around it.
+              Whether it's one process, one department, or your complete
+              business-support operation — we'll build the team and workflow
+              around it.
             </p>
           </div>
         </div>
 
         <div className="row g-5">
+
           {/* Left Column: Company & Office Information */}
           <div className="col-lg-5">
             <div className="contact-info-panel h-100 p-4 p-lg-5 overflow-hidden position-relative">
-              
-              {/* Photo Banner */}
-              <div className="contact-office-img-wrap mb-4">
-                <img src="/about3.png" alt="Centriva360 Corporate Hub" className="contact-office-img" />
-                <div className="contact-img-badge">
-                  <span>CENTRAL CAPABILITY OPERATIONS</span>
-                </div>
-              </div>
 
-              <h3 className="panel-title mb-3">Centriva360 Global Solutions</h3>
-              <p className="text-slate-400 mb-4" style={{ color: '#94A3B8', fontSize: '14.5px', lineHeight: '1.6' }}>
-                Connect with our strategic capability advisors to discuss your enterprise requirements, pilot projects, or full-scale GCC transition.
+              <h3 className="panel-title mb-3">
+                Centriva360 Global Solutions
+              </h3>
+
+              <p
+                className="text-slate-400 mb-4"
+                style={{
+                  color: '#94A3B8',
+                  fontSize: '14.5px',
+                  lineHeight: '1.6'
+                }}
+              >
+                Connect with our strategic capability advisors to discuss
+                your enterprise requirements, pilot projects, or full-scale
+                GCC transition.
               </p>
 
+              {/* Company */}
               <div className="info-item mb-4">
                 <div className="info-icon-box">
                   <Building size={20} className="text-danger" />
                 </div>
+
                 <div>
-                  <span className="info-label">Company</span>
-                  <p className="info-value">Centriva360 Global Solutions Pvt. Ltd.</p>
+                  <span className="info-label">
+                    Company
+                  </span>
+
+                  <p className="info-value">
+                    Centriva360 Global Solutions Pvt. Ltd.
+                  </p>
                 </div>
               </div>
 
+              {/* Email */}
               <div className="info-item mb-4">
                 <div className="info-icon-box">
                   <Mail size={20} className="text-danger" />
                 </div>
+
                 <div>
-                  <span className="info-label">Email</span>
+                  <span className="info-label">
+                    Email
+                  </span>
+
                   <p className="info-value">
-                    <a href="mailto:info@centriva360global.com" className="text-white text-decoration-none hover-orange">
+                    <a
+                      href="mailto:info@centriva360global.com"
+                      className="text-white text-decoration-none hover-orange"
+                    >
                       info@centriva360global.com
                     </a>
                   </p>
                 </div>
               </div>
 
+              {/* Phone */}
               <div className="info-item mb-4">
                 <div className="info-icon-box">
                   <Phone size={20} className="text-danger" />
                 </div>
+
                 <div>
-                  <span className="info-label">Phone</span>
+                  <span className="info-label">
+                    Phone
+                  </span>
+
                   <p className="info-value">
-                    <a href="tel:+919655680234" className="text-white text-decoration-none hover-orange">
+                    <a
+                      href="tel:+919655680234"
+                      className="text-white text-decoration-none hover-orange"
+                    >
                       +91 96556 80234
                     </a>
                   </p>
                 </div>
               </div>
 
+              {/* Address */}
               <div className="info-item mb-4">
                 <div className="info-icon-box">
                   <MapPin size={20} className="text-danger" />
                 </div>
+
                 <div>
-                  <span className="info-label">Address</span>
-                  <p className="info-value mb-0" style={{ lineHeight: '1.6' }}>
-                    ED-305, Bollineni Hillside Phase 2,<br />
-                    Perumbakkam, Chennai 600126
+                  <span className="info-label">
+                    Address
+                  </span>
+
+                  <p
+                    className="info-value mb-0"
+                    style={{ lineHeight: '1.6' }}
+                  >
+                    ED-305, Bollineni Hillside Phase 2,
+                    <br />
+                    Chennai - 600131
                   </p>
                 </div>
               </div>
 
+              {/* Operating Guarantee */}
               <div className="trusted-promise-box mt-4 p-3">
-                <span className="promise-title text-uppercase font-monospace text-warning fw-bold d-block mb-1" style={{ fontSize: '11px', letterSpacing: '1px' }}>
+                <span
+                  className="promise-title text-uppercase font-monospace text-warning fw-bold d-block mb-1"
+                  style={{
+                    fontSize: '11px',
+                    letterSpacing: '1px'
+                  }}
+                >
                   OUR OPERATING GUARANTEE
                 </span>
-                <p className="promise-text text-slate-300 mb-0" style={{ fontSize: '13.5px', color: '#CBD5E1' }}>
-                  Transparent communication, dedicated capability leads, and rapid onboarding tailored to your business model.
+
+                <p
+                  className="promise-text text-slate-300 mb-0"
+                  style={{
+                    fontSize: '13.5px',
+                    color: '#CBD5E1'
+                  }}
+                >
+                  Transparent communication, dedicated capability leads,
+                  and rapid onboarding tailored to your business model.
                 </p>
               </div>
+
             </div>
           </div>
 
           {/* Right Column: Interactive Form */}
           <div className="col-lg-7">
             <div className="contact-form-panel p-4 p-lg-5">
-              <h3 className="form-title mb-2">Start a conversation</h3>
+
+              <h3 className="form-title mb-2">
+                Start a conversation
+              </h3>
+
               <p className="form-sub mb-4">
-                Tell us about your organization and how we can support your growth.
+                Tell us about your organization and how we can support
+                your growth.
               </p>
 
               <form onSubmit={handleSubmit} noValidate>
+
                 <div className="row g-3">
-                  
+
                   {/* Full Name */}
                   <div className="col-md-6">
                     <div className="form-group-custom">
-                      <label htmlFor="fullName">Full name *</label>
+
+                      <label htmlFor="fullName">
+                        Full name *
+                      </label>
+
                       <input
                         type="text"
                         id="fullName"
@@ -179,13 +265,18 @@ const NexoraContact = () => {
                         onChange={handleChange}
                         required
                       />
+
                     </div>
                   </div>
 
                   {/* Company */}
                   <div className="col-md-6">
                     <div className="form-group-custom">
-                      <label htmlFor="company">Company</label>
+
+                      <label htmlFor="company">
+                        Company
+                      </label>
+
                       <input
                         type="text"
                         id="company"
@@ -195,13 +286,18 @@ const NexoraContact = () => {
                         value={formData.company}
                         onChange={handleChange}
                       />
+
                     </div>
                   </div>
 
                   {/* Work Email */}
                   <div className="col-md-6">
                     <div className="form-group-custom">
-                      <label htmlFor="workEmail">Work email *</label>
+
+                      <label htmlFor="workEmail">
+                        Work email *
+                      </label>
+
                       <input
                         type="email"
                         id="workEmail"
@@ -212,13 +308,18 @@ const NexoraContact = () => {
                         onChange={handleChange}
                         required
                       />
+
                     </div>
                   </div>
 
                   {/* Capability You Need */}
                   <div className="col-md-6">
                     <div className="form-group-custom">
-                      <label htmlFor="capability">Capability you need</label>
+
+                      <label htmlFor="capability">
+                        Capability you need
+                      </label>
+
                       <select
                         id="capability"
                         name="capability"
@@ -227,18 +328,26 @@ const NexoraContact = () => {
                         onChange={handleChange}
                       >
                         {CAPABILITIES.map((cap) => (
-                          <option key={cap.id} value={cap.title}>
+                          <option
+                            key={cap.id}
+                            value={cap.title}
+                          >
                             {cap.id} — {cap.title}
                           </option>
                         ))}
                       </select>
+
                     </div>
                   </div>
 
                   {/* What are you looking to outsource? */}
                   <div className="col-12">
                     <div className="form-group-custom">
-                      <label htmlFor="message">What are you looking to outsource? *</label>
+
+                      <label htmlFor="message">
+                        What are you looking to outsource? *
+                      </label>
+
                       <textarea
                         id="message"
                         name="message"
@@ -249,45 +358,76 @@ const NexoraContact = () => {
                         onChange={handleChange}
                         required
                       ></textarea>
+
                     </div>
                   </div>
 
                   {/* Status Banner */}
                   {status.text && (
                     <div className="col-12">
-                      <div className={`status-feedback ${status.type === 'success' ? 'status-success' : 'status-error'}`}>
-                        {status.type === 'success' ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}
-                        <span>{status.text}</span>
+
+                      <div
+                        className={`status-feedback ${
+                          status.type === 'success'
+                            ? 'status-success'
+                            : 'status-error'
+                        }`}
+                      >
+
+                        {status.type === 'success' ? (
+                          <CheckCircle2 size={18} />
+                        ) : (
+                          <AlertCircle size={18} />
+                        )}
+
+                        <span>
+                          {status.text}
+                        </span>
+
                       </div>
+
                     </div>
                   )}
 
                   {/* Submit Button */}
                   <div className="col-12 mt-4">
+
                     <button
                       type="submit"
                       className="btn-nexora-primary w-100 justify-content-center py-3"
                       disabled={isSubmitting}
                     >
+
                       {isSubmitting ? (
-                        <span>Sending message...</span>
+                        <span>
+                          Sending message...
+                        </span>
                       ) : (
                         <>
-                          <span>Send message</span>
+                          <span>
+                            Send message
+                          </span>
+
                           <Send size={18} />
                         </>
                       )}
+
                     </button>
-                    
+
                     <p className="form-disclaimer-note mt-3 text-center mb-0">
-                      This form is front-end only — connect it to your inbox or CRM before publishing.
+                      This form is front-end only — connect it to your
+                      inbox or CRM before publishing.
                     </p>
+
                   </div>
 
                 </div>
+
               </form>
+
             </div>
           </div>
+
         </div>
 
       </div>
@@ -295,148 +435,174 @@ const NexoraContact = () => {
       <style>{`
         .contact-nexora-section {
           background: 
-            radial-gradient(ellipse 80% 50% at 85% 20%, rgba(254, 215, 170, 0.45) 0%, transparent 60%),
-            radial-gradient(ellipse 70% 50% at 15% 70%, rgba(254, 226, 226, 0.5) 0%, transparent 60%),
+            radial-gradient(
+              ellipse 80% 50% at 85% 20%,
+              rgba(254, 215, 170, 0.45) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              ellipse 70% 50% at 15% 70%,
+              rgba(254, 226, 226, 0.5) 0%,
+              transparent 60%
+            ),
             #F8FAFC;
+
           color: #0F172A;
           position: relative;
           overflow: hidden;
         }
+
         .contact-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
+
           background-image: 
-            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+            radial-gradient(
+              rgba(148, 163, 184, 0.25) 1.2px,
+              transparent 1.2px
+            );
+
           background-size: 24px 24px;
           pointer-events: none;
           opacity: 0.8;
           z-index: 0;
         }
+
         .contact-nexora-section .container {
           position: relative;
           z-index: 1;
         }
+
         .contact-nexora-section .nexora-section-badge {
           display: inline-block;
           font-size: 12px;
           font-weight: 800;
           letter-spacing: 1.5px;
           color: #DC2626;
-          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+
+          background:
+            linear-gradient(
+              135deg,
+              rgba(220, 38, 38, 0.08) 0%,
+              rgba(249, 115, 22, 0.1) 100%
+            );
+
           border: 1px solid rgba(220, 38, 38, 0.25);
-          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
+
+          box-shadow:
+            0 2px 10px rgba(220, 38, 38, 0.06);
+
           padding: 6px 16px;
           border-radius: 9999px;
           text-transform: uppercase;
         }
+
         .contact-nexora-section .nexora-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.6rem);
           font-weight: 800;
           color: #0F172A;
           line-height: 1.25;
         }
+
         .contact-nexora-section .nexora-lead-text {
           font-size: clamp(1rem, 1.2vw, 1.15rem);
           line-height: 1.75;
           color: #475569;
         }
+
         .contact-info-panel {
           background: #0B0F17;
           border-radius: 24px;
           border: 1px solid rgba(220, 38, 38, 0.35);
           color: #FFFFFF;
-          box-shadow: 0 20px 48px rgba(15, 23, 42, 0.15);
+
+          box-shadow:
+            0 20px 48px rgba(15, 23, 42, 0.15);
         }
-        .contact-office-img-wrap {
-          height: 160px;
-          width: 100%;
-          border-radius: 14px;
-          overflow: hidden;
-          position: relative;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        .contact-office-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.4s ease;
-        }
-        .contact-office-img-wrap:hover .contact-office-img {
-          transform: scale(1.05);
-        }
-        .contact-img-badge {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
-          background: rgba(11, 15, 23, 0.88);
-          backdrop-filter: blur(4px);
-          color: #FF8A65;
-          font-size: 10px;
-          font-weight: 800;
-          letter-spacing: 0.8px;
-          padding: 4px 10px;
-          border-radius: 6px;
-          border: 1px solid rgba(249, 115, 22, 0.4);
-        }
+
         .panel-title {
           font-size: 24px;
           font-weight: 800;
           color: #FFFFFF;
         }
+
         .info-item {
           display: flex;
           align-items: flex-start;
           gap: 16px;
         }
+
         .info-icon-box {
           width: 44px;
           height: 44px;
           border-radius: 12px;
+
           background: rgba(220, 38, 38, 0.15);
+
           display: flex;
           align-items: center;
           justify-content: center;
+
           flex-shrink: 0;
+
           border: 1px solid rgba(220, 38, 38, 0.3);
         }
+
         .info-label {
           display: block;
           font-size: 12px;
           font-weight: 700;
           color: #F97316;
+
           text-transform: uppercase;
           letter-spacing: 0.8px;
         }
+
         .info-value {
           font-size: 15px;
           color: #FFFFFF;
           margin-bottom: 0;
           font-weight: 500;
         }
+
         .hover-orange:hover {
           color: #FF5722 !important;
         }
+
         .trusted-promise-box {
           background: rgba(255, 255, 255, 0.04);
-          border: 1px dashed rgba(249, 115, 22, 0.3);
+
+          border:
+            1px dashed rgba(249, 115, 22, 0.3);
+
           border-radius: 12px;
         }
+
         .contact-form-panel {
           background: #FFFFFF;
-          border: 1px solid rgba(226, 232, 240, 0.95);
+
+          border:
+            1px solid rgba(226, 232, 240, 0.95);
+
           border-radius: 24px;
-          box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+
+          box-shadow:
+            0 16px 40px rgba(15, 23, 42, 0.06),
+            0 2px 6px rgba(0, 0, 0, 0.02);
         }
+
         .form-title {
           font-size: 24px;
           font-weight: 800;
           color: #0F172A;
         }
+
         .form-sub {
           color: #64748B;
           font-size: 15px;
         }
+
         .form-group-custom label {
           display: block;
           font-size: 13.5px;
@@ -444,50 +610,74 @@ const NexoraContact = () => {
           color: #334155;
           margin-bottom: 6px;
         }
+
         .form-control-custom,
         .form-select-custom {
           width: 100%;
+
           padding: 12px 16px;
+
           font-size: 14.5px;
+
           background: #F8FAFC;
-          border: 1.5px solid #CBD5E1;
+
+          border:
+            1.5px solid #CBD5E1;
+
           border-radius: 10px;
+
           color: #0F172A;
+
           transition: all 0.25s ease;
+
           outline: none;
         }
+
         .form-control-custom::placeholder {
           color: #94A3B8;
         }
+
         .form-control-custom:focus,
         .form-select-custom:focus {
           border-color: #DC2626;
+
           background: #FFFFFF;
-          box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+
+          box-shadow:
+            0 0 0 4px rgba(220, 38, 38, 0.12);
         }
+
         .form-select-custom option {
           background: #FFFFFF;
           color: #0F172A;
         }
+
         .status-feedback {
           padding: 12px 16px;
+
           border-radius: 8px;
+
           display: flex;
           align-items: center;
+
           gap: 10px;
+
           font-size: 14px;
           font-weight: 600;
         }
+
         .status-success {
           background: #DCFCE7;
           color: #15803D;
           border: 1px solid #86EFAC;
         }
+
         .status-error {
           background: #FEE2E2;
           color: #B91C1C;
           border: 1px solid #FCA5A5;
         }
+
         .form-disclaimer-note {
           font-size: 12.5px;
           color: #94A3B8;
@@ -499,9 +689,6 @@ const NexoraContact = () => {
           .contact-form-panel {
             padding: 24px 18px !important;
             border-radius: 18px;
-          }
-          .contact-office-img-wrap {
-            height: 130px;
           }
         }
       `}</style>
