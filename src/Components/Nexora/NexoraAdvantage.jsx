@@ -230,7 +230,7 @@ const NexoraAdvantage = () => {
 
               <div className="node-inspector-card">
 
-                {/* Node Preview Image */}
+                {/* Clean Node Image - No Span Overlay */}
                 <div className="node-img-wrap mb-3">
 
                   <img
@@ -238,12 +238,6 @@ const NexoraAdvantage = () => {
                     alt={selectedNode.full}
                     className="node-preview-img"
                   />
-
-                  <div className="node-img-badge">
-                    <span>
-                      ACTIVE NODE: #{selectedNode.id}
-                    </span>
-                  </div>
 
                 </div>
 
@@ -270,33 +264,42 @@ const NexoraAdvantage = () => {
                 <div className="integrated-benefits mb-4">
 
                   <div className="benefit-row d-flex align-items-center gap-2 mb-2">
+
                     <Check
                       size={16}
                       className="text-danger flex-shrink-0"
                     />
+
                     <span>
                       Zero vendor fragmentation or finger-pointing
                     </span>
+
                   </div>
 
                   <div className="benefit-row d-flex align-items-center gap-2 mb-2">
+
                     <Check
                       size={16}
                       className="text-danger flex-shrink-0"
                     />
+
                     <span>
                       Single SLA and consolidated performance metrics
                     </span>
+
                   </div>
 
                   <div className="benefit-row d-flex align-items-center gap-2">
+
                     <Check
                       size={16}
                       className="text-danger flex-shrink-0"
                     />
+
                     <span>
                       Cross-department knowledge sharing &amp; synergy
                     </span>
+
                   </div>
 
                 </div>
@@ -312,11 +315,13 @@ const NexoraAdvantage = () => {
                       document.getElementById('contact');
 
                     if (el) {
+
                       e.preventDefault();
 
                       el.scrollIntoView({
                         behavior: 'smooth'
                       });
+
                     }
 
                   }}
@@ -352,7 +357,9 @@ const NexoraAdvantage = () => {
           <div className="position-relative z-2">
 
             <div className="d-inline-flex align-items-center justify-content-center p-3 rounded-circle bg-danger bg-opacity-25 text-danger mb-3 border border-danger">
+
               <ShieldCheck size={32} />
+
             </div>
 
             <h3 className="text-white fw-bold mb-3 display-6">
@@ -617,6 +624,8 @@ const NexoraAdvantage = () => {
           box-shadow: 0 0 10px #FF5722;
         }
 
+        /* Inspector Card */
+
         .node-inspector-card {
           background: #FFFFFF;
           border: 1.5px solid rgba(220, 38, 38, 0.22);
@@ -627,6 +636,8 @@ const NexoraAdvantage = () => {
             0 16px 36px rgba(15, 23, 42, 0.08),
             0 2px 6px rgba(0, 0, 0, 0.02);
         }
+
+        /* Clean Image */
 
         .node-img-wrap {
           height: 160px;
@@ -648,23 +659,6 @@ const NexoraAdvantage = () => {
 
         .node-inspector-card:hover .node-preview-img {
           transform: scale(1.05);
-        }
-
-        .node-img-badge {
-          position: absolute;
-          bottom: 10px;
-          left: 10px;
-
-          background: rgba(11, 15, 23, 0.85);
-          color: #FF8A65;
-
-          font-size: 10px;
-          font-weight: 800;
-
-          padding: 4px 8px;
-          border-radius: 4px;
-
-          backdrop-filter: blur(4px);
         }
 
         .badge-tag {
@@ -709,6 +703,8 @@ const NexoraAdvantage = () => {
           color: #1E293B;
           font-weight: 500;
         }
+
+        /* Banner */
 
         .advantage-focus-banner {
           border-radius: 24px;
