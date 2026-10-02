@@ -5,88 +5,88 @@ import { Link } from 'react-router';
 const ECOSYSTEM_NODES = [
   {
     id: "01",
-    name: "GCC",
-    full: "Global Capability Centres",
-    image: "/gcc.png",
-    desc: "Dedicated global captive hubs with turnkey infrastructure, talent, and governance under your direct brand control."
+    name: "Digital Marketing",
+    full: "Digital Marketing Services",
+    image: "/dm.png",
+    desc: "Performance marketing, technical SEO, thought leadership content, and multi-channel acquisition funnels.",
   },
   {
     id: "02",
-    name: "BPO",
-    full: "Business Process Outsourcing",
-    image: "/bpo.png",
-    desc: "Scalable front, middle, and back-office transaction execution delivering 99.8% accuracy and streamlined workflows."
+    name: "Digital Sales",
+    full: "Digital Sales & Lead Generation",
+    image: "/sales.png",
+    desc: "Targeted outbound SDR/BDR prospecting pods filling your executive calendar with sales-qualified opportunities.",
   },
   {
     id: "03",
     name: "Customer Experience",
-    full: "Customer Experience Services",
+    full: "Customer Experience & Contact Centre",
     image: "/ce.png",
-    desc: "24/7/365 multilingual omnichannel support delivering outstanding CSAT and proactive retention."
+    desc: "24/7/365 multilingual omnichannel customer support delivering outstanding CSAT and proactive retention.",
   },
   {
     id: "04",
-    name: "Digital Marketing",
-    full: "Digital Marketing Services",
-    image: "/dm.png",
-    desc: "Performance marketing, technical SEO, thought leadership content, and multi-channel acquisition funnels."
+    name: "GCC",
+    full: "Global Capability Centre (GCC) Solutions",
+    image: "/gcc.png",
+    desc: "Dedicated global capability hubs with turnkey infrastructure, talent, governance, and scalable operating models.",
   },
   {
     id: "05",
-    name: "Data & Analytics",
-    full: "Data & Analytics Services",
-    image: "/ds.png",
-    desc: "Advanced data analytics, reporting, business intelligence, dashboards, and data-driven decision support."
-  },
-  {
-    id: "06",
     name: "KPO",
     full: "Knowledge Process Outsourcing",
     image: "/kpo.png",
-    desc: "Domain-specialized analytics, market intelligence, valuation models, and executive decision-support."
+    desc: "Domain-specialized analytics, market intelligence, valuation models, and executive decision-support.",
+  },
+  {
+    id: "06",
+    name: "BPO",
+    full: "Business Process Outsourcing",
+    image: "/bpo.png",
+    desc: "Scalable front, middle, and back-office transaction execution delivering streamlined workflows and SLA excellence.",
   },
   {
     id: "07",
     name: "HR & Recruitment",
-    full: "HR & Talent Acquisition",
+    full: "HR & Recruitment Solutions",
     image: "/hr.png",
-    desc: "Global executive search, Employer of Record (EOR), cross-border payroll, and rapid candidate deployment."
+    desc: "Global executive search, Employer of Record (EOR), cross-border payroll, and end-to-end talent solutions.",
   },
   {
     id: "08",
-    name: "Finance",
-    full: "Finance & Accounting Services",
-    image: "/fi.png",
-    desc: "End-to-end ledger accounting, accounts payable/receivable, payroll processing, and audit-ready MIS."
+    name: "Data Management",
+    full: "Data Management & Processing",
+    image: "/data.png",
+    desc: "Reliable data processing, cleansing, validation, annotation, migration, and structured information solutions.",
   },
   {
     id: "09",
-    name: "Support",
-    full: "Administrative & Back-Office Support",
-    image: "/su.png",
-    desc: "Virtual executive assistance, calendar coordination, document hygiene, and operational travel logistics."
+    name: "Finance",
+    full: "Finance & Accounting Support",
+    image: "/fi.png",
+    desc: "End-to-end ledger accounting, accounts payable/receivable, payroll processing, financial reporting, and audit support.",
   },
   {
     id: "10",
-    name: "Sales",
-    full: "Digital Sales & Lead Generation",
-    image: "/sales.png",
-    desc: "Targeted outbound SDR/BDR prospecting pods filling your executive calendar with sales-qualified opportunities."
+    name: "Administration",
+    full: "Administrative & Back-Office Support",
+    image: "/su.png",
+    desc: "Virtual executive assistance, calendar coordination, document management, travel logistics, and operational support.",
   },
   {
     id: "11",
-    name: "Data",
-    full: "Data Management Services",
-    image: "/data.png",
-    desc: "Reliable data processing, data management, data quality, and structured information solutions for modern enterprises."
+    name: "Sales & Support",
+    full: "Sales & Customer Support Operations",
+    image: "/sales.png",
+    desc: "Customer success, technical support, onboarding, renewals, upsell opportunities, and customer retention operations.",
   },
   {
     id: "12",
-    name: "AI",
-    full: "AI & Process Automation",
+    name: "AI & Automation",
+    full: "AI & Automation Services",
     image: "/ai.png",
-    desc: "RPA bots, enterprise Generative AI copilots, intelligent document OCR, and custom cross-system automations."
-  }
+    desc: "RPA bots, enterprise Generative AI copilots, intelligent document processing, and custom cross-system automations.",
+  },
 ];
 
 const NexoraAdvantage = () => {
