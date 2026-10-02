@@ -20,7 +20,7 @@ const ContactPage = () => {
           <div className="map-wrapper rounded-4 overflow-hidden border border-danger border-opacity-25 shadow-sm">
             <iframe
               title="Centriva360 Chennai Headquarters"
-              src="https://maps.app.goo.gl/BDGgc7VVdoqVeVdf8"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d288.3485347134068!2d80.1994605!3d12.883155299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bef78ed9b3b%3A0x7c8ed4275fd93ffb!2sBollineni%20Hillside%20Phase%202!5e1!3m2!1sen!2sin!4v1790931728610!5m2!1sen!2sin"
               width="100%"
               height="380"
               style={{ border: 0, display: 'block' }}
