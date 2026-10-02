@@ -3,7 +3,7 @@ import NexoraHero from '../Components/Nexora/NexoraHero';
 import NexoraAbout from '../Components/Nexora/NexoraAbout';
 import NexoraValues from '../Components/Nexora/NexoraValues';
 import NexoraCapabilities from '../Components/Nexora/NexoraCapabilities';
-import NexoraAdvantage from '../Components/Nexora/HomenexoraAdvantage';
+import HomenexoraAdvantage from '../Components/Nexora/HomenexoraAdvantage';
 import NexoraCommitment from '../Components/Nexora/NexoraCommitment';
 import NexoraContact from '../Components/Nexora/NexoraContact';
 import useSEO from '../hooks/useSEO';
@@ -26,7 +26,7 @@ const Home = () => {
       <NexoraValues />
 
       {/* 05. The Centriva360 360° Advantage Section */}
-      <NexoraAdvantage />
+      <HomenexoraAdvantage />
 
       {/* 06. Commitments, Vision & Mission Section */}
       <NexoraCommitment />
