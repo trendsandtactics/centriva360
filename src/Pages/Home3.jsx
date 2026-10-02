@@ -3,7 +3,7 @@ import NexoraHero from '../Components/Nexora/NexoraHero';
 import NexoraAbout from '../Components/Nexora/NexoraAbout';
 import NexoraValues from '../Components/Nexora/NexoraValues';
 import NexoraCapabilities from '../Components/Nexora/NexoraCapabilities';
-import NexoraAdvantage from '../Components/Nexora/NexoraAdvantage';
+import NexoraAdvantage from '../Components/Nexora/HomeNexoraAdvantage';
 import NexoraCommitment from '../Components/Nexora/NexoraCommitment';
 import NexoraContact from '../Components/Nexora/NexoraContact';
 import useSEO from '../hooks/useSEO';
