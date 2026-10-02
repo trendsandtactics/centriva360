@@ -1,56 +1,51 @@
 import React, { useState } from 'react';
 import { CAPABILITIES } from '../../utils/capabilityData';
-import { 
-  Building2, 
-  Workflow, 
-  Headphones, 
-  TrendingUp, 
-  Target, 
-  BrainCircuit, 
-  UserCheck, 
-  Calculator, 
-  Briefcase, 
-  Users, 
-  Database, 
-  Bot, 
-  Wrench,
+import {
+  TrendingUp,
+  Target,
+  Headphones,
+  Building2,
+  BrainCircuit,
+  Workflow,
+  UserCheck,
+  Database,
+  Calculator,
+  Briefcase,
+  Users,
+  Bot,
   ArrowRight,
   X,
   CheckCircle,
-  ExternalLink,
-  Sparkles
 } from 'lucide-react';
 
 const CAP_ICONS = {
-  "01": Building2,
-  "02": Workflow,
-  "03": Headphones,
-  "04": TrendingUp,
-  "05": Target,
-  "06": BrainCircuit,
-  "07": UserCheck,
-  "08": Calculator,
-  "09": Briefcase,
-  "10": Users,
-  "11": Database,
-  "12": Bot,
-  "13": Wrench,
+  "01": TrendingUp,   // Digital Marketing
+  "02": Target,       // Digital Sales
+  "03": Headphones,   // Customer Support
+  "04": Building2,    // GCC
+  "05": BrainCircuit, // KPO
+  "06": Workflow,     // BPO
+  "07": UserCheck,    // HR
+  "08": Database,     // Data Management
+  "09": Calculator,   // Finance
+  "10": Briefcase,    // Administration
+  "11": Users,        // Sales & Customer Support
+  "12": Bot,          // AI & Automation
 };
 
 const CAP_IMAGES = {
-  "01": "/gcc.png",
-  "02": "/bpo.png",
+  "01": "/dm.png",
+  "02": "/ds.png",
   "03": "/ce.png",
-  "04": "/dm.png",
-  "05": "/ds.png",
-  "06": "/kpo.png",
+  "04": "/gcc.png",
+  "05": "/kpo.png",
+  "06": "/bpo.png",
   "07": "/hr.png",
-  "08": "/fi.png",
-  "09": "/su.png",
-  "10": "/sales.png",
-  "11": "/data.png",
+  "08": "/data.png",
+  "09": "/fi.png",
+  "10": "/su.png",
+  "11": "/sales.png",
   "12": "/ai.png",
-  "13": "/cbs.png",
 };
 
 const NexoraCapabilities = () => {
@@ -58,19 +53,52 @@ const NexoraCapabilities = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const CATEGORIES = [
-    { id: 'all', label: 'All Capabilities', count: 13 },
-    { id: 'gcc', label: 'GCC & Operations', count: 4 },
-    { id: 'digital', label: 'Digital, Sales & CX', count: 4 },
-    { id: 'tech', label: 'Engineering & AI', count: 2 },
-    { id: 'corporate', label: 'Corporate & Support', count: 3 }
+    {
+      id: 'all',
+      label: 'All Capabilities',
+      count: 12,
+    },
+    {
+      id: 'digital',
+      label: 'Digital, Sales & CX',
+      count: 3,
+    },
+    {
+      id: 'gcc',
+      label: 'GCC & Operations',
+      count: 3,
+    },
+    {
+      id: 'corporate',
+      label: 'Corporate & Support',
+      count: 4,
+    },
+    {
+      id: 'tech',
+      label: 'Engineering & AI',
+      count: 2,
+    },
   ];
 
   const filteredCaps = CAPABILITIES.filter((cap) => {
     if (activeCategory === 'all') return true;
-    if (activeCategory === 'gcc') return ['01', '02', '06', '13'].includes(cap.id);
-    if (activeCategory === 'digital') return ['03', '04', '05', '10'].includes(cap.id);
-    if (activeCategory === 'tech') return ['11', '12'].includes(cap.id);
-    if (activeCategory === 'corporate') return ['07', '08', '09'].includes(cap.id);
+
+    if (activeCategory === 'digital') {
+      return ['01', '02', '03'].includes(cap.id);
+    }
+
+    if (activeCategory === 'gcc') {
+      return ['04', '05', '06'].includes(cap.id);
+    }
+
+    if (activeCategory === 'corporate') {
+      return ['07', '08', '09', '10'].includes(cap.id);
+    }
+
+    if (activeCategory === 'tech') {
+      return ['11', '12'].includes(cap.id);
+    }
+
     return true;
   });
 
@@ -85,18 +113,31 @@ const NexoraCapabilities = () => {
   };
 
   return (
-    <section className="capabilities-nexora-section py-5 position-relative" id="capabilities">
+    <section
+      className="capabilities-nexora-section py-5 position-relative"
+      id="capabilities"
+    >
       <div className="container py-lg-4">
-        
+
         {/* Header */}
         <div className="row justify-content-center text-center mb-4">
           <div className="col-lg-9">
-            <span className="nexora-section-badge mb-2">CAPABILITY DIRECTORY</span>
+            <span className="nexora-section-badge mb-2">
+              CAPABILITY DIRECTORY
+            </span>
+
             <h2 className="nexora-section-title mt-2">
-              Thirteen capabilities. <span className="text-gradient-nexora">One integrated ecosystem.</span>
+              Twelve capabilities.{' '}
+              <span className="text-gradient-nexora">
+                One integrated ecosystem.
+              </span>
             </h2>
+
             <p className="nexora-lead-text mx-auto mt-3">
-              Each capability operates as a high-performing standalone unit or seamlessly connects into a unified 360° enterprise operation. Click any card to explore scope, SLAs, and target business outcomes.
+              Each capability operates as a high-performing standalone unit
+              or seamlessly connects into a unified 360° enterprise operation.
+              Click any card to explore scope, SLAs, and target business
+              outcomes.
             </p>
           </div>
         </div>
@@ -107,7 +148,9 @@ const NexoraCapabilities = () => {
             <button
               key={cat.id}
               type="button"
-              className={`cap-filter-pill ${activeCategory === cat.id ? 'active' : ''}`}
+              className={`cap-filter-pill ${
+                activeCategory === cat.id ? 'active' : ''
+              }`}
               onClick={() => setActiveCategory(cat.id)}
             >
               <span>{cat.label}</span>
@@ -116,37 +159,45 @@ const NexoraCapabilities = () => {
           ))}
         </div>
 
-        {/* 13 Capabilities Grid with Rich Images */}
+        {/* 12 Capabilities Grid */}
         <div className="row g-4 justify-content-center">
           {filteredCaps.map((cap) => {
             const Icon = CAP_ICONS[cap.id] || Building2;
             const imgPath = CAP_IMAGES[cap.id] || "/aboutbg.png";
 
             return (
-              <div key={cap.id} className="col-xl-4 col-lg-6 col-md-6" id={`cap-${cap.id}`}>
-                <div 
+              <div
+                key={cap.id}
+                className="col-xl-4 col-lg-6 col-md-6"
+                id={`cap-${cap.id}`}
+              >
+                <div
                   className="capability-card-enhanced h-100"
                   onClick={() => openModal(cap)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === 'Enter' && openModal(cap)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') openModal(cap);
+                  }}
                 >
+
                   {/* Card Visual Photo Header */}
                   <div className="cap-img-container">
-                    <img 
-                      src={imgPath} 
-                      alt={cap.title} 
-                      className="cap-card-img" 
+                    <img
+                      src={imgPath}
+                      alt={cap.title}
+                      className="cap-card-img"
                       loading="lazy"
                     />
+
                     <div className="cap-img-overlay" />
-                    
-                    {/* Corner Number Badge */}
+
+                    {/* Number */}
                     <div className="cap-number-badge">
                       <span>#{cap.id}</span>
                     </div>
 
-                    {/* Icon Badge */}
+                    {/* Icon */}
                     <div className="cap-icon-circle">
                       <Icon size={20} className="text-white" />
                     </div>
@@ -154,172 +205,285 @@ const NexoraCapabilities = () => {
 
                   {/* Card Body */}
                   <div className="cap-card-body p-4 d-flex flex-column flex-grow-1">
-                    <h3 className="cap-title mb-2">{cap.title}</h3>
-                    <p className="cap-tagline mb-3">{cap.tagline}</p>
 
-                    {/* Scope Preview Checklist */}
+                    <h3 className="cap-title mb-2">
+                      {cap.title}
+                    </h3>
+
+                    <p className="cap-tagline mb-3">
+                      {cap.tagline}
+                    </p>
+
+                    {/* Scope Preview */}
                     <div className="cap-scope-preview mb-3">
                       {cap.scope.slice(0, 2).map((item, idx) => (
-                        <div key={idx} className="cap-mini-scope-item">
-                          <CheckCircle size={14} className="text-danger flex-shrink-0" />
+                        <div
+                          key={idx}
+                          className="cap-mini-scope-item"
+                        >
+                          <CheckCircle
+                            size={14}
+                            className="text-danger flex-shrink-0"
+                          />
+
                           <span>{item}</span>
                         </div>
                       ))}
                     </div>
 
-                    {/* Footer Action */}
+                    {/* Footer */}
                     <div className="cap-action mt-auto pt-3 d-flex align-items-center justify-content-between">
                       <span className="view-details-btn">
                         Explore Scope &amp; Deliverables
                       </span>
-                      <ArrowRight size={16} className="cap-arrow text-danger" />
+
+                      <ArrowRight
+                        size={16}
+                        className="cap-arrow text-danger"
+                      />
                     </div>
+
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
 
-      {/* Interactive Details Modal ✕ with Modal Banner Image */}
+      {/* Modal */}
       {activeModalCap && (
-        <div className="modal-backdrop-custom" onClick={closeModal}>
-          <div 
-            className="modal-card-custom" 
+        <div
+          className="modal-backdrop-custom"
+          onClick={closeModal}
+        >
+          <div
+            className="modal-card-custom"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
           >
-            {/* Close Button ✕ */}
-            <button 
-              className="modal-close-btn" 
+
+            {/* Close Button */}
+            <button
+              className="modal-close-btn"
               onClick={closeModal}
               aria-label="Close details modal"
             >
               <X size={20} />
             </button>
 
-            {/* Modal Image Header */}
+            {/* Modal Image */}
             <div className="modal-img-wrap mb-4">
-              <img 
-                src={CAP_IMAGES[activeModalCap.id] || "/aboutbg.png"} 
-                alt={activeModalCap.title} 
-                className="modal-banner-img" 
+              <img
+                src={
+                  CAP_IMAGES[activeModalCap.id] ||
+                  "/aboutbg.png"
+                }
+                alt={activeModalCap.title}
+                className="modal-banner-img"
               />
+
               <div className="modal-img-overlay" />
+
               <div className="modal-img-caption">
-                <span className="modal-number-badge me-2">#{activeModalCap.id}</span>
-                <span className="modal-sub-badge">INTEGRATED 360° CAPABILITY</span>
+                <span className="modal-number-badge me-2">
+                  #{activeModalCap.id}
+                </span>
+
+                <span className="modal-sub-badge">
+                  INTEGRATED 360° CAPABILITY
+                </span>
               </div>
             </div>
 
+            {/* Modal Header */}
             <div className="modal-header-section mb-3">
-              <h2 className="modal-cap-title">{activeModalCap.title}</h2>
-              <p className="modal-cap-tagline">{activeModalCap.tagline}</p>
+              <h2 className="modal-cap-title">
+                {activeModalCap.title}
+              </h2>
+
+              <p className="modal-cap-tagline">
+                {activeModalCap.tagline}
+              </p>
             </div>
 
+            {/* Modal Body */}
             <div className="modal-body-section">
+
+              {/* Overview */}
               <div className="modal-overview mb-4">
-                <h4 className="modal-section-h">Overview &amp; Purpose</h4>
-                <p className="modal-overview-text">{activeModalCap.summary}</p>
+                <h4 className="modal-section-h">
+                  Overview &amp; Purpose
+                </h4>
+
+                <p className="modal-overview-text">
+                  {activeModalCap.summary}
+                </p>
               </div>
 
+              {/* Scope */}
               <div className="modal-scope mb-4">
-                <h4 className="modal-section-h">Scope of Operation &amp; Deliverables</h4>
+                <h4 className="modal-section-h">
+                  Scope of Operation &amp; Deliverables
+                </h4>
+
                 <ul className="modal-scope-list">
                   {activeModalCap.scope.map((item, i) => (
-                    <li key={i} className="modal-scope-item">
-                      <CheckCircle size={17} className="text-danger flex-shrink-0 mt-1" />
+                    <li
+                      key={i}
+                      className="modal-scope-item"
+                    >
+                      <CheckCircle
+                        size={17}
+                        className="text-danger flex-shrink-0 mt-1"
+                      />
+
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
+              {/* Outcomes */}
               <div className="modal-outcomes-box p-3 mb-4">
-                <h5 className="mb-1 text-danger fw-bold fs-6">Target Business Outcome:</h5>
-                <p className="mb-0 text-slate-700" style={{ fontSize: '14.5px', lineHeight: '1.6' }}>
+                <h5 className="mb-1 text-danger fw-bold fs-6">
+                  Target Business Outcome:
+                </h5>
+
+                <p
+                  className="mb-0 text-slate-700"
+                  style={{
+                    fontSize: '14.5px',
+                    lineHeight: '1.6',
+                  }}
+                >
                   {activeModalCap.outcomes}
                 </p>
               </div>
 
+              {/* Footer Actions */}
               <div className="modal-footer-actions d-flex flex-wrap gap-3 align-items-center justify-content-between pt-3 border-top">
-                <a 
-                  href={`#contact?capability=${encodeURIComponent(activeModalCap.title)}`}
+
+                <a
+                  href={`#contact?capability=${encodeURIComponent(
+                    activeModalCap.title
+                  )}`}
                   className="btn-nexora-primary"
                   onClick={() => {
                     closeModal();
-                    const el = document.getElementById('contact');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+
+                    const el =
+                      document.getElementById('contact');
+
+                    if (el) {
+                      el.scrollIntoView({
+                        behavior: 'smooth',
+                      });
+                    }
                   }}
                 >
                   <span>Request this capability</span>
                   <ArrowRight size={17} />
                 </a>
-                <button className="btn btn-outline-secondary rounded-pill px-4" onClick={closeModal}>
+
+                <button
+                  className="btn btn-outline-secondary rounded-pill px-4"
+                  onClick={closeModal}
+                >
                   Close
                 </button>
+
               </div>
             </div>
-
           </div>
         </div>
       )}
 
       <style>{`
         .capabilities-nexora-section {
-          background: 
-            radial-gradient(ellipse 80% 50% at 85% 15%, rgba(254, 215, 170, 0.5) 0%, transparent 60%),
-            radial-gradient(ellipse 70% 50% at 15% 55%, rgba(254, 226, 226, 0.55) 0%, transparent 60%),
-            radial-gradient(circle at 50% 95%, rgba(254, 215, 170, 0.35) 0%, transparent 50%),
+          background:
+            radial-gradient(
+              ellipse 80% 50% at 85% 15%,
+              rgba(254, 215, 170, 0.5) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              ellipse 70% 50% at 15% 55%,
+              rgba(254, 226, 226, 0.55) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              circle at 50% 95%,
+              rgba(254, 215, 170, 0.35) 0%,
+              transparent 50%
+            ),
             #F8FAFC;
+
           color: #0F172A;
           position: relative;
           overflow: hidden;
         }
+
         .capabilities-nexora-section::before {
           content: '';
           position: absolute;
           inset: 0;
-          background-image: 
-            radial-gradient(rgba(148, 163, 184, 0.25) 1.2px, transparent 1.2px);
+          background-image:
+            radial-gradient(
+              rgba(148, 163, 184, 0.25) 1.2px,
+              transparent 1.2px
+            );
+
           background-size: 24px 24px;
           pointer-events: none;
           opacity: 0.8;
           z-index: 0;
         }
+
         .capabilities-nexora-section .container {
           position: relative;
           z-index: 1;
         }
-        .capabilities-nexora-section .nexora-section-badge {
+
+        .capabilities-nexora-section
+          .nexora-section-badge {
           display: inline-block;
           font-size: 12px;
           font-weight: 800;
           letter-spacing: 1.5px;
           color: #DC2626;
-          background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(249, 115, 22, 0.1) 100%);
+          background:
+            linear-gradient(
+              135deg,
+              rgba(220, 38, 38, 0.08) 0%,
+              rgba(249, 115, 22, 0.1) 100%
+            );
+
           border: 1px solid rgba(220, 38, 38, 0.25);
-          box-shadow: 0 2px 10px rgba(220, 38, 38, 0.06);
+          box-shadow:
+            0 2px 10px rgba(220, 38, 38, 0.06);
+
           padding: 6px 16px;
           border-radius: 9999px;
           text-transform: uppercase;
         }
-        .capabilities-nexora-section .nexora-section-title {
+
+        .capabilities-nexora-section
+          .nexora-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.6rem);
           font-weight: 800;
           color: #0F172A;
           line-height: 1.25;
         }
-        .capabilities-nexora-section .nexora-lead-text {
+
+        .capabilities-nexora-section
+          .nexora-lead-text {
           font-size: clamp(1rem, 1.2vw, 1.15rem);
           line-height: 1.75;
           color: #475569;
         }
 
-        /* Filter Pills */
         .cap-filter-pill {
           display: inline-flex;
           align-items: center;
@@ -331,22 +495,35 @@ const NexoraCapabilities = () => {
           font-weight: 700;
           padding: 8px 18px;
           border-radius: 9999px;
-          box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+          box-shadow:
+            0 2px 10px rgba(15, 23, 42, 0.04);
           transition: all 0.25s ease;
           cursor: pointer;
         }
+
         .cap-filter-pill:hover {
           color: #DC2626;
           border-color: #F87171;
           transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(220, 38, 38, 0.1);
+          box-shadow:
+            0 6px 16px rgba(220, 38, 38, 0.1);
         }
+
         .cap-filter-pill.active {
-          background: linear-gradient(135deg, #DC2626 0%, #FF5722 50%, #F97316 100%);
+          background:
+            linear-gradient(
+              135deg,
+              #DC2626 0%,
+              #FF5722 50%,
+              #F97316 100%
+            );
+
           color: #FFFFFF;
           border-color: transparent;
-          box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+          box-shadow:
+            0 6px 20px rgba(220, 38, 38, 0.3);
         }
+
         .pill-counter {
           font-size: 11px;
           padding: 2px 7px;
@@ -354,41 +531,58 @@ const NexoraCapabilities = () => {
           background: rgba(15, 23, 42, 0.08);
           color: inherit;
         }
+
         .cap-filter-pill.active .pill-counter {
           background: rgba(255, 255, 255, 0.25);
           color: #FFFFFF;
         }
 
-        /* Enhanced Capability Card with Image */
         .capability-card-enhanced {
           background: #FFFFFF;
           border: 1px solid rgba(226, 232, 240, 0.9);
           border-radius: 22px;
           overflow: hidden;
-          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          transition:
+            all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;
           display: flex;
           flex-direction: column;
-          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+          box-shadow:
+            0 8px 24px rgba(15, 23, 42, 0.05),
+            0 2px 6px rgba(0, 0, 0, 0.02);
+
           position: relative;
         }
+
         .capability-card-enhanced::before {
           content: '';
           position: absolute;
-          top: 0; left: 0; right: 0;
+          top: 0;
+          left: 0;
+          right: 0;
           height: 3px;
-          background: linear-gradient(90deg, #DC2626, #FF5722);
+
+          background:
+            linear-gradient(
+              90deg,
+              #DC2626,
+              #FF5722
+            );
+
           opacity: 0;
           transition: opacity 0.3s ease;
           z-index: 5;
         }
+
         .capability-card-enhanced:hover::before {
           opacity: 1;
         }
+
         .capability-card-enhanced:hover {
           transform: translateY(-8px);
           border-color: #FCA5A5;
-          box-shadow: 0 22px 48px rgba(220, 38, 38, 0.14);
+          box-shadow:
+            0 22px 48px rgba(220, 38, 38, 0.14);
         }
 
         .cap-img-container {
@@ -398,32 +592,49 @@ const NexoraCapabilities = () => {
           overflow: hidden;
           background: #0B0F17;
         }
+
         .cap-card-img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: transform 0.5s ease;
         }
-        .capability-card-enhanced:hover .cap-card-img {
+
+        .capability-card-enhanced:hover
+          .cap-card-img {
           transform: scale(1.08);
         }
+
         .cap-img-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(11, 15, 23, 0.15) 0%, rgba(11, 15, 23, 0.75) 100%);
+          background:
+            linear-gradient(
+              180deg,
+              rgba(11, 15, 23, 0.15) 0%,
+              rgba(11, 15, 23, 0.75) 100%
+            );
         }
 
         .cap-number-badge {
           position: absolute;
           top: 14px;
           left: 14px;
-          background: linear-gradient(135deg, #DC2626 0%, #FF5722 100%);
+          background:
+            linear-gradient(
+              135deg,
+              #DC2626 0%,
+              #FF5722 100%
+            );
+
           color: #FFFFFF;
           font-size: 13px;
           font-weight: 800;
           padding: 4px 12px;
           border-radius: 9999px;
-          box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+          box-shadow:
+            0 4px 12px rgba(220, 38, 38, 0.4);
+
           z-index: 2;
         }
 
@@ -443,7 +654,9 @@ const NexoraCapabilities = () => {
           z-index: 2;
           transition: all 0.3s ease;
         }
-        .capability-card-enhanced:hover .cap-icon-circle {
+
+        .capability-card-enhanced:hover
+          .cap-icon-circle {
           background: #DC2626;
           border-color: #DC2626;
           transform: scale(1.1);
@@ -455,6 +668,7 @@ const NexoraCapabilities = () => {
           color: #0F172A;
           line-height: 1.3;
         }
+
         .cap-tagline {
           color: #64748B;
           font-size: 14px;
@@ -474,23 +688,28 @@ const NexoraCapabilities = () => {
         .cap-action {
           border-top: 1px solid #F1F5F9;
         }
+
         .view-details-btn {
           font-size: 13.5px;
           font-weight: 700;
           color: #DC2626;
           transition: all 0.25s ease;
         }
-        .capability-card-enhanced:hover .view-details-btn {
+
+        .capability-card-enhanced:hover
+          .view-details-btn {
           color: #FF5722;
         }
+
         .cap-arrow {
           transition: transform 0.25s ease;
         }
-        .capability-card-enhanced:hover .cap-arrow {
+
+        .capability-card-enhanced:hover
+          .cap-arrow {
           transform: translateX(5px);
         }
 
-        /* Modal Styles */
         .modal-backdrop-custom {
           position: fixed;
           inset: 0;
@@ -503,10 +722,17 @@ const NexoraCapabilities = () => {
           padding: 20px;
           animation: fadeIn 0.25s ease;
         }
+
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
         }
+
         .modal-card-custom {
           background: #FFFFFF;
           border-radius: 24px;
@@ -516,14 +742,26 @@ const NexoraCapabilities = () => {
           overflow-y: auto;
           padding: 28px;
           position: relative;
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+          box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.25);
+
           border: 1.5px solid #FCA5A5;
-          animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          animation:
+            slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         @keyframes slideUp {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+          from {
+            transform: translateY(20px);
+            opacity: 0;
+          }
+
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
+
         .modal-close-btn {
           position: absolute;
           top: 16px;
@@ -540,8 +778,10 @@ const NexoraCapabilities = () => {
           cursor: pointer;
           transition: all 0.2s ease;
           z-index: 10;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.08);
         }
+
         .modal-close-btn:hover {
           background: #FEE2E2;
           color: #DC2626;
@@ -555,16 +795,24 @@ const NexoraCapabilities = () => {
           overflow: hidden;
           position: relative;
         }
+
         .modal-banner-img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
+
         .modal-img-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, transparent 40%, rgba(11, 15, 23, 0.85) 100%);
+          background:
+            linear-gradient(
+              180deg,
+              transparent 40%,
+              rgba(11, 15, 23, 0.85) 100%
+            );
         }
+
         .modal-img-caption {
           position: absolute;
           bottom: 14px;
@@ -572,11 +820,13 @@ const NexoraCapabilities = () => {
           display: flex;
           align-items: center;
         }
+
         .modal-number-badge {
           color: #FFFFFF;
           font-size: 16px;
           font-weight: 900;
         }
+
         .modal-sub-badge {
           font-size: 11px;
           font-weight: 800;
@@ -587,18 +837,21 @@ const NexoraCapabilities = () => {
           padding: 3px 10px;
           border-radius: 6px;
         }
+
         .modal-cap-title {
           font-size: 24px;
           font-weight: 800;
           color: #0F172A;
           margin-bottom: 6px;
         }
+
         .modal-cap-tagline {
           font-size: 16px;
           font-weight: 600;
           color: #FF5722;
           margin-bottom: 0;
         }
+
         .modal-section-h {
           font-size: 14px;
           font-weight: 800;
@@ -607,16 +860,19 @@ const NexoraCapabilities = () => {
           color: #64748B;
           margin-bottom: 10px;
         }
+
         .modal-overview-text {
           font-size: 15px;
           color: #334155;
           line-height: 1.65;
         }
+
         .modal-scope-list {
           list-style: none;
           padding: 0;
           margin: 0;
         }
+
         .modal-scope-item {
           display: flex;
           align-items: flex-start;
@@ -626,6 +882,7 @@ const NexoraCapabilities = () => {
           margin-bottom: 10px;
           line-height: 1.5;
         }
+
         .modal-outcomes-box {
           background: #FEF2F2;
           border-left: 4px solid #DC2626;
@@ -638,9 +895,11 @@ const NexoraCapabilities = () => {
             padding: 20px 16px;
             border-radius: 18px;
           }
+
           .modal-img-wrap {
             height: 140px;
           }
+
           .cap-img-container {
             height: 160px;
           }
