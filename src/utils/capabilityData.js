@@ -217,3 +217,158 @@ export const CAPABILITIES = [
       "Cut operational processing costs by up to 70% while operating 24/7 with zero human fatigue.",
   },
 ];
+
+export const VALUES_CENTRIVA = [
+  {
+    letter: "C",
+    title: "Customer-Centricity",
+    description:
+      "Putting client goals, end-user experience, and long-term partnership at the core of every capability pod and delivery model.",
+  },
+  {
+    letter: "E",
+    title: "Excellence",
+    description:
+      "Delivering high-quality solutions, measurable outcomes, and exceptional service standards in everything we do.",
+  },
+  {
+    letter: "N",
+    title: "Next-Generation Thinking",
+    description:
+      "Embracing emerging technologies, AI, and digital transformation to create smarter solutions and future-ready operating models.",
+  },
+  {
+    letter: "T",
+    title: "Transparency & Trust",
+    description:
+      "Building lasting relationships through open communication, ethical governance, and complete operational visibility.",
+  },
+  {
+    letter: "R",
+    title: "Reliability",
+    description:
+      "Delivering consistent performance, robust infrastructure, and dependable service quality clients can count on.",
+  },
+  {
+    letter: "I",
+    title: "Innovation",
+    description:
+      "Continuously reimagining processes, automating workflows, and driving ongoing operational improvement.",
+  },
+  {
+    letter: "V",
+    title: "Value Creation",
+    description:
+      "Focusing relentlessly on tangible business impact, cost efficiency, and sustainable strategic ROI across the enterprise.",
+  },
+  {
+    letter: "A",
+    title: "Agility",
+    description:
+      "Adapting rapidly to evolving business needs, market dynamics, and technological change — flexible in every engagement.",
+  },
+  {
+    letter: "360°",
+    title: "Optimization & Value",
+    description:
+      "Looking at the business from every angle to find optimization, efficiency, and sustainable growth across the ecosystem.",
+  },
+];
+
+export const VALUES_NEXORA = VALUES_CENTRIVA;
+
+export const COMMITMENTS = [
+  {
+    title: "Reliability",
+    description:
+      "Delivering consistently and taking ownership of our commitments.",
+  },
+  {
+    title: "Excellence",
+    description:
+      "Maintaining high standards across people, processes and technology.",
+  },
+  {
+    title: "Innovation",
+    description:
+      "Continuously exploring better ways to solve business challenges.",
+  },
+  {
+    title: "Agility",
+    description:
+      "Adapting quickly to changing business requirements.",
+  },
+  {
+    title: "Transparency",
+    description:
+      "Building relationships through clear communication and measurable performance.",
+  },
+  {
+    title: "Customer Success",
+    description:
+      "Measuring our success by the value and results we create for our clients.",
+  },
+];
+
+export const ECOSYSTEM_NODES = [
+  {
+    id: "01",
+    name: "Digital Marketing",
+    full: "Digital Marketing Services",
+  },
+  {
+    id: "02",
+    name: "Digital Sales",
+    full: "Digital Sales & Lead Gen",
+  },
+  {
+    id: "03",
+    name: "Customer Experience",
+    full: "CX & Contact Centre",
+  },
+  {
+    id: "04",
+    name: "GCC",
+    full: "Global Capability Centres",
+  },
+  {
+    id: "05",
+    name: "KPO",
+    full: "Knowledge Process Outsourcing",
+  },
+  {
+    id: "06",
+    name: "BPO",
+    full: "Business Process Outsourcing",
+  },
+  {
+    id: "07",
+    name: "HR & Recruitment",
+    full: "HR & Talent Acquisition",
+  },
+  {
+    id: "08",
+    name: "Data Management",
+    full: "Data Management & Processing",
+  },
+  {
+    id: "09",
+    name: "Finance & Accounting",
+    full: "Finance, AP/AR & Accounting",
+  },
+  {
+    id: "10",
+    name: "Administration",
+    full: "Administrative & Back-Office",
+  },
+  {
+    id: "11",
+    name: "Sales & Customer Support",
+    full: "Sales & Customer Support Operations",
+  },
+  {
+    id: "12",
+    name: "AI & Automation",
+    full: "AI & Process Automation",
+  },
+];
