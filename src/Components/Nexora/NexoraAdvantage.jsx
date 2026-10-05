@@ -54,21 +54,21 @@ const ECOSYSTEM_NODES = [
   },
 
   {
-    id: "09",
+    id: "08",
     name: "Finance",
     full: "Finance & Accounting Support",
     image: "/fi.png",
     desc: "End-to-end ledger accounting, accounts payable/receivable, payroll processing, financial reporting, and audit support.",
   },
   {
-    id: "10",
+    id: "09",
     name: "Administration",
     full: "Administrative & Back-Office Support",
     image: "/su.png",
     desc: "Virtual executive assistance, calendar coordination, document management, travel logistics, and operational support.",
   },
   {
-    id: "11",
+    id: "10",
     name: "Sales & Support",
     full: "Sales & Customer Support Operations",
     image: "/sales.png",
