@@ -127,9 +127,26 @@ export const CAPABILITIES = [
       "Reduce hiring lead time by 50%, access global talent pools, and maintain 100% statutory labor compliance.",
   },
 
-
   {
     id: "08",
+    slug: "data-management-processing",
+    title: "Data Management & Processing",
+    tagline: "Structured data. Smarter decisions.",
+    summary:
+      "Comprehensive data hygiene, extraction, normalization, and annotation pipelines transforming unstructured clutter into strategic assets.",
+    scope: [
+      "Large-scale data entry, verification, and automated validation",
+      "Data cleansing, deduplication, and master data management (MDM)",
+      "Image, text, and video annotation for AI and machine learning models",
+      "ETL data pipelines and legacy system migration support",
+      "Data compliance auditing (GDPR, HIPAA, ISO standards)",
+    ],
+    outcomes:
+      "Clean, reliable, structured data ready for advanced analytics, predictive modeling, and AI model ingestion.",
+  },
+
+  {
+    id: "09",
     slug: "finance-accounting-support",
     title: "Finance & Accounting Support",
     tagline: "Accurate processes, better financial control.",
@@ -147,7 +164,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "09",
+    id: "10",
     slug: "administrative-back-office-support",
     title: "Administrative & Back-Office Support",
     tagline: "We handle the details. You focus on growth.",
@@ -165,7 +182,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "10",
+    id: "11",
     slug: "sales-customer-support-operations",
     title: "Sales & Customer Support Operations",
     tagline: "Extend your team without extending your overheads.",
@@ -182,7 +199,23 @@ export const CAPABILITIES = [
       "Drive Net Revenue Retention (NRR) above 115% while reducing first response time (FRT) to under 5 minutes.",
   },
 
-
+  {
+    id: "12",
+    slug: "ai-automation-services",
+    title: "AI & Automation Services",
+    tagline: "Make your business smarter and more efficient.",
+    summary:
+      "Robotic Process Automation (RPA), custom LLM and generative AI integrations, intelligent document processing, and smart workflow bots.",
+    scope: [
+      "Robotic Process Automation (RPA) for repetitive cross-system tasks",
+      "Enterprise Generative AI copilots and custom internal knowledge bots",
+      "Intelligent Document Processing (IDP) with OCR and LLM reasoning",
+      "Custom API connectors and cross-platform automated workflows",
+      "AI feasibility consulting, prompt engineering & security guardrails",
+    ],
+    outcomes:
+      "Cut operational processing costs by up to 70% while operating 24/7 with zero human fatigue.",
+  },
 ];
 
 export const VALUES_CENTRIVA = [
@@ -313,21 +346,29 @@ export const ECOSYSTEM_NODES = [
     name: "HR & Recruitment",
     full: "HR & Talent Acquisition",
   },
-  
   {
     id: "08",
+    name: "Data Management",
+    full: "Data Management & Processing",
+  },
+  {
+    id: "09",
     name: "Finance & Accounting",
     full: "Finance, AP/AR & Accounting",
   },
   {
-    id: "09",
+    id: "10",
     name: "Administration",
     full: "Administrative & Back-Office",
   },
   {
-    id: "10",
+    id: "11",
     name: "Sales & Customer Support",
     full: "Sales & Customer Support Operations",
   },
- 
+  {
+    id: "12",
+    name: "AI & Automation",
+    full: "AI & Process Automation",
+  },
 ];
