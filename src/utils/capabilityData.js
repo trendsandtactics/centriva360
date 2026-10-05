@@ -129,7 +129,7 @@ export const CAPABILITIES = [
 
 
   {
-    id: "09",
+    id: "08",
     slug: "finance-accounting-support",
     title: "Finance & Accounting Support",
     tagline: "Accurate processes, better financial control.",
@@ -147,7 +147,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "10",
+    id: "09",
     slug: "administrative-back-office-support",
     title: "Administrative & Back-Office Support",
     tagline: "We handle the details. You focus on growth.",
@@ -165,7 +165,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "11",
+    id: "10",
     slug: "sales-customer-support-operations",
     title: "Sales & Customer Support Operations",
     tagline: "Extend your team without extending your overheads.",
@@ -315,17 +315,17 @@ export const ECOSYSTEM_NODES = [
   },
   
   {
-    id: "09",
+    id: "08",
     name: "Finance & Accounting",
     full: "Finance, AP/AR & Accounting",
   },
   {
-    id: "10",
+    id: "09",
     name: "Administration",
     full: "Administrative & Back-Office",
   },
   {
-    id: "11",
+    id: "10",
     name: "Sales & Customer Support",
     full: "Sales & Customer Support Operations",
   },
