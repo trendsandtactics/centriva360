@@ -104,7 +104,7 @@ const NexoraContact = () => {
             <div className="contact-info-panel h-100 p-4 p-lg-5 overflow-hidden position-relative">
 
               <h3 className="panel-title mb-3">
-                Centriva360 Global Solutions
+                Centriva360 
               </h3>
 
               <p
@@ -132,7 +132,7 @@ const NexoraContact = () => {
                   </span>
 
                   <p className="info-value">
-                    Centriva360 Global Solutions Pvt. Ltd.
+                 Centriva360 Pvt Ltd
                   </p>
                 </div>
               </div>
@@ -153,7 +153,7 @@ const NexoraContact = () => {
                       href="mailto:info@centriva360global.com"
                       className="text-white text-decoration-none hover-orange"
                     >
-                      info@centriva360global.com
+                      info@centriva360.com
                     </a>
                   </p>
                 </div>
