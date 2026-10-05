@@ -52,13 +52,7 @@ const ECOSYSTEM_NODES = [
     image: "/hr.png",
     desc: "Global executive search, Employer of Record (EOR), cross-border payroll, and end-to-end talent solutions.",
   },
-  {
-    id: "08",
-    name: "Data Management",
-    full: "Data Management & Processing",
-    image: "/data.png",
-    desc: "Reliable data processing, cleansing, validation, annotation, migration, and structured information solutions.",
-  },
+
   {
     id: "09",
     name: "Finance",
@@ -80,13 +74,7 @@ const ECOSYSTEM_NODES = [
     image: "/sales.png",
     desc: "Customer success, technical support, onboarding, renewals, upsell opportunities, and customer retention operations.",
   },
-  {
-    id: "12",
-    name: "AI & Automation",
-    full: "AI & Automation Services",
-    image: "/ai.png",
-    desc: "RPA bots, enterprise Generative AI copilots, intelligent document processing, and custom cross-system automations.",
-  },
+
 ];
 
 const NexoraAdvantage = () => {
