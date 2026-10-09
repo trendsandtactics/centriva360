@@ -87,6 +87,27 @@ const ECOSYSTEM_NODES = [
     image: "/ai.png",
     desc: "RPA bots, enterprise Generative AI copilots, intelligent document processing, and custom cross-system automations.",
   },
+    {
+    id: "13",
+    name: "IT & Networking",
+    full: "IT & Networking Solutions",
+    image: "/it.png",
+    desc: "IT infrastructure, network management, technical support, system administration, cybersecurity support, and reliable technology operations.",
+  },
+  {
+    id: "14",
+    name: "Learning & Development",
+    full: "Learning & Development",
+    image: "/learning.png",
+    desc: "Corporate training, employee development, capability building, process training, knowledge management, and competency enhancement.",
+  },
+  {
+    id: "15",
+    name: "Process Excellence",
+    full: "Process Excellence & Continuous Improvement",
+    image: "/process.png",
+    desc: "Process optimization, SOP development, process re-engineering, Lean and Six Sigma initiatives, KPI improvement, workflow automation, quality management, and operational excellence.",
+  },
 ];
 
 const NexoraAdvantage = () => {
