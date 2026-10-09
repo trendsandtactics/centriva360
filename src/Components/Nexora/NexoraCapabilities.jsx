@@ -46,6 +46,9 @@ const CAP_IMAGES = {
   "10": "/su.png",
   "11": "/sales.png",
   "12": "/ai.png",
+  "13": "/it.png",
+  "14": "learning.png",
+  "15": "process.png",
 };
 
 const NexoraCapabilities = () => {
