@@ -215,6 +215,58 @@ export const CAPABILITIES = [
     ],
     outcomes:
       "Cut operational processing costs by up to 70% while operating 24/7 with zero human fatigue.",
+  },  {
+    id: "13",
+    slug: "it-networking-solutions",
+    title: "IT & Networking Solutions",
+    tagline: "Secure, connected, and reliable technology infrastructure.",
+    summary:
+      "End-to-end IT infrastructure, networking, and technical support services that ensure secure, reliable, and scalable technology operations.",
+    scope: [
+      "IT infrastructure design, deployment, and maintenance",
+      "Network configuration, monitoring, and troubleshooting",
+      "System administration and endpoint management",
+      "Cybersecurity support and vulnerability management",
+      "IT helpdesk, incident management, and technical support",
+    ],
+    outcomes:
+      "Improve system reliability, strengthen security, minimize downtime, and maintain business continuity.",
+  },
+
+  {
+    id: "14",
+    slug: "learning-and-development",
+    title: "Learning & Development",
+    tagline: "Build skills. Strengthen teams. Enable growth.",
+    summary:
+      "Structured learning and development programs designed to enhance employee capabilities, improve workforce performance, and support organizational growth.",
+    scope: [
+      "Corporate training and professional development programs",
+      "Employee onboarding and role-based capability building",
+      "Process training and standard operating procedure (SOP) training",
+      "Knowledge management and organizational learning systems",
+      "Competency assessments and skills gap analysis",
+    ],
+    outcomes:
+      "Strengthen workforce capabilities, accelerate employee readiness, and improve productivity through continuous learning.",
+  },
+
+  {
+    id: "15",
+    slug: "process-excellence-continuous-improvement",
+    title: "Process Excellence & Continuous Improvement",
+    tagline: "Optimize processes. Improve performance. Deliver excellence.",
+    summary:
+      "Process optimization and continuous improvement solutions focused on eliminating inefficiencies, standardizing workflows, improving quality, and maximizing operational performance.",
+    scope: [
+      "Process optimization and business process re-engineering",
+      "SOP development, documentation, and standardization",
+      "Lean and Six Sigma improvement initiatives",
+      "KPI improvement, performance measurement, and root cause analysis",
+      "Workflow automation, quality management, and operational excellence",
+    ],
+    outcomes:
+      "Reduce operational inefficiencies, improve process quality, shorten cycle times, and drive measurable performance improvements.",
   },
 ];
 
