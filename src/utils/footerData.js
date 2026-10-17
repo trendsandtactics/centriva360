@@ -3,8 +3,8 @@ import { addLog, isApiAvailable } from './adminData';
 const DEFAULT_FOOTER = {
   company: 'Centriva360 Global Solutions Pvt. Ltd.',
   tagline: 'One partner. Every business need.',
-  address: 'ED-305, Bollineni Hillside Phase 2,\nChennai 600126',
-  email: 'info@centriva360global.com',
+  address: 'ED-305, Bollineni Hillside Phase 2,\nPerumbakkam, Chennai 600126',
+  email: 'info@centriva360.com',
   phone_1: '+91 96556 80234',
   phone_2: '',
   phone_3: '',

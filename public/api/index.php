@@ -223,13 +223,13 @@ try {
     if ($stmt->fetchColumn() == 0) {
         $insertFooter = $pdo->prepare("INSERT INTO footer_details (address, email, phone_1, phone_2, phone_3, copyright, linkedin_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $insertFooter->execute([
-            "1 Global Enterprises Pte Ltd\n#03-01, Keppel Distripark,\n511 Kampong Bahru Road,\nSingapore 099447",
-            "info@1ge.sg",
-            "+65 69080838",
-            "+65 69080849",
-            "+65 98177292",
-            "© 1 Global Enterprises, All Rights Reserved.",
-            "https://www.linkedin.com/company/1-global-enterprises/"
+            "Centriva360 Global Solutions Pvt Ltd\nED-305, Bollineni Hillside Phase 2,\nPerumbakkam, Chennai 600126",
+            "info@centriva360.com",
+            "+91 96556 80234",
+            "",
+            "",
+            "© 2026 Centriva360 Global Solutions Private Limited",
+            "https://www.linkedin.com/company/centriva360-global-solutions"
         ]);
     }
 
@@ -383,6 +383,239 @@ try {
 }
 
 // ----------------------------------------------------
+// EMAIL NOTIFICATION HELPERS (info@centriva360.com)
+// ----------------------------------------------------
+function sendViaSmtp($to, $subject, $htmlContent, $plainText, $replyEmail, $replyName) {
+    $host = getenv('SMTP_HOST');
+    if (empty($host)) return false;
+
+    $port = (int)(getenv('SMTP_PORT') ?: 465);
+    $user = getenv('SMTP_USER') ?: '';
+    $pass = getenv('SMTP_PASS') ?: '';
+    $secure = strtolower(getenv('SMTP_SECURE') ?: ($port === 465 ? 'ssl' : 'tls'));
+    $fromEmail = getenv('MAIL_FROM') ?: ($user ?: 'noreply@centriva360.com');
+    $fromName = 'Centriva360 Contact Portal';
+
+    $address = ($secure === 'ssl' ? 'ssl://' : '') . $host;
+    $context = stream_context_create([
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true,
+        ]
+    ]);
+
+    $socket = @stream_socket_client($address . ':' . $port, $errno, $errstr, 12, STREAM_CLIENT_CONNECT, $context);
+    if (!$socket) {
+        error_log("SMTP connection failed: $errstr ($errno)");
+        return false;
+    }
+
+    $read = function() use ($socket) {
+        $data = '';
+        while ($str = fgets($socket, 515)) {
+            $data .= $str;
+            if (substr($str, 3, 1) === ' ') break;
+        }
+        return $data;
+    };
+
+    $send = function($cmd) use ($socket, $read) {
+        fputs($socket, $cmd . "\r\n");
+        return $read();
+    };
+
+    $read();
+    $serverDomain = getenv('SERVER_NAME') ?: 'centriva360.com';
+    $send("EHLO " . $serverDomain);
+
+    if ($secure === 'tls') {
+        $send("STARTTLS");
+        stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+        $send("EHLO " . $serverDomain);
+    }
+
+    if (!empty($user) && !empty($pass)) {
+        $send("AUTH LOGIN");
+        $send(base64_encode($user));
+        $send(base64_encode($pass));
+    }
+
+    $send("MAIL FROM:<$fromEmail>");
+    $send("RCPT TO:<$to>");
+    $send("DATA");
+
+    $boundary = "boundary_" . md5(uniqid(time()));
+    $headers = [
+        "From: =?UTF-8?B?" . base64_encode($fromName) . "?= <$fromEmail>",
+        "To: <$to>",
+        "Subject: =?UTF-8?B?" . base64_encode($subject) . "?=",
+        "Date: " . date('r'),
+        "MIME-Version: 1.0",
+        "Content-Type: multipart/alternative; boundary=\"$boundary\"",
+        "X-Mailer: Centriva360 PHP Gateway"
+    ];
+    if (!empty($replyEmail)) {
+        $headers[] = "Reply-To: =?UTF-8?B?" . base64_encode($replyName ?: $replyEmail) . "?= <$replyEmail>";
+    }
+
+    $body = implode("\r\n", $headers) . "\r\n\r\n";
+    $body .= "--$boundary\r\n";
+    $body .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
+    $body .= chunk_split(base64_encode($plainText)) . "\r\n";
+    $body .= "--$boundary\r\n";
+    $body .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $body .= "Content-Transfer-Encoding: base64\r\n\r\n";
+    $body .= chunk_split(base64_encode($htmlContent)) . "\r\n";
+    $body .= "--$boundary--\r\n";
+    $body .= ".";
+
+    $send($body);
+    $send("QUIT");
+    fclose($socket);
+
+    return true;
+}
+
+function sendInquiryEmail($inquiry) {
+    $to = getenv('INQUIRY_NOTIFICATION_EMAIL') ?: 'info@centriva360.com';
+    $name = trim($inquiry['name'] ?? 'Website Visitor');
+    $email = trim($inquiry['email'] ?? 'Not provided');
+    $subjectRaw = trim($inquiry['subject'] ?? 'New Contact Inquiry');
+    $messageRaw = trim($inquiry['message'] ?? '');
+    $inquiryId = $inquiry['id'] ?? 'N/A';
+    $dateStr = date('d M Y, h:i A T');
+
+    $emailSubject = "New Contact Inquiry: " . $subjectRaw . " [#" . $inquiryId . "]";
+
+    $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+    $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+    $safeSubject = htmlspecialchars($subjectRaw, ENT_QUOTES, 'UTF-8');
+    $safeMessage = nl2br(htmlspecialchars($messageRaw, ENT_QUOTES, 'UTF-8'));
+
+    $htmlBody = <<<HTML
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0B0F17; color: #1E293B; margin: 0; padding: 24px; }
+  .email-container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 1px solid #E2E8F0; }
+  .email-header { background: #0B0F17; padding: 28px 32px; border-bottom: 3px solid #DC2626; color: #ffffff; }
+  .badge-tag { display: inline-block; background: rgba(220, 38, 38, 0.2); border: 1px solid #DC2626; color: #FF5722; font-size: 11px; font-weight: 800; letter-spacing: 1px; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; margin-bottom: 8px; }
+  .header-title { font-size: 20px; font-weight: 800; margin: 0; color: #ffffff; }
+  .header-subtitle { font-size: 13px; color: #94A3B8; margin-top: 4px; }
+  .email-body { padding: 32px; }
+  .info-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+  .info-table td { padding: 10px 0; border-bottom: 1px solid #F1F5F9; font-size: 14px; vertical-align: top; }
+  .info-label { width: 140px; font-weight: 700; color: #64748B; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-value { color: #0F172A; font-weight: 600; }
+  .message-box { background: #F8FAFC; border: 1.5px solid #E2E8F0; border-left: 4px solid #DC2626; border-radius: 8px; padding: 18px 20px; font-size: 14.5px; line-height: 1.6; color: #334155; margin-bottom: 24px; }
+  .action-wrap { text-align: center; margin: 28px 0 10px; }
+  .btn-reply { display: inline-block; background: linear-gradient(135deg, #DC2626 0%, #FF5722 100%); color: #ffffff !important; text-decoration: none; padding: 12px 28px; border-radius: 9999px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 14px rgba(220,38,38,0.3); }
+  .email-footer { background: #F8FAFC; border-top: 1px solid #E2E8F0; padding: 18px 32px; font-size: 12px; color: #64748B; text-align: center; }
+</style>
+</head>
+<body>
+<div class="email-container">
+  <div class="email-header">
+    <div class="badge-tag">Centriva360 Website Inquiry</div>
+    <h1 class="header-title">New Contact Submission</h1>
+    <div class="header-subtitle">Inquiry #{$inquiryId} &bull; Received on {$dateStr}</div>
+  </div>
+  <div class="email-body">
+    <table class="info-table">
+      <tr>
+        <td class="info-label">Sender Name:</td>
+        <td class="info-value">{$safeName}</td>
+      </tr>
+      <tr>
+        <td class="info-label">Email Address:</td>
+        <td class="info-value"><a href="mailto:{$safeEmail}" style="color:#DC2626; text-decoration:none;">{$safeEmail}</a></td>
+      </tr>
+      <tr>
+        <td class="info-label">Subject:</td>
+        <td class="info-value">{$safeSubject}</td>
+      </tr>
+      <tr>
+        <td class="info-label">Timestamp:</td>
+        <td class="info-value">{$dateStr}</td>
+      </tr>
+    </table>
+
+    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.8px; color:#64748B; margin-bottom:8px;">
+      Message Details
+    </div>
+    <div class="message-box">
+      {$safeMessage}
+    </div>
+
+    <div class="action-wrap">
+      <a href="mailto:{$safeEmail}?subject=Re:%20{$safeSubject}%20-%20Centriva360" class="btn-reply">
+        Reply to {$safeName}
+      </a>
+    </div>
+  </div>
+  <div class="email-footer">
+    This inquiry was submitted from the contact form on <strong>Centriva360 Global Solutions</strong>.<br>
+    Destination: <a href="mailto:{$to}" style="color:#DC2626; text-decoration:none;">{$to}</a>
+  </div>
+</div>
+</body>
+</html>
+HTML;
+
+    $plainBody = "====================================================\n"
+               . "NEW CONTACT INQUIRY - Centriva360 Global Solutions\n"
+               . "====================================================\n\n"
+               . "Inquiry ID: #{$inquiryId}\n"
+               . "Sender Name: {$name}\n"
+               . "Email Address: {$email}\n"
+               . "Subject: {$subjectRaw}\n"
+               . "Timestamp: {$dateStr}\n\n"
+               . "MESSAGE DETAILS:\n"
+               . "----------------------------------------------------\n"
+               . "{$messageRaw}\n"
+               . "----------------------------------------------------\n\n"
+               . "Reply directly to: {$email}\n";
+
+    // 1. Try SMTP if configured in .env
+    $smtpHost = getenv('SMTP_HOST');
+    if (!empty($smtpHost)) {
+        try {
+            $smtpSent = sendViaSmtp($to, $emailSubject, $htmlBody, $plainBody, $email, $name);
+            if ($smtpSent) return true;
+        } catch (Exception $e) {
+            error_log("SMTP dispatch failed: " . $e->getMessage());
+        }
+    }
+
+    // 2. Fall back to standard PHP mail()
+    $fromEmail = getenv('MAIL_FROM') ?: 'noreply@centriva360.com';
+    $fromName = 'Centriva360 Contact Portal';
+
+    $headers = [];
+    $headers[] = 'MIME-Version: 1.0';
+    $headers[] = 'Content-Type: text/html; charset=UTF-8';
+    $headers[] = "From: {$fromName} <{$fromEmail}>";
+    if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $headers[] = "Reply-To: {$name} <{$email}>";
+    }
+    $headers[] = "X-Mailer: PHP/" . phpversion();
+    $headers[] = "X-Inquiry-ID: " . $inquiryId;
+
+    $headersStr = implode("\r\n", $headers);
+
+    $sent = @mail($to, $emailSubject, $htmlBody, $headersStr, "-f" . $fromEmail);
+    if (!$sent) {
+        $sent = @mail($to, $emailSubject, $htmlBody, $headersStr);
+    }
+
+    return (bool)$sent;
+}
+
+// ----------------------------------------------------
 // ROUTING APIS
 // ----------------------------------------------------
 $action = $_GET['action'] ?? '';
@@ -527,7 +760,23 @@ switch ($action) {
                 $input['subject'] ?? 'No Subject',
                 $input['message']
             ]);
-            echo json_encode(["success" => true, "id" => $pdo->lastInsertId()]);
+            $newId = (int)$pdo->lastInsertId();
+
+            // Trigger email notification to info@centriva360.com
+            $mailSent = sendInquiryEmail([
+                'id' => $newId,
+                'name' => $input['name'] ?? '',
+                'email' => $input['email'] ?? '',
+                'subject' => $input['subject'] ?? 'No Subject',
+                'message' => $input['message'] ?? ''
+            ]);
+
+            echo json_encode([
+                "success" => true,
+                "id" => $newId,
+                "email_sent" => $mailSent,
+                "recipient" => getenv('INQUIRY_NOTIFICATION_EMAIL') ?: 'info@centriva360.com'
+            ]);
         } catch (PDOException $e) {
             echo json_encode(["success" => false, "message" => $e->getMessage()]);
         }
@@ -732,13 +981,13 @@ switch ($action) {
             $footer = $stmt->fetch();
             if (!$footer) {
                 $footer = [
-                    "address" => "1 Global Enterprises Pte Ltd\n#03-01, Keppel Distripark,\n511 Kampong Bahru Road,\nSingapore 099447",
-                    "email" => "info@1ge.sg",
-                    "phone_1" => "+65 69080838",
-                    "phone_2" => "+65 69080849",
-                    "phone_3" => "+65 98177292",
-                    "copyright" => "© 1 Global Enterprises, All Rights Reserved.",
-                    "linkedin_url" => "https://www.linkedin.com/company/1-global-enterprises/"
+                    "address" => "Centriva360 Global Solutions Pvt Ltd\nED-305, Bollineni Hillside Phase 2,\nPerumbakkam, Chennai 600126",
+                    "email" => "info@centriva360.com",
+                    "phone_1" => "+91 96556 80234",
+                    "phone_2" => "",
+                    "phone_3" => "",
+                    "copyright" => "© 2026 Centriva360 Global Solutions Private Limited",
+                    "linkedin_url" => "https://www.linkedin.com/company/centriva360-global-solutions"
                 ];
             }
             echo json_encode(["success" => true, "data" => $footer]);

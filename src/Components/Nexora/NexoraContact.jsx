@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CAPABILITIES } from '../../utils/capabilityData';
 import { addInquiry } from '../../utils/adminData';
+import { sendViaFormSubmit } from '../../utils/formSubmit';
 import {
   Mail,
   Phone,
@@ -28,10 +29,9 @@ const NexoraContact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!formData.fullName || !formData.workEmail || !formData.message) {
+    if (!formData.fullName.trim() || !formData.workEmail.trim() || !formData.message.trim()) {
       setStatus({
         type: 'error',
         text: 'Please fill in all required fields (Name, Work Email, and What you want to outsource).'
@@ -42,20 +42,33 @@ const NexoraContact = () => {
     setIsSubmitting(true);
     setStatus({ type: '', text: '' });
 
-    // Simulate sending & save to inquiry database
-    setTimeout(() => {
-      addInquiry({
-        name: formData.fullName,
-        email: formData.workEmail,
-        subject: `Capability Inquiry: ${formData.capability} (${formData.company || 'Individual'})`,
-        message: `Company: ${formData.company}\nCapability Needed: ${formData.capability}\nDetails:\n${formData.message}`
+    try {
+      const subject = `Capability Inquiry: ${formData.capability} (${formData.company.trim() || 'Individual'})`;
+      const message = `Company: ${formData.company.trim() || 'N/A'}\nCapability Needed: ${formData.capability}\nDetails:\n${formData.message.trim()}`;
+
+      // 1. Send email directly to info@centriva360.com via FormSubmit.co
+      const formSubmitPromise = sendViaFormSubmit({
+        name: formData.fullName.trim(),
+        email: formData.workEmail.trim(),
+        company: formData.company.trim(),
+        capability: formData.capability,
+        message: formData.message.trim()
       });
 
-      setIsSubmitting(false);
+      // 2. Also save to MySQL database for Admin Dashboard tracking
+      const dbPromise = addInquiry({
+        name: formData.fullName.trim(),
+        email: formData.workEmail.trim(),
+        subject,
+        message
+      });
+
+      // Await both operations
+      await Promise.allSettled([formSubmitPromise, dbPromise]);
 
       setStatus({
         type: 'success',
-        text: 'Thank you for reaching out! Your inquiry has been received. Our capability team will connect with you shortly.'
+        text: 'Thank you for reaching out! Your inquiry has been sent to info@centriva360.com. Our capability team will connect with you shortly.'
       });
 
       setFormData({
@@ -65,7 +78,14 @@ const NexoraContact = () => {
         capability: 'Global Capability Centre (GCC) Solutions',
         message: ''
       });
-    }, 600);
+    } catch (err) {
+      setStatus({
+        type: 'error',
+        text: 'An error occurred while sending your message. Please try again or email us directly at info@centriva360.com.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -149,10 +169,7 @@ const NexoraContact = () => {
                   </span>
 
                   <p className="info-value">
-                    <a
-                      href="mailto:info@centriva360global.com"
-                      className="text-white text-decoration-none hover-orange"
-                    >
+                    <a href="mailto:info@centriva360.com" className="text-white text-decoration-none hover-orange">
                       info@centriva360.com
                     </a>
                   </p>
@@ -243,7 +260,16 @@ const NexoraContact = () => {
                 your growth.
               </p>
 
-              <form onSubmit={handleSubmit} noValidate>
+              <form 
+                action="https://formsubmit.co/info@centriva360.com" 
+                method="POST" 
+                onSubmit={handleSubmit} 
+                noValidate
+              >
+                {/* FormSubmit Configuration */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_subject" value={`New Inquiry: ${formData.capability} - Centriva360`} />
 
                 <div className="row g-3">
 
@@ -415,8 +441,7 @@ const NexoraContact = () => {
                     </button>
 
                     <p className="form-disclaimer-note mt-3 text-center mb-0">
-                      This form is front-end only — connect it to your
-                      inbox or CRM before publishing.
+                      Powered by FormSubmit — delivered directly to <strong>info@centriva360.com</strong>.
                     </p>
 
                   </div>

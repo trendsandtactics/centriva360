@@ -8,6 +8,8 @@ import bcrypt from 'bcryptjs';
 import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
+import tls from 'tls';
+import net from 'net';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -62,6 +64,107 @@ const upload = multer({
 
 const ok = (data = {}) => ({ success: true, ...data });
 const fail = (message) => ({ success: false, message });
+
+async function sendInquiryEmail(inquiry) {
+  const recipient = process.env.INQUIRY_NOTIFICATION_EMAIL || 'info@centriva360.com';
+  console.log('\n======================================================');
+  console.log(`[EMAIL DISPATCH] ✉️  New contact inquiry #${inquiry.id} received!`);
+  console.log(`[EMAIL DISPATCH] Recipient: ${recipient}`);
+  console.log(`[EMAIL DISPATCH] Sender: ${inquiry.name} <${inquiry.email}>`);
+  console.log(`[EMAIL DISPATCH] Subject: ${inquiry.subject}`);
+  console.log(`[EMAIL DISPATCH] Message:\n${inquiry.message}`);
+  console.log('======================================================\n');
+
+  if (!process.env.SMTP_HOST) {
+    console.log('[EMAIL DISPATCH] (SMTP_HOST not set in .env — email logged in console. In production on Hostinger, public/api/index.php dispatches this to ' + recipient + ' automatically.)');
+    return false;
+  }
+
+  try {
+    const host = process.env.SMTP_HOST;
+    const port = parseInt(process.env.SMTP_PORT || '465', 10);
+    const user = process.env.SMTP_USER || '';
+    const pass = process.env.SMTP_PASS || '';
+    const isSsl = port === 465;
+
+    await new Promise((resolve, reject) => {
+      const socket = (isSsl ? tls : net).connect({ host, port, rejectUnauthorized: false }, () => {
+        let step = 0;
+        const send = (str) => socket.write(str + '\r\n');
+
+        socket.on('data', (chunk) => {
+          const resp = chunk.toString();
+          if (step === 0 && resp.startsWith('220')) {
+            step++;
+            send(`EHLO centriva360.com`);
+          } else if (step === 1 && resp.startsWith('250')) {
+            step++;
+            if (user && pass) {
+              send('AUTH LOGIN');
+            } else {
+              step = 4;
+              send(`MAIL FROM:<${process.env.MAIL_FROM || 'noreply@centriva360.com'}>`);
+            }
+          } else if (step === 2 && resp.startsWith('334')) {
+            step++;
+            send(Buffer.from(user).toString('base64'));
+          } else if (step === 3 && resp.startsWith('334')) {
+            step++;
+            send(Buffer.from(pass).toString('base64'));
+          } else if (step === 4 && resp.startsWith('235')) {
+            step++;
+            send(`MAIL FROM:<${process.env.MAIL_FROM || 'noreply@centriva360.com'}>`);
+          } else if (step === 5 && resp.startsWith('250')) {
+            step++;
+            send(`RCPT TO:<${recipient}>`);
+          } else if (step === 6 && resp.startsWith('250')) {
+            step++;
+            send('DATA');
+          } else if (step === 7 && resp.startsWith('354')) {
+            step++;
+            const emailData = [
+              `From: Centriva360 Portal <${process.env.MAIL_FROM || 'noreply@centriva360.com'}>`,
+              `To: <${recipient}>`,
+              `Reply-To: ${inquiry.name} <${inquiry.email}>`,
+              `Subject: New Contact Inquiry: ${inquiry.subject} [#${inquiry.id}]`,
+              `MIME-Version: 1.0`,
+              `Content-Type: text/plain; charset=UTF-8`,
+              ``,
+              `New Contact Inquiry from centriva360.com:`,
+              `-----------------------------------------`,
+              `Name: ${inquiry.name}`,
+              `Email: ${inquiry.email}`,
+              `Subject: ${inquiry.subject}`,
+              `Date: ${new Date().toISOString()}`,
+              ``,
+              `Message:`,
+              `${inquiry.message}`,
+              `-----------------------------------------`,
+              `.`
+            ].join('\r\n');
+            send(emailData);
+          } else if (step === 8 && resp.startsWith('250')) {
+            step++;
+            send('QUIT');
+            socket.end();
+            resolve(true);
+          }
+        });
+
+        socket.on('error', (err) => reject(err));
+      });
+      socket.setTimeout(10000, () => {
+        socket.destroy();
+        resolve(false);
+      });
+    });
+    console.log(`[EMAIL DISPATCH] Live email successfully dispatched via SMTP to ${recipient}!`);
+    return true;
+  } catch (err) {
+    console.error(`[EMAIL DISPATCH] SMTP dispatch error:`, err.message);
+    return false;
+  }
+}
 
 const handlers = {
   // --- GLOBAL PRESENCE ---
@@ -125,7 +228,17 @@ const handlers = {
       "INSERT INTO inquiries (name, email, subject, message, status) VALUES (?, ?, ?, ?, 'unread')",
       [input.name, input.email, input.subject ?? 'No Subject', input.message]
     );
-    return ok({ id: res.insertId });
+    const id = res.insertId;
+
+    const emailSent = await sendInquiryEmail({
+      id,
+      name: input.name,
+      email: input.email,
+      subject: input.subject ?? 'No Subject',
+      message: input.message
+    });
+
+    return ok({ id, email_sent: emailSent, recipient: process.env.INQUIRY_NOTIFICATION_EMAIL || 'info@centriva360.com' });
   },
   async update_inquiry_status(input) {
     await pool.query('UPDATE inquiries SET status = ? WHERE id = ?', [input.status, input.id]);
