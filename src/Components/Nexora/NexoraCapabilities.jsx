@@ -117,7 +117,7 @@ const NexoraCapabilities = () => {
             </span>
 
             <h2 className="nexora-section-title mt-2 fw-bold">
-              Seven capabilities.{' '}
+             {' '}
               <span className="text-gradient-nexora fw-bold">
                 One integrated ecosystem.
               </span>
