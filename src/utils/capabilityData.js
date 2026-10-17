@@ -1,56 +1,69 @@
+
 export const CAPABILITIES = [
   {
     id: "01",
     slug: "global-capability-centre",
-    title: "Global Capability Centre (GCC) Solutions",
-    tagline:
-      "Build, operate and scale a GCC without building everything internally.",
+    title: "Global Capability Centre (GCC)",
+    tagline: "Dedicated global capacity, from strategy to execution.",
     summary:
-      "Turnkey offshore and nearshore capability hubs giving you dedicated global capacity, strategic talent, and governance without operational overhead.",
+      "Turnkey offshore and nearshore capability hubs that give you dedicated global capacity, specialist talent and strong governance, without the operational overhead. Each GCC can be staffed to deliver research and decision support (KPO), front-, middle- and back-office operations (BPO), and end-to-end data management. Everything runs under one governed centre that you control.",
     scope: [
-      "Turnkey GCC Build-Operate-Transfer (BOT) and Shared Models",
-      "World-class physical & virtual secure infrastructure setup",
-      "Executive talent acquisition, leadership hiring & retention",
-      "Regulatory, legal, and compliance adherence in target regions",
-      "Process migration, governance frameworks & continuous KPI monitoring",
+      "GCC Setup & Governance",
+      "Turnkey Build-Operate-Transfer (BOT) and shared GCC models",
+      "World-class, secure physical and virtual infrastructure",
+      "Executive talent acquisition, leadership hiring and retention",
+      "Regulatory, legal and compliance adherence in target regions",
+      "Process migration, governance frameworks and continuous KPI monitoring",
+
+      "Knowledge Process Outsourcing (KPO): research, analysis and decision support",
+      "In-depth market research, industry landscapes and competitor benchmarking",
+      "Financial modelling, valuation analysis and DCF models",
+      "Legal, regulatory and patent research support",
+      "Quantitative data synthesis and executive briefing preparation",
+      "Bespoke analytics and data visualisation dashboards",
+
+      "Business Process Outsourcing (BPO): front-, middle- and back-office operations",
+      "High-throughput transactional and back-office processing",
+      "End-to-end workflow digitisation and process re-engineering",
+      "Multi-channel inquiry routing and exception handling",
+      "Strict SLA adherence with real-time audit dashboards",
+      "Scalable staffing for seasonal and growth surges",
+
+      "Data Management & Processing: structured data, smarter decisions",
+      "Large-scale data entry, verification and automated validation",
+      "Data cleansing, deduplication and master data management (MDM)",
+      "Image, text and video annotation for AI and machine learning models",
+      "ETL data pipelines and legacy system migration support",
+      "Data compliance auditing (GDPR, HIPAA, ISO standards)",
     ],
     outcomes:
-      "Accelerate time-to-market by 60%, reduce total cost of ownership, and retain full operational control with institutionalized knowledge.",
+      "Speed: up to 60% faster time-to-market. Efficiency: 99.8% process accuracy and 45% shorter cycle times. Cost: lower total cost of ownership, plus decision-support intelligence without the cost of legacy consulting firms. Control: full operational control and knowledge kept in-house. Data readiness: clean, structured data ready for advanced analytics, predictive modelling and AI. Flexibility: operations that scale up or down with business demand.",
   },
 
   {
     id: "02",
-    slug: "digital-marketing-sales",
-    title: "Digital Marketing & Sales",
+    slug: "digital-growth",
+    title: "Digital Growth: Marketing, Sales & Customer Experience",
     tagline:
       "Win customers, grow revenue and keep customers loyal, all from one growth engine.",
     summary:
-      "One integrated engine covering the full customer lifecycle. Performance campaigns, search visibility and content build demand. Dedicated SDR and BDR pods turn that demand into qualified pipeline. Every touchpoint is managed, measured and aligned with your brand.",
+      "One integrated engine covering the full customer lifecycle. Performance campaigns, search visibility and content build demand. Dedicated SDR and BDR pods turn that demand into qualified pipeline. Round-the-clock, multilingual customer support then keeps those customers happy and loyal. Every touchpoint is managed, measured and aligned with your brand.",
     scope: [
+      "Digital Marketing: demand generation and visibility",
       "Enterprise SEO and technical site architecture optimisation",
       "Targeted performance marketing across Google, Meta and LinkedIn",
       "B2B and B2C content marketing and thought leadership",
       "Full-funnel conversion rate optimisation (CRO) and A/B testing",
       "Marketing automation workflows and CRM attribution modelling",
+
+      "Digital Sales & Lead Generation: pipeline and conversion",
       "Precision B2B prospect research and verified ICP list creation",
       "Multi-touch outreach across cold email, cold calling and LinkedIn",
       "SDR-led appointment setting",
       "Inbound lead qualification and rapid-response triage",
       "CRM pipeline management, deal scoring and stage acceleration",
-    ],
-    outcomes:
-      "Predictable, qualified traffic from search, paid and content channels; a sales calendar filled with sales-qualified opportunities (SQOs); faster movement from lead to opportunity to deal; higher return on ad spend (ROAS) and lower customer acquisition cost (CAC).",
-  },
 
-  {
-    id: "03",
-    slug: "customer-support",
-    title: "Customer Support",
-    tagline:
-      "Responsive, professional support aligned with your brand.",
-    summary:
-      "Round-the-clock, multilingual customer support that keeps customers happy and loyal. Every touchpoint is managed, measured and aligned with your brand.",
-    scope: [
+      "Customer Experience & Contact Centre: support and retention",
       "Omnichannel 24/7/365 inbound and outbound support across voice, live chat, email, messaging and social",
       "Customer satisfaction (CSAT) and NPS improvement programmes",
       "Tier 1–3 helpdesk, incident escalation and resolution tracking",
@@ -58,11 +71,11 @@ export const CAPABILITIES = [
       "Speech and text analytics for sentiment and voice of customer (VoC)",
     ],
     outcomes:
-      "Up to 35% higher customer retention, lower cost per contact, and support interactions that build loyalty and turn customers into brand advocates.",
+      "Traffic: predictable, qualified traffic from search, paid and content channels. Pipeline: a sales calendar filled with sales-qualified opportunities (SQOs). Conversion: faster movement from lead to opportunity to deal. Efficiency: higher return on ad spend (ROAS), lower customer acquisition cost (CAC) and lower cost per contact. Retention: up to 35% higher customer retention. Advocacy: support interactions that build loyalty and turn customers into brand advocates.",
   },
 
   {
-    id: "04",
+    id: "03",
     slug: "hr-recruitment-solutions",
     title: "HR & Recruitment Solutions",
     tagline: "The right people, the right capability.",
@@ -80,7 +93,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "05",
+    id: "04",
     slug: "finance-accounting-support",
     title: "Finance & Accounting Support",
     tagline: "Accurate processes, better financial control.",
@@ -98,7 +111,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "06",
+    id: "05",
     slug: "ai-automation-services",
     title: "AI & Automation Services",
     tagline: "Make your business smarter and more efficient.",
@@ -116,7 +129,7 @@ export const CAPABILITIES = [
   },
 
   {
-    id: "07",
+    id: "06",
     slug: "it-networking-solutions",
     title: "IT & Networking Solutions",
     tagline: "Secure, connected, and reliable technology infrastructure.",
@@ -131,6 +144,32 @@ export const CAPABILITIES = [
     ],
     outcomes:
       "Improve system reliability, strengthen security, minimize downtime, and maintain business continuity.",
+  },
+
+  {
+    id: "07",
+    slug: "people-process-excellence",
+    title: "People & Process Excellence",
+    tagline: "Better-trained teams, better-run processes, measurable results.",
+    summary:
+      "A combined programme that improves how work gets done and how well people are equipped to do it. We streamline and standardise workflows, remove inefficiencies and raise quality. Then we build the skills, onboarding and knowledge systems that help teams adopt those improvements and keep them running. Better processes and stronger teams reinforce each other, so performance keeps improving instead of slipping back.",
+    scope: [
+      "Process Excellence & Continuous Improvement: optimise how work flows",
+      "Process optimisation and business process re-engineering",
+      "SOP development, documentation and standardisation",
+      "Lean and Six Sigma improvement initiatives",
+      "KPI improvement, performance measurement and root cause analysis",
+      "Workflow automation, quality management and operational excellence",
+
+      "Learning & Development: build the people who run it",
+      "Corporate training and professional development programmes",
+      "Employee onboarding and role-based capability building",
+      "Process and SOP training",
+      "Knowledge management and organisational learning systems",
+      "Competency assessments and skills gap analysis",
+    ],
+    outcomes:
+      "Efficiency: fewer operational inefficiencies and shorter cycle times. Quality: better process quality and fewer errors. Readiness: new hires and existing teams productive sooner. Capability: a stronger workforce built through continuous learning. Consistency: standardised SOPs that teams are trained to follow. Performance: measurable, lasting gains in productivity and KPIs.",
   },
 ];
 
@@ -230,36 +269,36 @@ export const ECOSYSTEM_NODES = [
   {
     id: "01",
     name: "GCC",
-    full: "Global Capability Centres",
+    full: "Global Capability Centre",
   },
   {
     id: "02",
-    name: "Digital Marketing & Sales",
-    full: "Digital Marketing & Sales",
+    name: "Digital Growth",
+    full: "Digital Growth: Marketing, Sales & Customer Experience",
   },
   {
     id: "03",
-    name: "Customer Support",
-    full: "Customer Experience & Contact Centre",
-  },
-  {
-    id: "04",
     name: "HR & Recruitment",
     full: "HR & Talent Acquisition",
   },
   {
-    id: "05",
+    id: "04",
     name: "Finance & Accounting",
     full: "Finance, AP/AR & Accounting",
   },
   {
-    id: "06",
+    id: "05",
     name: "AI & Automation",
     full: "AI & Process Automation",
   },
   {
-    id: "07",
+    id: "06",
     name: "IT & Networking",
     full: "IT & Networking Solutions",
+  },
+  {
+    id: "07",
+    name: "People & Process Excellence",
+    full: "People & Process Excellence",
   },
 ];
