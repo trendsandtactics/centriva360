@@ -1,4 +1,3 @@
-
 export const CAPABILITIES = [
   {
     id: "01",
@@ -8,28 +7,28 @@ export const CAPABILITIES = [
     summary:
       "Turnkey offshore and nearshore capability hubs that give you dedicated global capacity, specialist talent and strong governance, without the operational overhead. Each GCC can be staffed to deliver research and decision support (KPO), front-, middle- and back-office operations (BPO), and end-to-end data management. Everything runs under one governed centre that you control.",
     scope: [
-      "1. GCC Setup & Governance",
+      "<strong>1. GCC Setup & Governance</strong>",
       "Turnkey Build-Operate-Transfer (BOT) and shared GCC models",
       "World-class, secure physical and virtual infrastructure",
       "Executive talent acquisition, leadership hiring and retention",
       "Regulatory, legal and compliance adherence in target regions",
       "Process migration, governance frameworks and continuous KPI monitoring",
 
-      "2. Knowledge Process Outsourcing (KPO): research, analysis and decision support",
+      "<strong>2. Knowledge Process Outsourcing (KPO): research, analysis and decision support</strong>",
       "In-depth market research, industry landscapes and competitor benchmarking",
       "Financial modelling, valuation analysis and DCF models",
       "Legal, regulatory and patent research support",
       "Quantitative data synthesis and executive briefing preparation",
       "Bespoke analytics and data visualisation dashboards",
 
-      "3. Business Process Outsourcing (BPO): front-, middle- and back-office operations",
+      "<strong>3. Business Process Outsourcing (BPO): front-, middle- and back-office operations</strong>",
       "High-throughput transactional and back-office processing",
       "End-to-end workflow digitisation and process re-engineering",
       "Multi-channel inquiry routing and exception handling",
       "Strict SLA adherence with real-time audit dashboards",
       "Scalable staffing for seasonal and growth surges",
 
-      "4. Data Management & Processing: structured data, smarter decisions",
+      "<strong>4. Data Management & Processing: structured data, smarter decisions</strong>",
       "Large-scale data entry, verification and automated validation",
       "Data cleansing, deduplication and master data management (MDM)",
       "Image, text and video annotation for AI and machine learning models",
@@ -57,21 +56,21 @@ export const CAPABILITIES = [
     summary:
       "One integrated engine covering the full customer lifecycle. Performance campaigns, search visibility and content build demand. Dedicated SDR and BDR pods turn that demand into qualified pipeline. Round-the-clock, multilingual customer support then keeps those customers happy and loyal. Every touchpoint is managed, measured and aligned with your brand.",
     scope: [
-      "1. Digital Marketing: demand generation and visibility",
+      "<strong>1. Digital Marketing: demand generation and visibility</strong>",
       "Enterprise SEO and technical site architecture optimisation",
       "Targeted performance marketing across Google, Meta and LinkedIn",
       "B2B and B2C content marketing and thought leadership",
       "Full-funnel conversion rate optimisation (CRO) and A/B testing",
       "Marketing automation workflows and CRM attribution modelling",
 
-      "2. Digital Sales & Lead Generation: pipeline and conversion",
+      "<strong>2. Digital Sales & Lead Generation: pipeline and conversion</strong>",
       "Precision B2B prospect research and verified ICP list creation",
       "Multi-touch outreach across cold email, cold calling and LinkedIn",
       "SDR-led appointment setting",
       "Inbound lead qualification and rapid-response triage",
       "CRM pipeline management, deal scoring and stage acceleration",
 
-      "3. Customer Experience & Contact Centre: support and retention",
+      "<strong>3. Customer Experience & Contact Centre: support and retention</strong>",
       "Omnichannel 24/7/365 inbound and outbound support across voice, live chat, email, messaging and social",
       "Customer satisfaction (CSAT) and NPS improvement programmes",
       "Tier 1–3 helpdesk, incident escalation and resolution tracking",
@@ -162,14 +161,14 @@ export const CAPABILITIES = [
     summary:
       "A combined programme that improves how work gets done and how well people are equipped to do it. We streamline and standardise workflows, remove inefficiencies and raise quality. Then we build the skills, onboarding and knowledge systems that help teams adopt those improvements and keep them running. Better processes and stronger teams reinforce each other, so performance keeps improving instead of slipping back.",
     scope: [
-      "1. Process Excellence & Continuous Improvement: optimise how work flows",
+      "<strong>1. Process Excellence & Continuous Improvement: optimise how work flows</strong>",
       "Process optimisation and business process re-engineering",
       "SOP development, documentation and standardisation",
       "Lean and Six Sigma improvement initiatives",
       "KPI improvement, performance measurement and root cause analysis",
       "Workflow automation, quality management and operational excellence",
 
-      "2. Learning & Development: build the people who run it",
+      "<strong>2. Learning & Development: build the people who run it</strong>",
       "Corporate training and professional development programmes",
       "Employee onboarding and role-based capability building",
       "Process and SOP training",
