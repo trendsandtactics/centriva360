@@ -1,4 +1,3 @@
-
 export const CAPABILITIES = [
   {
     id: "01",
@@ -8,28 +7,37 @@ export const CAPABILITIES = [
     summary:
       "Turnkey offshore and nearshore capability hubs that give you dedicated global capacity, specialist talent and strong governance, without the operational overhead. Each GCC can be staffed to deliver research and decision support (KPO), front-, middle- and back-office operations (BPO), and end-to-end data management. Everything runs under one governed centre that you control.",
     scope: [
-      "1. GCC Setup & Governance",
+      { type: "heading", text: "1. GCC Setup & Governance" },
       "Turnkey Build-Operate-Transfer (BOT) and shared GCC models",
       "World-class, secure physical and virtual infrastructure",
       "Executive talent acquisition, leadership hiring and retention",
       "Regulatory, legal and compliance adherence in target regions",
       "Process migration, governance frameworks and continuous KPI monitoring",
 
-      "2. Knowledge Process Outsourcing (KPO): research, analysis and decision support",
+      {
+        type: "heading",
+        text: "2. Knowledge Process Outsourcing (KPO): research, analysis and decision support",
+      },
       "In-depth market research, industry landscapes and competitor benchmarking",
       "Financial modelling, valuation analysis and DCF models",
       "Legal, regulatory and patent research support",
       "Quantitative data synthesis and executive briefing preparation",
       "Bespoke analytics and data visualisation dashboards",
 
-      "3. Business Process Outsourcing (BPO): front-, middle- and back-office operations",
+      {
+        type: "heading",
+        text: "3. Business Process Outsourcing (BPO): front-, middle- and back-office operations",
+      },
       "High-throughput transactional and back-office processing",
       "End-to-end workflow digitisation and process re-engineering",
       "Multi-channel inquiry routing and exception handling",
       "Strict SLA adherence with real-time audit dashboards",
       "Scalable staffing for seasonal and growth surges",
 
-      "4. Data Management & Processing: structured data, smarter decisions",
+      {
+        type: "heading",
+        text: "4. Data Management & Processing: structured data, smarter decisions",
+      },
       "Large-scale data entry, verification and automated validation",
       "Data cleansing, deduplication and master data management (MDM)",
       "Image, text and video annotation for AI and machine learning models",
@@ -39,6 +47,7 @@ export const CAPABILITIES = [
     outcomes:
       "Speed: up to 60% faster time-to-market. Efficiency: 99.8% process accuracy and 45% shorter cycle times. Cost: lower total cost of ownership, plus decision-support intelligence without the cost of legacy consulting firms. Control: full operational control and knowledge kept in-house. Data readiness: clean, structured data ready for advanced analytics, predictive modelling and AI. Flexibility: operations that scale up or down with business demand.",
     outcomeDetails: [
+      { type: "heading", text: "Target Business Outcomes" },
       "Speed: up to 60% faster time-to-market",
       "Efficiency: 99.8% process accuracy and 45% shorter cycle times",
       "Cost: lower total cost of ownership, plus decision-support intelligence without the cost of legacy consulting firms",
@@ -57,21 +66,30 @@ export const CAPABILITIES = [
     summary:
       "One integrated engine covering the full customer lifecycle. Performance campaigns, search visibility and content build demand. Dedicated SDR and BDR pods turn that demand into qualified pipeline. Round-the-clock, multilingual customer support then keeps those customers happy and loyal. Every touchpoint is managed, measured and aligned with your brand.",
     scope: [
-      "1. Digital Marketing: demand generation and visibility",
+      {
+        type: "heading",
+        text: "1. Digital Marketing: demand generation and visibility",
+      },
       "Enterprise SEO and technical site architecture optimisation",
       "Targeted performance marketing across Google, Meta and LinkedIn",
       "B2B and B2C content marketing and thought leadership",
       "Full-funnel conversion rate optimisation (CRO) and A/B testing",
       "Marketing automation workflows and CRM attribution modelling",
 
-      "2. Digital Sales & Lead Generation: pipeline and conversion",
+      {
+        type: "heading",
+        text: "2. Digital Sales & Lead Generation: pipeline and conversion",
+      },
       "Precision B2B prospect research and verified ICP list creation",
       "Multi-touch outreach across cold email, cold calling and LinkedIn",
       "SDR-led appointment setting",
       "Inbound lead qualification and rapid-response triage",
       "CRM pipeline management, deal scoring and stage acceleration",
 
-      "3. Customer Experience & Contact Centre: support and retention",
+      {
+        type: "heading",
+        text: "3. Customer Experience & Contact Centre: support and retention",
+      },
       "Omnichannel 24/7/365 inbound and outbound support across voice, live chat, email, messaging and social",
       "Customer satisfaction (CSAT) and NPS improvement programmes",
       "Tier 1–3 helpdesk, incident escalation and resolution tracking",
@@ -80,6 +98,15 @@ export const CAPABILITIES = [
     ],
     outcomes:
       "Traffic: predictable, qualified traffic from search, paid and content channels. Pipeline: a sales calendar filled with sales-qualified opportunities (SQOs). Conversion: faster movement from lead to opportunity to deal. Efficiency: higher return on ad spend (ROAS), lower customer acquisition cost (CAC) and lower cost per contact. Retention: up to 35% higher customer retention. Advocacy: support interactions that build loyalty and turn customers into brand advocates.",
+    outcomeDetails: [
+      { type: "heading", text: "Target Business Outcomes" },
+      "Traffic: predictable, qualified traffic from search, paid and content channels",
+      "Pipeline: a sales calendar filled with sales-qualified opportunities (SQOs)",
+      "Conversion: faster movement from lead to opportunity to deal",
+      "Efficiency: higher return on ad spend (ROAS), lower customer acquisition cost (CAC) and lower cost per contact",
+      "Retention: up to 35% higher customer retention",
+      "Advocacy: support interactions that build loyalty and turn customers into brand advocates",
+    ],
   },
 
   {
@@ -162,14 +189,20 @@ export const CAPABILITIES = [
     summary:
       "A combined programme that improves how work gets done and how well people are equipped to do it. We streamline and standardise workflows, remove inefficiencies and raise quality. Then we build the skills, onboarding and knowledge systems that help teams adopt those improvements and keep them running. Better processes and stronger teams reinforce each other, so performance keeps improving instead of slipping back.",
     scope: [
-      "1. Process Excellence & Continuous Improvement: optimise how work flows",
+      {
+        type: "heading",
+        text: "1. Process Excellence & Continuous Improvement: optimise how work flows",
+      },
       "Process optimisation and business process re-engineering",
       "SOP development, documentation and standardisation",
       "Lean and Six Sigma improvement initiatives",
       "KPI improvement, performance measurement and root cause analysis",
       "Workflow automation, quality management and operational excellence",
 
-      "2. Learning & Development: build the people who run it",
+      {
+        type: "heading",
+        text: "2. Learning & Development: build the people who run it",
+      },
       "Corporate training and professional development programmes",
       "Employee onboarding and role-based capability building",
       "Process and SOP training",
@@ -179,6 +212,7 @@ export const CAPABILITIES = [
     outcomes:
       "Efficiency: fewer operational inefficiencies and shorter cycle times. Quality: better process quality and fewer errors. Readiness: new hires and existing teams productive sooner. Capability: a stronger workforce built through continuous learning. Consistency: standardised SOPs that teams are trained to follow. Performance: measurable, lasting gains in productivity and KPIs.",
     outcomeDetails: [
+      { type: "heading", text: "Target Business Outcomes" },
       "Efficiency: fewer operational inefficiencies and shorter cycle times",
       "Quality: better process quality and fewer errors",
       "Readiness: new hires and existing teams productive sooner",
