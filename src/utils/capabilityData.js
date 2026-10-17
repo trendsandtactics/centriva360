@@ -21,7 +21,7 @@ export const CAPABILITIES = [
       "Quantitative data synthesis and executive briefing preparation",
       "Bespoke analytics and data visualisation dashboards",
 
-      "<strong>3. Business Process Outsourcing (BPO): front-, middle- and back-office operations</strong>",
+      "<strong>3. Business Process Outsourcing (BPO): front, middle & back-office operations</strong>",
       "High-throughput transactional and back-office processing",
       "End-to-end workflow digitisation and process re-engineering",
       "Multi-channel inquiry routing and exception handling",
