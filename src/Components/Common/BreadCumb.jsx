@@ -13,7 +13,7 @@ const BreadCumb = ({ Title, bgimg }) => {
       <div className="container">
         <div className="row">
           <div className="page-heading">
-            <h2>{Title}</h2>
+            <h2 className="fw-bold">{Title}</h2>
             <ul className="breadcrumb-list">
               <li>
                 <Link to="/">Home</Link>

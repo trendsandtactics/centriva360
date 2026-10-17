@@ -19,36 +19,23 @@ import {
 } from 'lucide-react';
 
 const CAP_ICONS = {
-  "01": TrendingUp,   // Digital Marketing
-  "02": Target,       // Digital Sales
-  "03": Headphones,   // Customer Support
-  "04": Building2,    // GCC
-  "05": BrainCircuit, // KPO
-  "06": Workflow,     // BPO
-  "07": UserCheck,    // HR
-  "08": Database,     // Data Management
-  "09": Calculator,   // Finance
-  "10": Briefcase,    // Administration
-  "11": Users,        // Sales & Customer Support
-  "12": Bot,          // AI & Automation
+  "01": Building2,    // GCC
+  "02": TrendingUp,   // Digital Growth
+  "03": UserCheck,    // HR & Recruitment
+  "04": Calculator,   // Finance & Accounting
+  "05": Bot,          // AI & Automation
+  "06": Workflow,     // IT & Networking
+  "07": Users,        // People & Process Excellence
 };
 
 const CAP_IMAGES = {
-  "01": "/dm.png",
-  "02": "/ds.png",
-  "03": "/ce.png",
-  "04": "/gcc.png",
-  "05": "/kpo.png",
-  "06": "/bpo.png",
-  "07": "/hr.png",
-  "08": "/data.png",
-  "09": "/fi.png",
-  "10": "/su.png",
-  "11": "/sales.png",
-  "12": "/ai.png",
-  "13": "/it.png",
-  "14": "learning.png",
-  "15": "process.png",
+  "01": "/gcc.png",
+  "02": "/dm.png",
+  "03": "/hr.png",
+  "04": "/fi.png",
+  "05": "/ai.png",
+  "06": "/it.png",
+  "07": "/process.png",
 };
 
 const NexoraCapabilities = () => {
@@ -59,26 +46,26 @@ const NexoraCapabilities = () => {
     {
       id: 'all',
       label: 'All Capabilities',
-      count: 12,
+      count: 7,
     },
     {
-      id: 'digital',
-      label: 'Digital, Sales & CX',
-      count: 3,
-    },
-    {
-      id: 'gcc',
+      id: 'operations',
       label: 'GCC & Operations',
-      count: 3,
+      count: 2,
+    },
+    {
+      id: 'growth',
+      label: 'Digital Growth & CX',
+      count: 1,
     },
     {
       id: 'corporate',
-      label: 'Corporate & Support',
-      count: 4,
+      label: 'HR & Finance',
+      count: 2,
     },
     {
       id: 'tech',
-      label: 'Engineering & AI',
+      label: 'Tech & Automation',
       count: 2,
     },
   ];
@@ -86,20 +73,20 @@ const NexoraCapabilities = () => {
   const filteredCaps = CAPABILITIES.filter((cap) => {
     if (activeCategory === 'all') return true;
 
-    if (activeCategory === 'digital') {
-      return ['01', '02', '03'].includes(cap.id);
+    if (activeCategory === 'operations') {
+      return ['01', '07'].includes(cap.id);
     }
 
-    if (activeCategory === 'gcc') {
-      return ['04', '05', '06'].includes(cap.id);
+    if (activeCategory === 'growth') {
+      return ['02'].includes(cap.id);
     }
 
     if (activeCategory === 'corporate') {
-      return ['07', '08', '09', '10'].includes(cap.id);
+      return ['03', '04'].includes(cap.id);
     }
 
     if (activeCategory === 'tech') {
-      return ['11', '12'].includes(cap.id);
+      return ['05', '06'].includes(cap.id);
     }
 
     return true;
@@ -125,13 +112,13 @@ const NexoraCapabilities = () => {
         {/* Header */}
         <div className="row justify-content-center text-center mb-4">
           <div className="col-lg-9">
-            <span className="nexora-section-badge mb-2">
+            <span className="nexora-section-badge mb-2 fw-bold">
               CAPABILITY DIRECTORY
             </span>
 
-            <h2 className="nexora-section-title mt-2">
-              Twelve capabilities.{' '}
-              <span className="text-gradient-nexora">
+            <h2 className="nexora-section-title mt-2 fw-bold">
+              Seven capabilities.{' '}
+              <span className="text-gradient-nexora fw-bold">
                 One integrated ecosystem.
               </span>
             </h2>
@@ -209,7 +196,7 @@ const NexoraCapabilities = () => {
                   {/* Card Body */}
                   <div className="cap-card-body p-4 d-flex flex-column flex-grow-1">
 
-                    <h3 className="cap-title mb-2">
+                    <h3 className="cap-title mb-2 fw-bold">
                       {cap.title}
                     </h3>
 
@@ -219,19 +206,32 @@ const NexoraCapabilities = () => {
 
                     {/* Scope Preview */}
                     <div className="cap-scope-preview mb-3">
-                      {cap.scope.slice(0, 2).map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="cap-mini-scope-item"
-                        >
-                          <CheckCircle
-                            size={14}
-                            className="text-danger flex-shrink-0"
-                          />
+                      {cap.scope.slice(0, 3).map((item, idx) => {
+                        const isHeading =
+                          item.includes('<strong>') ||
+                          /^\d+\./.test(item.replace(/<[^>]+>/g, '').trim());
 
-                          <span>{item}</span>
-                        </div>
-                      ))}
+                        return (
+                          <div
+                            key={idx}
+                            className={`cap-mini-scope-item ${
+                              isHeading ? 'cap-mini-scope-heading fw-bold' : ''
+                            }`}
+                          >
+                            {!isHeading && (
+                              <CheckCircle
+                                size={14}
+                                className="text-danger flex-shrink-0 mt-1"
+                              />
+                            )}
+
+                            <span
+                              className={isHeading ? 'fw-bold text-dark' : ''}
+                              dangerouslySetInnerHTML={{ __html: item }}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
 
                     {/* Footer */}
@@ -302,7 +302,7 @@ const NexoraCapabilities = () => {
 
             {/* Modal Header */}
             <div className="modal-header-section mb-3">
-              <h2 className="modal-cap-title">
+              <h2 className="modal-cap-title fw-bold">
                 {activeModalCap.title}
               </h2>
 
@@ -316,7 +316,7 @@ const NexoraCapabilities = () => {
 
               {/* Overview */}
               <div className="modal-overview mb-4">
-                <h4 className="modal-section-h">
+                <h4 className="modal-section-h fw-bold">
                   Overview &amp; Purpose
                 </h4>
 
@@ -327,24 +327,45 @@ const NexoraCapabilities = () => {
 
               {/* Scope */}
               <div className="modal-scope mb-4">
-                <h4 className="modal-section-h">
+                <h4 className="modal-section-h fw-bold">
                   Scope of Operation &amp; Deliverables
                 </h4>
 
                 <ul className="modal-scope-list">
-                  {activeModalCap.scope.map((item, i) => (
-                    <li
-                      key={i}
-                      className="modal-scope-item"
-                    >
-                      <CheckCircle
-                        size={17}
-                        className="text-danger flex-shrink-0 mt-1"
-                      />
+                  {activeModalCap.scope.map((item, i) => {
+                    const isHeading =
+                      item.includes('<strong>') ||
+                      /^\d+\./.test(item.replace(/<[^>]+>/g, '').trim());
 
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                    if (isHeading) {
+                      return (
+                        <li
+                          key={i}
+                          className="modal-scope-heading-item mt-3 mb-2"
+                        >
+                          <h5
+                            className="fw-bold mb-0 text-dark"
+                            style={{ fontSize: '15.5px' }}
+                            dangerouslySetInnerHTML={{ __html: item }}
+                          />
+                        </li>
+                      );
+                    }
+
+                    return (
+                      <li
+                        key={i}
+                        className="modal-scope-item"
+                      >
+                        <CheckCircle
+                          size={17}
+                          className="text-danger flex-shrink-0 mt-1"
+                        />
+
+                        <span dangerouslySetInnerHTML={{ __html: item }} />
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 
@@ -475,7 +496,7 @@ const NexoraCapabilities = () => {
         .capabilities-nexora-section
           .nexora-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-          font-weight: 800;
+          font-weight: 800 !important;
           color: #0F172A;
           line-height: 1.25;
         }
@@ -666,8 +687,8 @@ const NexoraCapabilities = () => {
         }
 
         .cap-title {
-          font-size: 19px;
-          font-weight: 800;
+          font-size: 20px;
+          font-weight: 800 !important;
           color: #0F172A;
           line-height: 1.3;
         }
@@ -686,6 +707,23 @@ const NexoraCapabilities = () => {
           color: #334155;
           margin-bottom: 6px;
           line-height: 1.4;
+        }
+
+        .cap-mini-scope-item strong {
+          font-weight: 800 !important;
+          color: #0F172A !important;
+        }
+
+        .cap-mini-scope-heading {
+          margin-top: 4px;
+          margin-bottom: 4px;
+        }
+
+        .cap-mini-scope-heading span,
+        .cap-mini-scope-heading strong {
+          font-weight: 800 !important;
+          color: #0F172A !important;
+          font-size: 13px;
         }
 
         .cap-action {
@@ -842,8 +880,8 @@ const NexoraCapabilities = () => {
         }
 
         .modal-cap-title {
-          font-size: 24px;
-          font-weight: 800;
+          font-size: 26px;
+          font-weight: 800 !important;
           color: #0F172A;
           margin-bottom: 6px;
         }
@@ -857,7 +895,7 @@ const NexoraCapabilities = () => {
 
         .modal-section-h {
           font-size: 14px;
-          font-weight: 800;
+          font-weight: 800 !important;
           text-transform: uppercase;
           letter-spacing: 1px;
           color: #64748B;
@@ -874,6 +912,17 @@ const NexoraCapabilities = () => {
           list-style: none;
           padding: 0;
           margin: 0;
+        }
+
+        .modal-scope-heading-item {
+          padding-top: 8px;
+        }
+
+        .modal-scope-heading-item h5,
+        .modal-scope-heading-item strong,
+        .modal-scope-item strong {
+          font-weight: 800 !important;
+          color: #0F172A !important;
         }
 
         .modal-scope-item {

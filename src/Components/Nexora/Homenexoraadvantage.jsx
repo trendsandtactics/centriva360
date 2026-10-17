@@ -14,14 +14,14 @@ const NexoraAdvantage = () => {
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-9">
 
-            <span className="nexora-section-badge mb-2">
+            <span className="nexora-section-badge mb-2 fw-bold">
               THE CENTRIVA360 360° ADVANTAGE
             </span>
 
-            <h2 className="nexora-section-title mt-2">
+            <h2 className="nexora-section-title mt-2 fw-bold">
               One partner. Multiple capabilities.
               <br />
-              <span className="text-gradient-nexora">
+              <span className="text-gradient-nexora fw-bold">
                 One integrated solution.
               </span>
             </h2>
@@ -178,7 +178,7 @@ const NexoraAdvantage = () => {
 
         .advantage-nexora-section .nexora-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-          font-weight: 800;
+          font-weight: 800 !important;
           color: #0F172A;
           line-height: 1.25;
         }

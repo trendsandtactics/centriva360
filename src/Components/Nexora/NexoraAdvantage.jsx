@@ -5,108 +5,87 @@ import { Link } from 'react-router';
 const ECOSYSTEM_NODES = [
   {
     id: "01",
-    name: "Digital Marketing",
-    full: "Digital Marketing Services",
-    image: "/dm.png",
-    desc: "Performance marketing, technical SEO, thought leadership content, and multi-channel acquisition funnels.",
+    name: "GCC",
+    full: "Global Capability Centre (GCC)",
+    image: "/gcc.png",
+    desc: "Turnkey offshore and nearshore capability hubs delivering decision support (KPO), transaction operations (BPO), and enterprise data management under unified governance.",
+    highlights: [
+      "Turnkey Build-Operate-Transfer (BOT) & dedicated GCC pods",
+      "Specialized KPO analytics, BPO operations & data pipelines",
+      "Full governance, compliance & continuous SLA monitoring"
+    ]
   },
   {
     id: "02",
-    name: "Digital Sales",
-    full: "Digital Sales & Lead Generation",
-    image: "/sales.png",
-    desc: "Targeted outbound SDR/BDR prospecting pods filling your executive calendar with sales-qualified opportunities.",
+    name: "Digital Growth",
+    full: "Digital Growth: Marketing, Sales & Customer Experience",
+    image: "/dm.png",
+    desc: "A unified full-lifecycle engine driving demand generation, outbound SDR pipeline generation, and 24/7 multilingual customer support & retention.",
+    highlights: [
+      "Full-funnel performance marketing, technical SEO & CRO",
+      "Dedicated outbound SDR/BDR appointment setting pods",
+      "24/7/365 omnichannel customer care and CSAT improvement"
+    ]
   },
   {
     id: "03",
-    name: "Customer Experience",
-    full: "Customer Experience & Contact Centre",
-    image: "/ce.png",
-    desc: "24/7/365 multilingual omnichannel customer support delivering outstanding CSAT and proactive retention.",
-  },
-  {
-    id: "04",
-    name: "GCC",
-    full: "Global Capability Centre (GCC) Solutions",
-    image: "/gcc.png",
-    desc: "Dedicated global capability hubs with turnkey infrastructure, talent, governance, and scalable operating models.",
-  },
-  {
-    id: "05",
-    name: "KPO",
-    full: "Knowledge Process Outsourcing",
-    image: "/kpo.png",
-    desc: "Domain-specialized analytics, market intelligence, valuation models, and executive decision-support.",
-  },
-  {
-    id: "06",
-    name: "BPO",
-    full: "Business Process Outsourcing",
-    image: "/bpo.png",
-    desc: "Scalable front, middle, and back-office transaction execution delivering streamlined workflows and SLA excellence.",
-  },
-  {
-    id: "07",
     name: "HR & Recruitment",
     full: "HR & Recruitment Solutions",
     image: "/hr.png",
-    desc: "Global executive search, Employer of Record (EOR), cross-border payroll, and end-to-end talent solutions.",
+    desc: "End-to-end talent acquisition, executive search, global Employer of Record (EOR), and cross-border payroll built to rapidly scale high-performance teams.",
+    highlights: [
+      "Specialized technical, executive, and volume recruitment",
+      "Global Employer of Record (EOR) and cross-border payroll",
+      "Structured onboarding, retention frameworks & performance reviews"
+    ]
   },
   {
-    id: "08",
-    name: "Data Management",
-    full: "Data Management & Processing",
-    image: "/data.png",
-    desc: "Reliable data processing, cleansing, validation, annotation, migration, and structured information solutions.",
-  },
-  {
-    id: "09",
-    name: "Finance",
+    id: "04",
+    name: "Finance & Accounting",
     full: "Finance & Accounting Support",
     image: "/fi.png",
-    desc: "End-to-end ledger accounting, accounts payable/receivable, payroll processing, financial reporting, and audit support.",
+    desc: "Meticulous bookkeeping, accounts payable/receivable, payroll processing, and financial reporting ensuring fiscal health and audit readiness.",
+    highlights: [
+      "End-to-end AP/AR processing, ledger reconciliation & closing",
+      "Payroll accounting, statutory tax filings & deductions",
+      "Management information systems (MIS) & financial forecasting"
+    ]
   },
   {
-    id: "10",
-    name: "Administration",
-    full: "Administrative & Back-Office Support",
-    image: "/su.png",
-    desc: "Virtual executive assistance, calendar coordination, document management, travel logistics, and operational support.",
-  },
-  {
-    id: "11",
-    name: "Sales & Support",
-    full: "Sales & Customer Support Operations",
-    image: "/sales.png",
-    desc: "Customer success, technical support, onboarding, renewals, upsell opportunities, and customer retention operations.",
-  },
-  {
-    id: "12",
+    id: "05",
     name: "AI & Automation",
     full: "AI & Automation Services",
     image: "/ai.png",
-    desc: "RPA bots, enterprise Generative AI copilots, intelligent document processing, and custom cross-system automations.",
+    desc: "Robotic Process Automation (RPA), enterprise Generative AI copilots, intelligent document processing, and custom cross-system workflow automations.",
+    highlights: [
+      "Robotic Process Automation (RPA) for repetitive workflows",
+      "Enterprise Generative AI copilots & custom knowledge bases",
+      "Intelligent Document Processing (IDP) with OCR & reasoning"
+    ]
   },
-    {
-    id: "13",
+  {
+    id: "06",
     name: "IT & Networking",
     full: "IT & Networking Solutions",
     image: "/it.png",
-    desc: "IT infrastructure, network management, technical support, system administration, cybersecurity support, and reliable technology operations.",
+    desc: "End-to-end IT infrastructure, network configuration, cybersecurity support, systems administration, and 24/7 technical helpdesk.",
+    highlights: [
+      "IT infrastructure design, deployment, and system maintenance",
+      "Enterprise network configuration, monitoring & troubleshooting",
+      "Cybersecurity management, vulnerability auditing & helpdesk"
+    ]
   },
   {
-    id: "14",
-    name: "Learning & Development",
-    full: "Learning & Development",
-    image: "/learning.png",
-    desc: "Corporate training, employee development, capability building, process training, knowledge management, and competency enhancement.",
-  },
-  {
-    id: "15",
-    name: "Process Excellence",
-    full: "Process Excellence & Continuous Improvement",
+    id: "07",
+    name: "People & Process Excellence",
+    full: "People & Process Excellence",
     image: "/process.png",
-    desc: "Process optimization, SOP development, process re-engineering, Lean and Six Sigma initiatives, KPI improvement, workflow automation, quality management, and operational excellence.",
+    desc: "A combined programme uniting process optimization, SOP standardization, Lean Six Sigma workflows, and continuous corporate learning & development.",
+    highlights: [
+      "Process optimization & Lean Six Sigma business re-engineering",
+      "SOP documentation, standardisation & quality management",
+      "Corporate training, role-based onboarding & capability building"
+    ]
   },
 ];
 
@@ -124,13 +103,13 @@ const NexoraAdvantage = () => {
         <div className="row justify-content-center text-center mb-5">
           <div className="col-lg-9">
 
-            <span className="nexora-section-badge mb-2">
+            <span className="nexora-section-badge mb-2 fw-bold">
               THE CENTRIVA360 360° ADVANTAGE
             </span>
 
-            <h2 className="nexora-section-title mt-2">
+            <h2 className="nexora-section-title mt-2 fw-bold">
               One partner. Multiple capabilities. <br />
-              <span className="text-gradient-nexora">
+              <span className="text-gradient-nexora fw-bold">
                 One integrated ecosystem.
               </span>
             </h2>
@@ -163,7 +142,7 @@ const NexoraAdvantage = () => {
                       CENTRIVA360 ECOSYSTEM
                     </span>
 
-                    <h3 className="core-title">
+                    <h3 className="core-title fw-bold">
                       ONE UNIFIED ENGINE
                     </h3>
 
@@ -211,7 +190,7 @@ const NexoraAdvantage = () => {
                             {node.id}
                           </span>
 
-                          <span className="node-name">
+                          <span className="node-name fw-bold">
                             {node.name}
                           </span>
 
@@ -237,7 +216,7 @@ const NexoraAdvantage = () => {
                     fontWeight: 500
                   }}
                 >
-                  Twelve capabilities, one shared operating model —
+                  Seven capabilities, one shared operating model —
                   click any vertical to preview its integration node
                   and delivery image.
                 </p>
@@ -274,7 +253,7 @@ const NexoraAdvantage = () => {
 
                 </div>
 
-                <h3 className="inspector-title mb-1">
+                <h3 className="inspector-title mb-1 fw-bold">
                   {selectedNode.full}
                 </h3>
 
@@ -284,44 +263,22 @@ const NexoraAdvantage = () => {
 
                 <div className="integrated-benefits mb-4">
 
-                  <div className="benefit-row d-flex align-items-center gap-2 mb-2">
-
-                    <Check
-                      size={16}
-                      className="text-danger flex-shrink-0"
-                    />
-
-                    <span>
-                      Zero vendor fragmentation or finger-pointing
-                    </span>
-
-                  </div>
-
-                  <div className="benefit-row d-flex align-items-center gap-2 mb-2">
-
-                    <Check
-                      size={16}
-                      className="text-danger flex-shrink-0"
-                    />
-
-                    <span>
-                      Single SLA and consolidated performance metrics
-                    </span>
-
-                  </div>
-
-                  <div className="benefit-row d-flex align-items-center gap-2">
-
-                    <Check
-                      size={16}
-                      className="text-danger flex-shrink-0"
-                    />
-
-                    <span>
-                      Cross-department knowledge sharing &amp; synergy
-                    </span>
-
-                  </div>
+                  {(selectedNode.highlights || [
+                    "Zero vendor fragmentation or finger-pointing",
+                    "Single SLA and consolidated performance metrics",
+                    "Cross-department knowledge sharing & synergy"
+                  ]).map((benefit, i) => (
+                    <div
+                      key={i}
+                      className="benefit-row d-flex align-items-start gap-2 mb-2"
+                    >
+                      <Check
+                        size={16}
+                        className="text-danger flex-shrink-0 mt-1"
+                      />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
 
                 </div>
 
@@ -507,7 +464,7 @@ const NexoraAdvantage = () => {
 
         .advantage-nexora-section .nexora-section-title {
           font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-          font-weight: 800;
+          font-weight: 800 !important;
           color: #0F172A;
           line-height: 1.25;
         }
@@ -704,7 +661,7 @@ const NexoraAdvantage = () => {
 
         .inspector-title {
           font-size: 22px;
-          font-weight: 800;
+          font-weight: 800 !important;
           color: #0F172A;
         }
 
